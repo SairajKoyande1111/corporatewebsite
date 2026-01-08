@@ -76,7 +76,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn} 
-              className="text-6xl md:text-7xl lg:text-[100px] font-bold text-white font-['Nunito',sans-serif] leading-[1] mb-12 tracking-tight"
+              className="text-6xl md:text-7xl lg:text-[100px] font-bold text-white font-['Poppins',sans-serif] leading-[1] mb-12 tracking-tight"
             >
               Financial <br />
               confidence for <br />
@@ -85,41 +85,18 @@ export default function Home() {
             
             <motion.p 
               variants={fadeIn} 
-              className="text-xl md:text-3xl text-white/90 mb-14 max-w-2xl leading-relaxed font-['Nunito',sans-serif] font-medium"
+              className="text-xl md:text-3xl text-white/90 mb-14 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium"
             >
               45+ years of tax, audit & advisory solutions.
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex items-center gap-6">
-               <motion.div 
-                 whileHover={{ scale: 1.1 }}
-                 whileTap={{ scale: 0.95 }}
-                 className="flex items-center justify-center text-secondary cursor-pointer"
-               >
-                 <ArrowUpRight className="w-8 h-8 rotate-225" />
-               </motion.div>
-               <motion.div 
-                 whileHover={{ scale: 1.05 }}
-                 whileTap={{ scale: 0.95 }}
-                 className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center text-secondary cursor-pointer hover:border-secondary transition-colors"
-               >
-                 <ArrowUpRight className="w-8 h-8" />
-               </motion.div>
             </motion.div>
           </motion.div>
         </div>
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-16 left-12 flex flex-col items-center gap-2 opacity-80">
-           <div className="flex flex-col items-center gap-4">
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="text-secondary"
-              >
-                <ArrowUpRight className="w-12 h-12 rotate-180" />
-              </motion.div>
-           </div>
         </div>
       </section>
 
@@ -157,9 +134,6 @@ export default function Home() {
               We believe that the best results come from true partnership. By combining our deep technical expertise with a genuine understanding of your business, we create solutions that drive real value and long-term success.
             </motion.p>
             <motion.div variants={fadeIn} className="flex items-center gap-4 group cursor-pointer">
-              <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <ArrowRight className="w-5 h-5" />
-              </div>
               <span className="font-bold text-primary text-lg group-hover:underline decoration-secondary underline-offset-4">Read Our Story</span>
             </motion.div>
           </motion.div>
@@ -218,12 +192,6 @@ export default function Home() {
                     <p className="text-gray-500 mb-8 line-clamp-3">
                       Comprehensive solutions tailored to your unique needs, delivering clarity and confidence.
                     </p>
-                    
-                    <div className="mt-auto flex justify-end">
-                      <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
-                        <ArrowUpRight className="w-5 h-5" />
-                      </div>
-                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
