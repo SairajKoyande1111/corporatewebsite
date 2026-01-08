@@ -151,15 +151,39 @@ export default function Home() {
       </section>
 
       {/* Awards Strip */}
-      <div className="bg-white border-b py-10">
+      <div className="bg-white border-b py-10 overflow-hidden">
         <div className="container-custom">
           <p className="text-center text-gray-400 text-sm font-semibold uppercase tracking-widest mb-8">Recognized for Excellence</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Logo placeholders - using text for simplicity but styled like logos */}
-             <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2"><ShieldCheck className="w-6 h-6"/> VAULT</div>
-             <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2"><BarChart3 className="w-6 h-6"/> INSIDE PUBLIC ACCOUNTING</div>
-             <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2"><Globe className="w-6 h-6"/> ACCOUNTING TODAY</div>
-             <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2"><Users className="w-6 h-6"/> FORBES</div>
+          
+          <div className="relative">
+            {/* Gradient masks for smooth fade edges */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+            
+            <motion.div 
+              className="flex gap-20 items-center whitespace-nowrap"
+              animate={{
+                x: [0, -1030],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 20,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex gap-20 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><ShieldCheck className="w-6 h-6"/> VAULT</div>
+                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><BarChart3 className="w-6 h-6"/> INSIDE PUBLIC ACCOUNTING</div>
+                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><Globe className="w-6 h-6"/> ACCOUNTING TODAY</div>
+                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><Users className="w-6 h-6"/> FORBES</div>
+                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><ShieldCheck className="w-6 h-6"/> IPA BEST OF THE BEST</div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
