@@ -159,14 +159,10 @@ export default function Home() {
       </section>
 
       {/* Awards Strip */}
-      <div className="bg-white border-b py-16 overflow-hidden">
+      <div className="bg-white border-b py-6 overflow-hidden">
         <div className="container-custom">
           
           <div className="relative">
-            {/* Gradient masks for smooth fade edges */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
-            
             <motion.div 
               className="flex gap-48 items-center whitespace-nowrap"
               animate={{
