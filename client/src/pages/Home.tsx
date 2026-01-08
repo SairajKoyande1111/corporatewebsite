@@ -310,13 +310,13 @@ export default function Home() {
                 <Card className="h-full border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden bg-white p-2">
                   <div className="aspect-video overflow-hidden rounded-lg mb-6 relative">
                     <img 
-                      src={`https://images.unsplash.com/photo-${
-                        service.title === "Advisory" ? "1554224155-11ee21268471" :
-                        service.title === "Audit" ? "1454165833767-02acd350c2b8" :
-                        service.title === "Tax" ? "1554224154-1a062c936e10" :
-                        service.title === "Operational Solutions" ? "1460925895917-afdab827c52f" :
-                        "1551288049-bebda4e38f71"
-                      }?auto=format&fit=crop&w=800&q=80`}
+                      src={
+                        service.title === "Advisory" ? "https://images.unsplash.com/photo-1554224155-11ee21268471?auto=format&fit=crop&w=800&q=80" :
+                        service.title === "Audit" ? "https://images.unsplash.com/photo-1454165833767-02acd350c2b8?auto=format&fit=crop&w=800&q=80" :
+                        service.title === "Tax" ? "https://images.unsplash.com/photo-1554224154-1a062c936e10?auto=format&fit=crop&w=800&q=80" :
+                        service.title === "Operational Solutions" ? "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" :
+                        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                      }
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
