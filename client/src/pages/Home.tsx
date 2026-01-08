@@ -283,7 +283,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-sm"
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl"
             >
               Our Services
             </motion.span>
@@ -296,13 +296,6 @@ export default function Home() {
             >
               Backed by Deep Industry Knowledge
             </motion.h2>
-            <motion.div 
-              initial={{ width: 0 }}
-              whileInView={{ width: 80 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="h-1.5 bg-primary rounded-full"
-            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -317,24 +310,21 @@ export default function Home() {
                 <Card className="h-full border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden bg-white p-2">
                   <div className="aspect-video overflow-hidden rounded-lg mb-6 relative">
                     <img 
-                      src={`https://images.unsplash.com/photo-${1500000000000 + (service.id * 1000000)}?auto=format&fit=crop&w=800&q=80`}
+                      src={`https://images.unsplash.com/photo-${1554224155 + (service.id * 1000)}?auto=format&fit=crop&w=800&q=80`}
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-500" />
-                    <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center text-secondary shadow-lg">
-                      {getIcon(service.icon)}
-                    </div>
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors duration-500" />
                   </div>
                   
                   <CardContent className="px-6 pb-8 space-y-4">
-                    <h3 className="text-2xl font-bold text-primary font-display group-hover:text-secondary transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-primary font-['Poppins',sans-serif] group-hover:text-secondary transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 font-['Nunito',sans-serif] text-lg leading-relaxed">
                       Comprehensive solutions tailored to your unique needs, delivering clarity and confidence through expert technical knowledge.
                     </p>
-                    <div className="pt-4 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all duration-300">
+                    <div className="pt-4 flex items-center gap-2 text-primary font-bold font-['Poppins',sans-serif] group-hover:gap-4 transition-all duration-300">
                       <span>Learn More</span>
                       <ArrowRight className="w-5 h-5" />
                     </div>
