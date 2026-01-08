@@ -36,10 +36,10 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-12 font-['Poppins',sans-serif] text-[18px] font-medium uppercase tracking-[0.15em] text-white">
-            <a href="/" className="hover:text-secondary transition-colors py-2">Home</a>
-            <a href="#about" className="hover:text-secondary transition-colors py-2">About Us</a>
-            <a href="#services" className="hover:text-secondary transition-colors py-2">Services</a>
-            <a href="#contact" className="hover:text-secondary transition-colors py-2">Contact</a>
+            <Link href="/" className="hover:text-secondary transition-colors py-2">Home</Link>
+            <Link href="/about" className="hover:text-secondary transition-colors py-2">About Us</Link>
+            <Link href="/services" className="hover:text-secondary transition-colors py-2">Services</Link>
+            <Link href="/contact" className="hover:text-secondary transition-colors py-2">Contact</Link>
           </nav>
 
           <div className="flex items-center gap-8">
