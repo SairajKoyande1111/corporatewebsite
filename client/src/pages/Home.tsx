@@ -779,44 +779,72 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="container-custom">
-          <SectionHeading
-            title="Trusted by Many"
-            subtitle="Testimonials"
-            alignment="center"
-          />
-
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 relative"
-              >
-                <div className="text-secondary text-6xl font-serif absolute top-6 left-6 opacity-30">
-                  "
-                </div>
-                <p className="text-gray-600 italic mb-8 relative z-10 pt-4 text-lg">
-                  The team provided exceptional guidance during our merger.
-                  Their attention to detail and strategic advice were
-                  instrumental to our success.
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                    <img
-                      src={`https://randomuser.me/api/portraits/men/${i + 20}.jpg`}
-                      alt="User"
-                    />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-primary">Michael Richards</h5>
-                    <p className="text-xs text-gray-500 uppercase tracking-widest">
-                      CFO, Tech Ventures
-                    </p>
-                  </div>
-                </div>
+          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base"
+            >
+              Testimonials
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-display"
+            >
+              Trusted by Many
+            </motion.h2>
+          </div>
+          
+          <div className="mt-12 relative px-4 md:px-12">
+            <Carousel 
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4 md:-ml-8">
+                {(testimonials?.length ? testimonials : [1, 2, 3, 4, 5]).map((t, i) => (
+                  <CarouselItem key={i} className="pl-4 md:pl-8 md:basis-1/2 lg:basis-1/3">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="h-full bg-[#F9F7F2] p-8 md:p-10 rounded-3xl shadow-sm border border-primary/5 relative group hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                      <div className="text-secondary text-6xl font-serif absolute top-6 left-6 opacity-20 group-hover:opacity-40 transition-opacity">"</div>
+                      <p className="text-gray-700 italic mb-10 relative z-10 pt-6 text-lg leading-relaxed">
+                        {typeof t === 'object' ? t.quote : "The team provided exceptional guidance during our merger. Their attention to detail and strategic advice were instrumental to our success."}
+                      </p>
+                      <div className="flex items-center gap-4 mt-auto">
+                        <div className="w-14 h-14 bg-white rounded-full overflow-hidden border-2 border-secondary/20 shadow-inner p-1">
+                          <img 
+                            src={`https://i.pravatar.cc/150?u=${i}`} 
+                            alt="User" 
+                            className="w-full h-full object-cover rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <h5 className="font-bold text-primary text-lg">{typeof t === 'object' ? t.author : "Michael Richards"}</h5>
+                          <p className="text-xs text-secondary font-bold uppercase tracking-widest">{typeof t === 'object' ? (t.role || t.company) : "CFO, Tech Ventures"}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-4 mt-12">
+                <CarouselPrevious className="static translate-y-0 w-12 h-12 border-2 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all" />
+                <CarouselNext className="static translate-y-0 w-12 h-12 border-2 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all" />
               </div>
-            ))}
+            </Carousel>
           </div>
         </div>
       </section>
