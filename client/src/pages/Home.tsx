@@ -169,29 +169,29 @@ export default function Home() {
             <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
             
             <motion.div 
-              className="flex gap-20 items-center whitespace-nowrap"
+              className="flex gap-40 items-center whitespace-nowrap"
               animate={{
-                x: [0, -1600],
+                x: [0, -2000],
               }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 40,
                   ease: "linear",
                 },
               }}
             >
               {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-24 items-center transition-all duration-500">
-                  <img src={vaultLogo} alt="Logo 1" className="h-12 w-auto object-contain" />
-                  <img src={ipaLogo} alt="Logo 2" className="h-12 w-auto object-contain" />
-                  <img src={accountingTodayLogo} alt="Logo 3" className="h-12 w-auto object-contain" />
-                  <img src={forbesLogo} alt="Logo 4" className="h-12 w-auto object-contain" />
-                  <img src={logo404} alt="Logo 5" className="h-12 w-auto object-contain" />
-                  <img src={logo411} alt="Logo 6" className="h-12 w-auto object-contain" />
-                  <img src={logo415} alt="Logo 7" className="h-12 w-auto object-contain" />
-                  <img src={logo417} alt="Logo 8" className="h-12 w-auto object-contain" />
+                <div key={i} className="flex gap-40 items-center transition-all duration-500">
+                  <img src={vaultLogo} alt="Logo 1" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={ipaLogo} alt="Logo 2" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={accountingTodayLogo} alt="Logo 3" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={forbesLogo} alt="Logo 4" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={logo404} alt="Logo 5" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={logo411} alt="Logo 6" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={logo415} alt="Logo 7" className="h-12 w-auto object-contain shrink-0" />
+                  <img src={logo417} alt="Logo 8" className="h-12 w-auto object-contain shrink-0" />
                 </div>
               ))}
             </motion.div>
