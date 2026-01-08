@@ -283,7 +283,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl"
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-2xl"
             >
               Our Services
             </motion.span>
@@ -310,7 +310,13 @@ export default function Home() {
                 <Card className="h-full border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden bg-white p-2">
                   <div className="aspect-video overflow-hidden rounded-lg mb-6 relative">
                     <img 
-                      src={`https://images.unsplash.com/photo-${1554224155 + (service.id * 1000)}?auto=format&fit=crop&w=800&q=80`}
+                      src={`https://images.unsplash.com/photo-${
+                        service.title === "Advisory" ? "1554224155-11ee21268471" :
+                        service.title === "Audit" ? "1454165833767-02acd350c2b8" :
+                        service.title === "Tax" ? "1554224154-1a062c936e10" :
+                        service.title === "Operational Solutions" ? "1460925895917-afdab827c52f" :
+                        "1551288049-bebda4e38f71"
+                      }?auto=format&fit=crop&w=800&q=80`}
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
