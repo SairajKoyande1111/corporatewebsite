@@ -49,16 +49,15 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center bg-primary overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center bg-[#0a1e36] overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          {/* Corporate meeting placeholder */}
           <img 
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
             alt="Corporate Meeting" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1e36] via-[#0a1e36]/80 to-transparent" />
         </div>
 
         <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -68,32 +67,38 @@ export default function Home() {
             variants={stagger}
             className="max-w-2xl"
           >
-            <motion.div variants={fadeIn} className="inline-block bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
-              <span className="text-secondary font-semibold text-sm tracking-wide uppercase">Est. 1980</span>
-            </motion.div>
-            
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display leading-[1.1] mb-6">
-              Financial <span className="text-secondary">confidence</span> <br /> for today.
+            <motion.h1 variants={fadeIn} className="text-6xl md:text-7xl lg:text-8xl font-bold text-white font-display leading-[1.05] mb-12 tracking-tight">
+              Financial <br />
+              confidence for <br />
+              today
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
-              For over 45 years, we have provided comprehensive tax, audit, and advisory solutions to help businesses and individuals thrive.
+            <motion.p variants={fadeIn} className="text-xl md:text-3xl text-gray-300 mb-14 max-w-2xl leading-relaxed font-medium">
+              45+ years of tax, audit & advisory solutions.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <button className="bg-secondary text-primary px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 flex items-center gap-2 shadow-lg shadow-secondary/20">
-                Explore Services
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="px-8 py-4 rounded-full font-bold text-white border border-white/30 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                Contact Us
-              </button>
+            <motion.div variants={fadeIn} className="flex flex-wrap gap-4 items-center">
+               <div className="flex items-center gap-8 group cursor-pointer">
+                <div className="w-20 h-20 rounded-full border-2 border-secondary/40 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary transition-all duration-500">
+                  <ArrowUpRight className="w-10 h-10" />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
         
-        {/* Decorative element */}
-        <div className="absolute bottom-0 right-0 w-1/3 h-32 bg-secondary/10 blur-3xl rounded-full" />
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-16 left-12 flex flex-col items-center gap-2 opacity-80">
+           <div className="flex flex-col items-center gap-4">
+              <motion.div 
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="text-secondary"
+              >
+                <ArrowUpRight className="w-12 h-12 rotate-180" />
+              </motion.div>
+           </div>
+        </div>
       </section>
 
       {/* Awards Strip */}
