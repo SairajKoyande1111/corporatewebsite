@@ -224,7 +224,7 @@ export default function Home() {
               <div className="space-y-4">
                 <motion.span 
                   variants={fadeIn}
-                  className="text-secondary font-bold tracking-[0.2em] uppercase text-sm block"
+                  className="text-secondary font-bold tracking-[0.2em] uppercase text-xl block"
                 >
                   Our Philosophy
                 </motion.span>
@@ -234,10 +234,6 @@ export default function Home() {
                 >
                   A Collaborative <br /> Approach
                 </motion.h2>
-                <motion.div 
-                  variants={fadeIn}
-                  className="w-20 h-1.5 bg-primary"
-                />
               </div>
 
               <div className="space-y-6 max-w-xl">
