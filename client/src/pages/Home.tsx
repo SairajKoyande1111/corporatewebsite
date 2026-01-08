@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ArrowRight, ArrowUpRight, BarChart3, Calculator, FileText, Globe, Layers, Phone, ShieldCheck, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -21,6 +22,41 @@ export default function Home() {
   const { data: experts } = useExperts();
   const { data: testimonials } = useTestimonials();
   const { data: awards } = useAwards();
+
+  const [heroTextIndex, setHeroTextIndex] = useState(0);
+  const heroTexts = [
+    { main: "Financial", sub: "confidence for", highlight: "today" },
+    { main: "Strategic", sub: "guidance for", highlight: "growth" },
+    { main: "Expert", sub: "solutions for", highlight: "success" }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroTextIndex((prev) => (prev + 1) % heroTexts.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const TypewriterEffect = ({ text }: { text: string }) => {
+    return (
+      <motion.span>
+        {text.split("").map((char, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.05,
+              delay: i * 0.05,
+              ease: "easeIn"
+            }}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </motion.span>
+    );
+  };
 
   // Mocks if data is empty (for immediate preview)
   const mockServices = [
@@ -72,22 +108,30 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="max-w-2xl"
+            className="max-w-3xl"
           >
-            <motion.h1 
-              variants={fadeIn} 
-              className="text-6xl md:text-7xl lg:text-[100px] font-medium text-white font-['Poppins',sans-serif] leading-[1] mb-12 tracking-tight"
-            >
-              Financial <br />
-              confidence for <br />
-              today
-            </motion.h1>
+            <div className="h-[320px] mb-12 flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={heroTextIndex}
+                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="text-6xl md:text-7xl lg:text-[100px] font-medium text-white font-['Poppins',sans-serif] leading-[1] tracking-tight"
+                >
+                  {heroTexts[heroTextIndex].main} <br />
+                  {heroTexts[heroTextIndex].sub} <br />
+                  <span className="text-secondary">{heroTexts[heroTextIndex].highlight}</span>
+                </motion.h1>
+              </AnimatePresence>
+            </div>
             
             <motion.p 
               variants={fadeIn} 
-              className="text-xl md:text-3xl text-white/90 mb-14 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium"
+              className="text-xl md:text-3xl text-white/90 mb-14 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3.5rem]"
             >
-              45+ years of tax, audit & advisory solutions.
+              <TypewriterEffect text="45+ years of tax, audit & advisory solutions." />
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex items-center gap-6">
