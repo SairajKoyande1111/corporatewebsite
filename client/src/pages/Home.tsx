@@ -88,6 +88,59 @@ export default function Home() {
     }
   };
 
+  const [selectedCategory, setSelectedCategory] = useState("Construction");
+
+  const categories = [
+    {
+      id: "Construction",
+      title: "Construction",
+      description: "If you're looking for strategic construction tax consulting to navigate financial reporting, international growth and business transactions, we can help.",
+      experts: [
+        { name: "Aaron Scale", role: "Partner", phone: "678.302.1409", email: "aaron.scale@btcpa.net", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" },
+        { name: "Aaron Epp", role: "Senior Manager", phone: "770.635.5028", email: "aaron.epp@btcpa.net", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" }
+      ]
+    },
+    {
+      id: "Entertainment",
+      title: "Entertainment",
+      description: "If you're looking for a strategic entertainment accounting firm to help with your financial and consulting needs, we can help.",
+      experts: [
+        { name: "Peter G. Stathopoulos", role: "Partner", phone: "678.218.1396", email: "peter.stathopoulos@btcpa.net", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" },
+        { name: "Jane L. Klingmeyer", role: "Director", phone: "678.218.1390", email: "jane.klingmeyer@btcpa.net", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
+      ]
+    },
+    {
+      id: "Healthcare",
+      title: "Healthcare",
+      description: "If you would benefit from the assistance of dedicated healthcare accountants and consultants, we can help.",
+      experts: [
+        { name: "Patrick Braley", role: "Partner", phone: "678.218.1407", email: "patrick.braley@btcpa.net", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop" },
+        { name: "Michael Y. Dukes", role: "Partner", phone: "678.302.1480", email: "michael.dukes@btcpa.net", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
+        { name: "Matthew R. Grosvenor", role: "Partner", phone: "678.302.1465", email: "matt.grosvenor@btcpa.net", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop" }
+      ]
+    },
+    {
+      id: "HNWI",
+      title: "High Net Worth Individuals",
+      description: "If you're looking for a solution to manage your individual tax planning and compliance needs, we can help.",
+      experts: [
+        { name: "Jonathan D. Swartz", role: "Partner", phone: "678.302.1477", email: "jonathan.swartz@btcpa.net", image: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=400&h=400&fit=crop" },
+        { name: "Michael Thrasher", role: "Partner", phone: "678.990.2264", email: "michael.thrasher@btcpa.net", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop" }
+      ]
+    },
+    {
+      id: "Hospitality",
+      title: "Hospitality",
+      description: "If you're looking for a strategic hospitality accounting partner who understands the industry, we can help.",
+      experts: [
+        { name: "Cory Bennett", role: "Partner", phone: "678.302.1485", email: "cory.bennett@btcpa.net", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" },
+        { name: "Timothy Watt", role: "Partner", phone: "678.302.1420", email: "tim.watt@btcpa.net", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" }
+      ]
+    }
+  ];
+
+  const currentCategory = categories.find(c => c.id === selectedCategory) || categories[0];
+
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
@@ -348,56 +401,121 @@ export default function Home() {
       </section>
 
       {/* Experts Section */}
-      <section id="people" className="py-24 bg-gray-50 overflow-hidden">
+      <section id="people" className="py-32 bg-[#F9F7F2] overflow-hidden">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-4">
-              <SectionHeading 
-                title="Meet Your Experts" 
-                subtitle="People First"
-              />
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Our team is comprised of industry leaders who bring deep technical knowledge and practical experience to every engagement. Get to know the people dedicated to your success.
-              </p>
-              <button className="hidden lg:flex items-center gap-2 text-primary font-bold hover:text-secondary transition-colors group">
-                View All Professionals
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-primary mb-16 font-display"
+          >
+            Meet Your Experts:
+          </motion.h2>
+
+          <div className="grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4 space-y-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedCategory}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="space-y-6"
+                >
+                  <div className="pl-4 border-l-2 border-primary/20">
+                    <h3 className="text-3xl font-bold text-primary mb-6 font-display">{currentCategory.title}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                      {currentCategory.description}
+                    </p>
+                    <div className="text-base text-gray-500">
+                      Contact {currentCategory.experts.map((e, i) => (
+                        <span key={e.name}>
+                          <span className="text-primary font-bold hover:text-secondary cursor-pointer transition-colors">{e.name}</span>
+                          {i < currentCategory.experts.length - 1 ? (i === currentCategory.experts.length - 2 ? " or " : ", ") : ""}
+                        </span>
+                      ))} to schedule a consultation.
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              <div className="flex gap-4 pt-8">
+                <button 
+                  onClick={() => {
+                    const idx = categories.findIndex(c => c.id === selectedCategory);
+                    const prevIdx = (idx - 1 + categories.length) % categories.length;
+                    setSelectedCategory(categories[prevIdx].id);
+                  }}
+                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
+                >
+                  <ArrowRight className="w-5 h-5 rotate-180" />
+                </button>
+                <button 
+                  onClick={() => {
+                    const idx = categories.findIndex(c => c.id === selectedCategory);
+                    const nextIdx = (idx + 1) % categories.length;
+                    setSelectedCategory(categories[nextIdx].id);
+                  }}
+                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
             <div className="lg:col-span-8">
-              <Carousel className="w-full">
-                <CarouselContent className="-ml-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                      <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
-                        <div className="aspect-[3/4] overflow-hidden relative">
-                           {/* Professional Headshot */}
-                          <img 
-                            src={`https://images.unsplash.com/photo-${i === 1 ? '1560250097-0b93528c311a' : i === 2 ? '1573496359142-b8d87734a5a2' : i === 3 ? '1580489944761-15a19d654956' : '1519085360753-af0119f7cbe7'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
-                            alt="Expert" 
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                             <div className="flex gap-3 mb-2">
-                                <button className="bg-secondary p-2 rounded-full text-primary hover:bg-white transition-colors"><Phone className="w-4 h-4"/></button>
-                                <button className="bg-secondary p-2 rounded-full text-primary hover:bg-white transition-colors"><Globe className="w-4 h-4"/></button>
-                             </div>
-                          </div>
-                        </div>
-                        <div className="p-6 border-t border-gray-100">
-                          <h4 className="font-bold text-lg text-primary">Alex Thompson</h4>
-                          <p className="text-sm text-gray-500 uppercase tracking-wider font-medium">Partner, Tax</p>
+              <div className="flex overflow-x-auto pb-4 mb-12 border-b border-gray-200 no-scrollbar gap-12">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`text-xl font-bold whitespace-nowrap pb-4 transition-all relative font-display ${
+                      selectedCategory === cat.id ? "text-primary" : "text-gray-300 hover:text-gray-500"
+                    }`}
+                  >
+                    {cat.title}
+                    {selectedCategory === cat.id && (
+                      <motion.div 
+                        layoutId="activeTab"
+                        className="absolute -bottom-[2px] left-0 right-0 h-1 bg-primary rounded-full"
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <AnimatePresence mode="popLayout">
+                  {currentCategory.experts.map((expert, idx) => (
+                    <motion.div
+                      key={expert.name}
+                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                      transition={{ duration: 0.3, delay: idx * 0.1 }}
+                      className="space-y-4"
+                    >
+                      <div className="aspect-[4/5] rounded-tr-[40px] overflow-hidden relative group shadow-lg">
+                        <img 
+                          src={expert.image}
+                          alt={expert.name}
+                          className="w-full h-full object-cover transition-all duration-700"
+                        />
+                        <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="font-bold text-primary text-xl font-display">{expert.name}</h4>
+                        <p className="text-gray-500 text-sm font-semibold uppercase tracking-wider">{expert.role}</p>
+                        <div className="pt-2 space-y-0.5">
+                          <p className="text-primary font-medium hover:text-secondary cursor-pointer transition-colors">{expert.phone}</p>
+                          <p className="text-gray-500 text-sm hover:text-primary cursor-pointer transition-colors truncate">{expert.email}</p>
                         </div>
                       </div>
-                    </CarouselItem>
+                    </motion.div>
                   ))}
-                </CarouselContent>
-                <div className="flex justify-end gap-2 mt-8">
-                  <CarouselPrevious className="static translate-y-0" />
-                  <CarouselNext className="static translate-y-0" />
-                </div>
-              </Carousel>
+                </AnimatePresence>
+              </div>
             </div>
           </div>
         </div>
