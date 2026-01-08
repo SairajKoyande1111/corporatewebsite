@@ -55,15 +55,15 @@ export default function Home() {
           <img 
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
             alt="Corporate Meeting" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
           />
           {/* Complex Gradient Overlay matching screenshot */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002140] via-[#002140]/90 to-[#003A70]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#002140] via-[#002140]/95 to-transparent" />
           
           {/* Large "BT" Pattern Overlay */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-             <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[120px] border-white/30 rounded-full" />
-             <div className="absolute -right-40 top-1/2 -translate-y-1/3 w-[600px] h-[600px] border-[100px] border-white/20 rounded-full" />
+          <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+             <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[900px] h-[900px] border-[140px] border-white/10 rounded-full" />
+             <div className="absolute -right-40 top-1/2 -translate-y-1/3 w-[700px] h-[700px] border-[120px] border-white/5 rounded-full" />
           </div>
         </div>
 
@@ -76,7 +76,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn} 
-              className="text-6xl md:text-7xl lg:text-8xl font-bold text-white font-['Nunito',sans-serif] leading-[1.05] mb-12 tracking-tight"
+              className="text-6xl md:text-7xl lg:text-[100px] font-bold text-white font-['Nunito',sans-serif] leading-[1] mb-12 tracking-tight"
             >
               Financial <br />
               confidence for <br />
@@ -90,12 +90,21 @@ export default function Home() {
               45+ years of tax, audit & advisory solutions.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="flex flex-wrap gap-4 items-center">
-               <div className="flex items-center gap-8 group cursor-pointer">
-                <div className="w-20 h-20 rounded-full border-2 border-secondary/40 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary transition-all duration-500">
-                  <ArrowUpRight className="w-10 h-10" />
-                </div>
-              </div>
+            <motion.div variants={fadeIn} className="flex items-center gap-6">
+               <motion.div 
+                 whileHover={{ scale: 1.1 }}
+                 whileTap={{ scale: 0.95 }}
+                 className="flex items-center justify-center text-secondary cursor-pointer"
+               >
+                 <ArrowUpRight className="w-8 h-8 rotate-225" />
+               </motion.div>
+               <motion.div 
+                 whileHover={{ scale: 1.05 }}
+                 whileTap={{ scale: 0.95 }}
+                 className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center text-secondary cursor-pointer hover:border-secondary transition-colors"
+               >
+                 <ArrowUpRight className="w-8 h-8" />
+               </motion.div>
             </motion.div>
           </motion.div>
         </div>
