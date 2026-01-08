@@ -43,6 +43,9 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-8">
+            <button className="bg-secondary text-primary px-8 py-3 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 uppercase tracking-widest text-sm">
+              Connect Now
+            </button>
           </div>
         </div>
       </div>
