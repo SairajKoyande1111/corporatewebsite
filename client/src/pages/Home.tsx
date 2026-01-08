@@ -737,26 +737,41 @@ export default function Home() {
             {/* Leaf shape image */}
             <div className="aspect-square bg-gray-800 rounded-tr-[150px] rounded-bl-[150px] overflow-hidden border-4 border-secondary/30">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Team Success"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2070&q=80"
+                alt="Professional Team"
+                className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
               />
             </div>
           </motion.div>
 
-          <div className="order-1 lg:order-2">
-            <SectionHeading
-              title="Our Team, Your Success"
-              subtitle="Culture"
-              light
-            />
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+          <div className="order-1 lg:order-2 space-y-8">
+            <div className="space-y-4">
+              <motion.span 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-secondary font-bold tracking-[0.2em] uppercase text-base md:text-lg block"
+              >
+                Culture
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display leading-tight"
+              >
+                Our Team, Your Success
+              </motion.h2>
+            </div>
+            
+            <p className="text-gray-100 text-2xl md:text-3xl mb-10 leading-relaxed font-light max-w-2xl">
               We believe that happy employees lead to happy clients. Our unique
               culture fosters collaboration, innovation, and a relentless
               commitment to excellence. When our team thrives, so does your
               business.
             </p>
-            <button className="bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-primary px-8 py-3 rounded-full font-bold transition-all duration-300">
+            <button className="bg-secondary text-primary hover:bg-white px-12 py-5 rounded-full font-bold text-xl md:text-2xl transition-all duration-300 shadow-2xl shadow-secondary/20">
               Meet Our Team
             </button>
           </div>
