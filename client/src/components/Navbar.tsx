@@ -18,12 +18,12 @@ export function Navbar() {
         <div className="container-custom flex items-center justify-between h-[105px]">
           <Link href="/">
             <div className="flex flex-col cursor-pointer group">
-              <span className="text-4xl font-display font-bold tracking-tight text-white group-hover:text-secondary transition-colors">BT</span>
-              <span className="text-[10px] tracking-[0.2em] uppercase text-secondary font-semibold -mt-1">Bennett Thrasher</span>
+              <span className="text-4xl font-display font-medium tracking-tight text-white group-hover:text-secondary transition-colors">BT</span>
+              <span className="text-[10px] tracking-[0.2em] uppercase text-secondary font-medium -mt-1">Bennett Thrasher</span>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-12 font-['Poppins',sans-serif] text-[18px] font-medium uppercase tracking-[0.15em]">
+          <nav className="hidden lg:flex items-center gap-12 font-['Poppins',sans-serif] text-[18px] font-normal uppercase tracking-[0.15em]">
             <a href="#services" className="hover:text-secondary transition-colors py-2">Services</a>
             <a href="#industries" className="hover:text-secondary transition-colors py-2">Industries</a>
             <a href="#people" className="hover:text-secondary transition-colors py-2">People</a>
@@ -31,7 +31,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-8">
-            <div className="hidden xl:flex items-center gap-2 text-xl font-bold tracking-wide">
+            <div className="hidden xl:flex items-center gap-2 text-xl font-medium tracking-wide">
               <span>770.396.2200</span>
             </div>
           </div>

@@ -76,7 +76,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn} 
-              className="text-6xl md:text-7xl lg:text-[100px] font-bold text-white font-['Poppins',sans-serif] leading-[1] mb-12 tracking-tight"
+              className="text-6xl md:text-7xl lg:text-[100px] font-medium text-white font-['Poppins',sans-serif] leading-[1] mb-12 tracking-tight"
             >
               Financial <br />
               confidence for <br />
