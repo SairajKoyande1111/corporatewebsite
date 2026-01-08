@@ -283,7 +283,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-2xl"
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl md:text-2xl"
             >
               Our Services
             </motion.span>
@@ -308,16 +308,21 @@ export default function Home() {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
               >
                 <Card className="h-full border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden bg-white p-2">
-                  <div className="aspect-video overflow-hidden rounded-lg mb-6 relative">
+                  <div className="aspect-video overflow-hidden rounded-lg mb-6 relative bg-gray-100">
                     <img 
                       src={
-                        service.title === "Advisory" ? "https://images.unsplash.com/photo-1554224155-11ee21268471?auto=format&fit=crop&w=800&q=80" :
-                        service.title === "Audit" ? "https://images.unsplash.com/photo-1454165833767-02acd350c2b8?auto=format&fit=crop&w=800&q=80" :
-                        service.title === "Tax" ? "https://images.unsplash.com/photo-1554224154-1a062c936e10?auto=format&fit=crop&w=800&q=80" :
+                        service.title === "Advisory" ? "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" :
+                        service.title === "Audit" ? "https://images.unsplash.com/photo-1554224155-1659a7245222?auto=format&fit=crop&w=800&q=80" :
+                        service.title === "Tax" ? "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" :
                         service.title === "Operational Solutions" ? "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" :
                         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
                       }
                       alt={service.title}
+                      loading="eager"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80";
+                      }}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors duration-500" />
