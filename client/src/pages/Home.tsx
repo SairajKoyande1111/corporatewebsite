@@ -276,38 +276,68 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-white relative overflow-hidden">
+      <section id="services" className="py-32 bg-white relative overflow-hidden">
         <div className="container-custom">
-          <SectionHeading 
-            title="Backed by Deep Industry Knowledge" 
-            subtitle="Our Services"
-            alignment="left"
-          />
+          <div className="flex flex-col items-center text-center mb-20 space-y-4">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-sm"
+            >
+              Our Services
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-display leading-tight"
+            >
+              Backed by Deep Industry Knowledge
+            </motion.h2>
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: 80 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="h-1.5 bg-primary rounded-full"
+            />
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {(services?.length ? services : mockServices).map((service, idx) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
               >
-                <Card className="h-full border-gray-100 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:border-secondary/30 transition-all duration-300 group cursor-pointer overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500" />
-                  
-                  <CardContent className="p-8 flex flex-col h-full min-h-[280px]">
-                    <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <Card className="h-full border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden bg-white p-2">
+                  <div className="aspect-video overflow-hidden rounded-lg mb-6 relative">
+                    <img 
+                      src={`https://images.unsplash.com/photo-${1500000000000 + (service.id * 1000000)}?auto=format&fit=crop&w=800&q=80`}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-500" />
+                    <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center text-secondary shadow-lg">
                       {getIcon(service.icon)}
                     </div>
-                    
-                    <h3 className="text-2xl font-bold text-primary mb-4 font-display group-hover:text-secondary transition-colors">
+                  </div>
+                  
+                  <CardContent className="px-6 pb-8 space-y-4">
+                    <h3 className="text-2xl font-bold text-primary font-display group-hover:text-secondary transition-colors duration-300">
                       {service.title}
                     </h3>
-                    
-                    <p className="text-gray-500 mb-8 line-clamp-3">
-                      Comprehensive solutions tailored to your unique needs, delivering clarity and confidence.
+                    <p className="text-gray-600 leading-relaxed">
+                      Comprehensive solutions tailored to your unique needs, delivering clarity and confidence through expert technical knowledge.
                     </p>
+                    <div className="pt-4 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all duration-300">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
