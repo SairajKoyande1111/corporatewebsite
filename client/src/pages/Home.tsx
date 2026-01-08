@@ -6,6 +6,10 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { useServices, useExperts, useTestimonials, useAwards } from "@/hooks/use-content";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import vaultLogo from "@assets/stock_images/logo_for_vault_accou_5e1ffc82.jpg";
+import ipaLogo from "@assets/stock_images/logo_for_inside_publ_ed13df9d.jpg";
+import accountingTodayLogo from "@assets/stock_images/logo_for_accounting__ef3814f4.jpg";
+import forbesLogo from "@assets/stock_images/logo_for_forbes,_whi_88746866.jpg";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -163,24 +167,24 @@ export default function Home() {
             <motion.div 
               className="flex gap-20 items-center whitespace-nowrap"
               animate={{
-                x: [0, -1030],
+                x: [0, -1200],
               }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 20,
+                  duration: 25,
                   ease: "linear",
                 },
               }}
             >
               {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-20 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><ShieldCheck className="w-6 h-6"/> VAULT</div>
-                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><BarChart3 className="w-6 h-6"/> INSIDE PUBLIC ACCOUNTING</div>
-                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><Globe className="w-6 h-6"/> ACCOUNTING TODAY</div>
-                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><Users className="w-6 h-6"/> FORBES</div>
-                  <div className="font-display font-bold text-xl text-gray-600 flex items-center gap-2 shrink-0"><ShieldCheck className="w-6 h-6"/> IPA BEST OF THE BEST</div>
+                <div key={i} className="flex gap-24 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                  <img src={vaultLogo} alt="Vault Logo" className="h-12 w-auto object-contain" />
+                  <img src={ipaLogo} alt="IPA Logo" className="h-12 w-auto object-contain" />
+                  <img src={accountingTodayLogo} alt="Accounting Today Logo" className="h-12 w-auto object-contain" />
+                  <img src={forbesLogo} alt="Forbes Logo" className="h-12 w-auto object-contain" />
+                  <img src={vaultLogo} alt="Vault Logo" className="h-12 w-auto object-contain" />
                 </div>
               ))}
             </motion.div>
