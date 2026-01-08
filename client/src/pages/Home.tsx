@@ -896,69 +896,55 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0a1e36] text-white pt-20 pb-10 border-t border-white/5">
+      <footer className="bg-[#0b1b2d] text-white pt-20 pb-10">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-            <div className="lg:col-span-2">
-              <div className="mb-6 flex flex-col">
-                <span className="text-3xl font-display font-bold tracking-tight text-white mb-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div className="space-y-8">
+              <div className="flex flex-col">
+                <span className="text-4xl font-bold tracking-tight text-white mb-1 font-display">
                   BT
                 </span>
-                <span className="text-xs tracking-[0.2em] uppercase text-secondary font-semibold">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d4af37] font-bold">
                   Bennett Thrasher
                 </span>
               </div>
-              <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
+              <p className="text-gray-400 max-w-xs leading-relaxed text-base">
                 Providing financial confidence and strategic guidance to
                 businesses and individuals since 1980.
               </p>
               <div className="flex gap-4">
-                {["twitter", "linkedin", "facebook", "instagram"].map(
-                  (social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-primary transition-all duration-300"
-                    >
-                      <Globe className="w-4 h-4" />
-                    </a>
-                  ),
-                )}
+                {[1, 2, 3, 4].map((i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#d4af37] hover:text-[#002140] transition-all duration-300"
+                  >
+                    <Globe className="w-4 h-4 opacity-70" />
+                  </a>
+                ))}
               </div>
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-6 text-white">About</h4>
-              <ul className="space-y-4 text-gray-400">
+              <h4 className="font-bold text-lg mb-8 text-white font-display">About</h4>
+              <ul className="space-y-4 text-gray-400 text-base">
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Our Story
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Leadership
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Careers
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Community
                   </a>
                 </li>
@@ -966,72 +952,59 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-6 text-white">Services</h4>
-              <ul className="space-y-4 text-gray-400">
+              <h4 className="font-bold text-lg mb-8 text-white font-display">Services</h4>
+              <ul className="space-y-4 text-gray-400 text-base">
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Advisory
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Audit
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Tax
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-secondary transition-colors"
-                  >
+                  <a href="#" className="hover:text-[#d4af37] transition-colors">
                     Technology
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-6 text-white">Contact</h4>
-              <ul className="space-y-4 text-gray-400">
-                <li className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-secondary shrink-0" />
+            <div className="space-y-8">
+              <h4 className="font-bold text-lg mb-8 text-white font-display">Contact</h4>
+              <div className="space-y-6 text-gray-400 text-base">
+                <div className="flex items-center gap-4">
+                  <Phone className="w-5 h-5 text-[#d4af37] shrink-0" />
                   <span>404.752.0600</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Globe className="w-5 h-5 text-secondary shrink-0" />
+                </div>
+                <div className="flex items-start gap-4">
+                  <Globe className="w-5 h-5 text-[#d4af37] shrink-0 mt-1" />
                   <span>
                     3300 Riverwood Pkwy
                     <br />
                     Atlanta, GA 30339
                   </span>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
             <p>
-              &copy; {new Date().getFullYear()} Bennett Thrasher LLP. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Bennett Thrasher LLP. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-secondary">
+            <div className="flex gap-10">
+              <a href="#" className="hover:text-[#d4af37] transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-secondary">
+              <a href="#" className="hover:text-[#d4af37] transition-colors">
                 Terms of Use
               </a>
             </div>
