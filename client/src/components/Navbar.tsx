@@ -23,7 +23,7 @@ export function Navbar() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-12 font-['Poppins',sans-serif] text-[18px] font-normal uppercase tracking-[0.15em]">
+          <nav className="hidden lg:flex items-center gap-12 font-['Poppins',sans-serif] text-[18px] font-medium uppercase tracking-[0.15em] text-white">
             <a href="/" className="hover:text-secondary transition-colors py-2">Home</a>
             <a href="#about" className="hover:text-secondary transition-colors py-2">About Us</a>
             <a href="#services" className="hover:text-secondary transition-colors py-2">Services</a>
@@ -31,9 +31,6 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-8">
-            <div className="hidden xl:flex items-center gap-2 text-xl font-medium tracking-wide">
-              <span>770.396.2200</span>
-            </div>
           </div>
         </div>
       </div>
