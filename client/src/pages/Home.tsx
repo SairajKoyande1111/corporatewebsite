@@ -110,7 +110,7 @@ export default function Home() {
             variants={stagger}
             className="max-w-3xl"
           >
-            <div className="h-[320px] mb-12 flex flex-col justify-center">
+            <div className="h-[240px] mb-12 flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={heroTextIndex}
@@ -118,7 +118,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
-                  className="text-6xl md:text-7xl lg:text-[100px] font-medium text-white font-['Poppins',sans-serif] leading-[1] tracking-tight"
+                  className="text-5xl md:text-6xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
                 >
                   {heroTexts[heroTextIndex].main} <br />
                   {heroTexts[heroTextIndex].sub} <br />
