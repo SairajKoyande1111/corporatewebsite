@@ -103,14 +103,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center -mt-20">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={stagger}
             className="max-w-3xl"
           >
-            <div className="h-[240px] mb-12 flex flex-col justify-center">
+            <div className="h-[240px] mb-8 flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={heroTextIndex}
@@ -129,12 +129,18 @@ export default function Home() {
             
             <motion.p 
               variants={fadeIn} 
-              className="text-xl md:text-3xl text-white/90 mb-14 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3.5rem]"
+              className="text-xl md:text-3xl text-white/90 mb-10 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3.5rem]"
             >
               <TypewriterEffect text="45+ years of tax, audit & advisory solutions." />
             </motion.p>
             
-            <motion.div variants={fadeIn} className="flex items-center gap-6">
+            <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-6">
+              <button className="bg-secondary text-primary px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20">
+                Explore Services
+              </button>
+              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300">
+                Connect Now
+              </button>
             </motion.div>
           </motion.div>
         </div>
