@@ -28,6 +28,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import vaultLogo from "@assets/logoipsum-344_1767855967338.png";
 import ipaLogo from "@assets/logoipsum-349_1767855967339.png";
 import accountingTodayLogo from "@assets/logoipsum-356_1767855967339.png";
@@ -807,23 +808,30 @@ export default function Home() {
                 align: "start",
                 loop: true,
               }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                }),
+              ]}
               className="w-full"
             >
               <CarouselContent className="-ml-4 md:-ml-8">
                 {(testimonials?.length ? testimonials : [1, 2, 3, 4, 5]).map((t, i) => (
-                  <CarouselItem key={i} className="pl-4 md:pl-8 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={i} className="pl-4 md:pl-8 md:basis-1/2 lg:basis-1/3 h-full">
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="h-full bg-[#F9F7F2] p-8 md:p-10 rounded-3xl shadow-sm border border-primary/5 relative group hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                      className="flex flex-col h-full bg-[#F9F7F2] p-8 md:p-10 rounded-3xl shadow-sm border border-primary/5 relative group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 min-h-[400px]"
                     >
                       <div className="text-secondary text-6xl font-serif absolute top-6 left-6 opacity-20 group-hover:opacity-40 transition-opacity">"</div>
-                      <p className="text-gray-700 italic mb-10 relative z-10 pt-6 text-lg leading-relaxed">
-                        {typeof t === 'object' ? t.quote : "The team provided exceptional guidance during our merger. Their attention to detail and strategic advice were instrumental to our success."}
-                      </p>
-                      <div className="flex items-center gap-4 mt-auto">
+                      <div className="flex-grow">
+                        <p className="text-gray-700 italic mb-10 relative z-10 pt-6 text-lg leading-relaxed">
+                          {typeof t === 'object' ? t.quote : "The team provided exceptional guidance during our merger. Their attention to detail and strategic advice were instrumental to our success."}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-4 pt-6 border-t border-primary/5">
                         <div className="w-14 h-14 bg-white rounded-full overflow-hidden border-2 border-secondary/20 shadow-inner p-1">
                           <img 
                             src={`https://i.pravatar.cc/150?u=${i}`} 
@@ -831,9 +839,9 @@ export default function Home() {
                             className="w-full h-full object-cover rounded-full"
                           />
                         </div>
-                        <div>
-                          <h5 className="font-bold text-primary text-lg">{typeof t === 'object' ? t.author : "Michael Richards"}</h5>
-                          <p className="text-xs text-secondary font-bold uppercase tracking-widest">{typeof t === 'object' ? (t.role || t.company) : "CFO, Tech Ventures"}</p>
+                        <div className="flex flex-col">
+                          <h5 className="font-bold text-primary text-lg leading-tight">{typeof t === 'object' ? t.author : "Michael Richards"}</h5>
+                          <p className="text-xs text-secondary font-bold uppercase tracking-widest mt-1">{typeof t === 'object' ? (t.role || t.company) : "CFO, Tech Ventures"}</p>
                         </div>
                       </div>
                     </motion.div>
