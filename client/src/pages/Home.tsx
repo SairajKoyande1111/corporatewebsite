@@ -211,27 +211,51 @@ export default function Home() {
       </div>
 
       {/* Collaborative Approach Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-32 bg-white">
+        <div className="container-custom grid lg:grid-cols-2 gap-24 items-center">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
+            className="flex flex-col justify-center h-full"
           >
-            <SectionHeading 
-              title="A Collaborative Approach" 
-              subtitle="Our Philosophy"
-            />
-            <motion.p variants={fadeIn} className="text-xl text-primary font-medium mb-6">
-              Your goals are our goals. We don't just work for you; we work with you.
-            </motion.p>
-            <motion.p variants={fadeIn} className="text-gray-600 leading-relaxed mb-8">
-              We believe that the best results come from true partnership. By combining our deep technical expertise with a genuine understanding of your business, we create solutions that drive real value and long-term success.
-            </motion.p>
-            <motion.div variants={fadeIn} className="flex items-center gap-4 group cursor-pointer">
-              <span className="font-bold text-primary text-lg group-hover:underline decoration-secondary underline-offset-4">Read Our Story</span>
-            </motion.div>
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <motion.span 
+                  variants={fadeIn}
+                  className="text-secondary font-bold tracking-[0.2em] uppercase text-sm block"
+                >
+                  Our Philosophy
+                </motion.span>
+                <motion.h2 
+                  variants={fadeIn}
+                  className="text-5xl md:text-6xl font-bold text-primary font-display leading-[1.1]"
+                >
+                  A Collaborative <br /> Approach
+                </motion.h2>
+                <motion.div 
+                  variants={fadeIn}
+                  className="w-20 h-1.5 bg-primary"
+                />
+              </div>
+
+              <div className="space-y-6 max-w-xl">
+                <motion.p variants={fadeIn} className="text-2xl text-primary font-semibold leading-tight">
+                  Your goals are our goals. We don't just work for you; we work with you.
+                </motion.p>
+                <motion.p variants={fadeIn} className="text-gray-600 text-lg leading-relaxed">
+                  We believe that the best results come from true partnership. By combining our deep technical expertise with a genuine understanding of your business, we create solutions that drive real value and long-term success.
+                </motion.p>
+              </div>
+
+              <motion.div variants={fadeIn} className="pt-4">
+                <button className="group flex items-center gap-3 text-primary font-bold text-xl hover:text-secondary transition-colors">
+                  <span className="border-b-2 border-secondary pb-1 group-hover:border-primary transition-colors">Read Our Story</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                </button>
+              </motion.div>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -242,15 +266,15 @@ export default function Home() {
             className="relative"
           >
             {/* Collaboration image */}
-            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden shadow-2xl relative z-10 border-4 border-white">
+            <div className="aspect-[4/3] rounded-tl-[120px] rounded-br-[120px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative z-10 border-8 border-white">
               <img 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                 alt="Team Collaboration" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />
             </div>
             {/* Decorative background shape */}
-            <div className="absolute -bottom-10 -right-10 w-full h-full bg-secondary/20 rounded-tl-[100px] rounded-br-[100px] -z-0" />
+            <div className="absolute -bottom-12 -right-12 w-full h-full bg-[#F5F2EA] rounded-tl-[120px] rounded-br-[120px] -z-0" />
           </motion.div>
         </div>
       </section>
