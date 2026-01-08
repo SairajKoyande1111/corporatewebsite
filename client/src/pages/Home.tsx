@@ -858,32 +858,39 @@ export default function Home() {
       </section>
 
       {/* Join Us / Careers */}
-      <section className="py-24 bg-white relative">
-        <div className="container-custom grid lg:grid-cols-2 gap-0 items-center bg-gray-50 rounded-3xl overflow-hidden shadow-2xl">
-          <div className="relative h-[400px] lg:h-[500px]">
-            <img
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-              alt="Join Us"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-primary/20" />
+      <section className="py-24 bg-[#E8F0F5]">
+        <div className="container-custom grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-tr-[160px] overflow-hidden relative z-10">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="Join Us"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
-          <div className="p-12 lg:p-20">
-            <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">
-              Careers
-            </span>
-            <h2 className="text-4xl font-bold text-primary mb-6 font-display">
+          <div className="space-y-8">
+            <h2 className="text-5xl md:text-6xl font-medium text-[#002140] font-display">
               Join Us
             </h2>
-            <p className="text-gray-600 mb-8 text-lg">
-              We are one of the largest and most respected firms in the region.
-              Build your career in an environment that values growth, balance,
-              and community.
-            </p>
-            <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20">
-              Explore Careers
-            </button>
+            <div className="space-y-6 max-w-xl">
+              <p className="text-2xl text-[#002140] font-semibold leading-tight">
+                We are one of the largest and fastest-growing certified public accounting and consulting firms.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Consistently named one of the Best Accounting Firms to Work for in the United States by Accounting Today, Bennett Thrasher offers you the opportunities of a large accounting firm, with a collaborative, fun culture and a flexible, supportive work atmosphere.
+              </p>
+            </div>
+            
+            <div className="flex items-center gap-4 pt-4">
+              <button className="border-2 border-[#002140]/20 text-[#002140] px-10 py-4 rounded-full font-bold hover:bg-[#002140] hover:text-white transition-all duration-300">
+                Explore Careers
+              </button>
+              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-primary cursor-pointer hover:scale-110 transition-transform">
+                <ArrowUpRight className="w-6 h-6" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
