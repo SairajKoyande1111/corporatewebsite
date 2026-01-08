@@ -7,9 +7,21 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar */}
       <div className="bg-[hsl(var(--header-top))] text-white/90 py-2.5 text-[18px] font-['Poppins',sans-serif] border-b border-white/5">
-        <div className="container-custom flex justify-end gap-6">
-          <a href="#" className="hover:text-secondary transition-colors underline-offset-4 hover:underline">Online Payments & Client Resources</a>
-          <a href="#" className="hover:text-secondary transition-colors underline-offset-4 hover:underline">Careers</a>
+        <div className="container-custom flex justify-between items-center">
+          <div className="flex gap-6 items-center">
+            <a href="tel:4047520600" className="hover:text-secondary transition-colors flex items-center gap-2">
+              <Phone className="w-4 h-4 text-secondary" />
+              404.752.0600
+            </a>
+            <a href="mailto:info@btcpa.net" className="hover:text-secondary transition-colors flex items-center gap-2">
+              <Search className="w-4 h-4 text-secondary" />
+              info@btcpa.net
+            </a>
+          </div>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-secondary transition-colors underline-offset-4 hover:underline">Online Payments & Client Resources</a>
+            <a href="#" className="hover:text-secondary transition-colors underline-offset-4 hover:underline">Careers</a>
+          </div>
         </div>
       </div>
 
