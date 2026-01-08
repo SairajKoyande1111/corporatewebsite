@@ -14,8 +14,10 @@
   --popover: 0 0% 100%;
   --popover-foreground: 212 67% 18%;
  
-  --primary: 215 50% 15%; /* Darker Navy Blue for Header/Hero */
+  --primary: 215 50% 15%; /* Default fallback */
   --primary-foreground: 0 0% 100%;
+  --header-top: 210 90% 13%; /* #002140 from screenshot */
+  --header-main: 212 90% 22%; /* #003A70 from screenshot */
  
   --secondary: 42 76% 56%; /* Gold/Mustard #e3b23c */
   --secondary-foreground: 212 67% 18%;

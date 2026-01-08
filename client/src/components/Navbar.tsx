@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar */}
-      <div className="bg-[#0a1e36] text-white/90 py-2 text-xs border-b border-white/5">
+      <div className="bg-[hsl(var(--header-top))] text-white/90 py-2.5 text-[18px] font-['Nunito',sans-serif] border-b border-white/5">
         <div className="container-custom flex justify-end gap-6">
           <a href="#" className="hover:text-secondary transition-colors underline-offset-4 hover:underline">Online Payments & Client Resources</a>
           <a href="#" className="hover:text-secondary transition-colors underline-offset-4 hover:underline">Careers</a>
@@ -14,8 +14,8 @@ export function Navbar() {
       </div>
 
       {/* Main Nav */}
-      <div className="bg-[#0a1e36] text-white">
-        <div className="container-custom flex items-center justify-between h-20">
+      <div className="bg-[hsl(var(--header-main))] text-white">
+        <div className="container-custom flex items-center justify-between h-[105px]">
           <Link href="/">
             <div className="flex flex-col cursor-pointer group">
               <span className="text-4xl font-display font-bold tracking-tight text-white group-hover:text-secondary transition-colors">BT</span>
@@ -23,7 +23,7 @@ export function Navbar() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-12 font-bold text-sm uppercase tracking-[0.15em]">
+          <nav className="hidden lg:flex items-center gap-12 font-['Nunito',sans-serif] text-[18px] font-medium uppercase tracking-[0.15em]">
             <a href="#services" className="hover:text-secondary transition-colors py-2">Services</a>
             <a href="#industries" className="hover:text-secondary transition-colors py-2">Industries</a>
             <a href="#people" className="hover:text-secondary transition-colors py-2">People</a>
