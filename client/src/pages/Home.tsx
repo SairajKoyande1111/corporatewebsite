@@ -744,7 +744,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="order-1 lg:order-2 space-y-8">
+          <div className="order-1 lg:order-2 space-y-8 flex flex-col items-center text-center">
             <div className="space-y-4">
               <motion.span 
                 initial={{ opacity: 0, y: 10 }}
@@ -765,7 +765,7 @@ export default function Home() {
               </motion.h2>
             </div>
             
-            <p className="text-gray-100 text-2xl md:text-3xl mb-10 leading-relaxed font-light max-w-2xl">
+            <p className="text-gray-100 text-2xl md:text-3xl mb-10 leading-relaxed font-light max-w-2xl mx-auto">
               We believe that happy employees lead to happy clients. Our unique
               culture fosters collaboration, innovation, and a relentless
               commitment to excellence. When our team thrives, so does your
