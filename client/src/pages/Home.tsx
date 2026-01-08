@@ -401,19 +401,19 @@ export default function Home() {
       </section>
 
       {/* Experts Section */}
-      <section id="people" className="py-32 bg-[#F9F7F2] overflow-hidden">
+      <section id="people" className="py-20 bg-[#F5F2EA] overflow-hidden">
         <div className="container-custom">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-primary mb-16 font-display"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-12 font-display"
           >
             Meet Your Experts:
           </motion.h2>
 
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-4 space-y-8">
+          <div className="grid lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-5 space-y-8">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedCategory}
@@ -423,15 +423,15 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className="space-y-6"
                 >
-                  <div className="pl-4 border-l-2 border-primary/20">
-                    <h3 className="text-3xl font-bold text-primary mb-6 font-display">{currentCategory.title}</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  <div className="pl-6 border-l-4 border-primary">
+                    <h3 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">{currentCategory.title}</h3>
+                    <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8">
                       {currentCategory.description}
                     </p>
-                    <div className="text-base text-gray-500">
+                    <div className="text-base md:text-lg text-gray-600">
                       Contact {currentCategory.experts.map((e, i) => (
                         <span key={e.name}>
-                          <span className="text-primary font-bold hover:text-secondary cursor-pointer transition-colors">{e.name}</span>
+                          <span className="text-primary font-bold hover:text-secondary cursor-pointer transition-colors underline decoration-secondary/30 underline-offset-4">{e.name}</span>
                           {i < currentCategory.experts.length - 1 ? (i === currentCategory.experts.length - 2 ? " or " : ", ") : ""}
                         </span>
                       ))} to schedule a consultation.
@@ -440,16 +440,17 @@ export default function Home() {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="flex gap-4 pt-8">
+              <div className="flex gap-4 pt-4">
                 <button 
                   onClick={() => {
                     const idx = categories.findIndex(c => c.id === selectedCategory);
                     const prevIdx = (idx - 1 + categories.length) % categories.length;
                     setSelectedCategory(categories[prevIdx].id);
                   }}
-                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
+                  className="w-14 h-14 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
+                  aria-label="Previous Category"
                 >
-                  <ArrowRight className="w-5 h-5 rotate-180" />
+                  <ArrowRight className="w-6 h-6 rotate-180" />
                 </button>
                 <button 
                   onClick={() => {
@@ -457,21 +458,22 @@ export default function Home() {
                     const nextIdx = (idx + 1) % categories.length;
                     setSelectedCategory(categories[nextIdx].id);
                   }}
-                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
+                  className="w-14 h-14 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
+                  aria-label="Next Category"
                 >
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-6 h-6" />
                 </button>
               </div>
             </div>
 
-            <div className="lg:col-span-8">
-              <div className="flex overflow-x-auto pb-4 mb-12 border-b border-gray-200 no-scrollbar gap-12">
+            <div className="lg:col-span-7">
+              <div className="flex overflow-x-auto pb-6 mb-10 border-b-2 border-primary/10 no-scrollbar gap-10">
                 {categories.map((cat) => (
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`text-xl font-bold whitespace-nowrap pb-4 transition-all relative font-display ${
-                      selectedCategory === cat.id ? "text-primary" : "text-gray-300 hover:text-gray-500"
+                      selectedCategory === cat.id ? "text-primary" : "text-gray-400 hover:text-gray-600"
                     }`}
                   >
                     {cat.title}
@@ -485,7 +487,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <AnimatePresence mode="popLayout">
                   {currentCategory.experts.map((expert, idx) => (
                     <motion.div
@@ -496,20 +498,25 @@ export default function Home() {
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                       className="space-y-4"
                     >
-                      <div className="aspect-[4/5] rounded-tr-[40px] overflow-hidden relative group shadow-lg">
+                      <div className="aspect-[4/5] rounded-tr-[60px] overflow-hidden relative group shadow-xl border-4 border-white">
                         <img 
                           src={expert.image}
                           alt={expert.name}
-                          className="w-full h-full object-cover transition-all duration-700"
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                        <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="font-bold text-primary text-xl font-display">{expert.name}</h4>
-                        <p className="text-gray-500 text-sm font-semibold uppercase tracking-wider">{expert.role}</p>
-                        <div className="pt-2 space-y-0.5">
-                          <p className="text-primary font-medium hover:text-secondary cursor-pointer transition-colors">{expert.phone}</p>
-                          <p className="text-gray-500 text-sm hover:text-primary cursor-pointer transition-colors truncate">{expert.email}</p>
+                        <h4 className="font-bold text-primary text-2xl font-display">{expert.name}</h4>
+                        <p className="text-secondary font-bold text-sm uppercase tracking-widest">{expert.role}</p>
+                        <div className="pt-2 space-y-1">
+                          <p className="text-primary font-bold hover:text-secondary cursor-pointer transition-colors flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                            {expert.phone}
+                          </p>
+                          <p className="text-gray-600 text-sm hover:text-primary cursor-pointer transition-colors truncate pl-3.5">
+                            {expert.email}
+                          </p>
                         </div>
                       </div>
                     </motion.div>
