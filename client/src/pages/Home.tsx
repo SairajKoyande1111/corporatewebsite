@@ -6,10 +6,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { useServices, useExperts, useTestimonials, useAwards } from "@/hooks/use-content";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import vaultLogo from "@assets/stock_images/logo_for_vault_accou_5e1ffc82.jpg";
-import ipaLogo from "@assets/stock_images/logo_for_inside_publ_ed13df9d.jpg";
-import accountingTodayLogo from "@assets/stock_images/logo_for_accounting__ef3814f4.jpg";
-import forbesLogo from "@assets/stock_images/logo_for_forbes,_whi_88746866.jpg";
+import vaultLogo from "@assets/logoipsum-344_1767855967338.png";
+import ipaLogo from "@assets/logoipsum-349_1767855967339.png";
+import accountingTodayLogo from "@assets/logoipsum-356_1767855967339.png";
+import forbesLogo from "@assets/logoipsum-385_1767855967342.png";
+import logo404 from "@assets/logoipsum-404_1767855967342.png";
+import logo411 from "@assets/logoipsum-411_1767855967343.png";
+import logo415 from "@assets/logoipsum-415_1767855967343.png";
+import logo417 from "@assets/logoipsum-417_1767855967343.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -167,24 +171,27 @@ export default function Home() {
             <motion.div 
               className="flex gap-20 items-center whitespace-nowrap"
               animate={{
-                x: [0, -1200],
+                x: [0, -1600],
               }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 25,
+                  duration: 30,
                   ease: "linear",
                 },
               }}
             >
               {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-24 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                  <img src={vaultLogo} alt="Vault Logo" className="h-12 w-auto object-contain" />
-                  <img src={ipaLogo} alt="IPA Logo" className="h-12 w-auto object-contain" />
-                  <img src={accountingTodayLogo} alt="Accounting Today Logo" className="h-12 w-auto object-contain" />
-                  <img src={forbesLogo} alt="Forbes Logo" className="h-12 w-auto object-contain" />
-                  <img src={vaultLogo} alt="Vault Logo" className="h-12 w-auto object-contain" />
+                <div key={i} className="flex gap-24 items-center transition-all duration-500">
+                  <img src={vaultLogo} alt="Logo 1" className="h-12 w-auto object-contain" />
+                  <img src={ipaLogo} alt="Logo 2" className="h-12 w-auto object-contain" />
+                  <img src={accountingTodayLogo} alt="Logo 3" className="h-12 w-auto object-contain" />
+                  <img src={forbesLogo} alt="Logo 4" className="h-12 w-auto object-contain" />
+                  <img src={logo404} alt="Logo 5" className="h-12 w-auto object-contain" />
+                  <img src={logo411} alt="Logo 6" className="h-12 w-auto object-contain" />
+                  <img src={logo415} alt="Logo 7" className="h-12 w-auto object-contain" />
+                  <img src={logo417} alt="Logo 8" className="h-12 w-auto object-contain" />
                 </div>
               ))}
             </motion.div>
