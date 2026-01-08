@@ -164,43 +164,43 @@ export default function Home() {
           
           <div className="relative">
             <motion.div 
-              className="flex gap-48 items-center whitespace-nowrap"
+              className="flex gap-64 items-center whitespace-nowrap"
               animate={{
-                x: [0, -2800],
+                x: [0, -3200],
               }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 45,
+                  duration: 60,
                   ease: "linear",
                 },
               }}
             >
               {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-48 items-center transition-all duration-500">
-                  <div className="flex-shrink-0 px-12">
+                <div key={i} className="flex gap-64 items-center transition-all duration-500">
+                  <div className="flex-shrink-0 px-24">
                     <img src={vaultLogo} alt="Logo 1" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={ipaLogo} alt="Logo 2" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={accountingTodayLogo} alt="Logo 3" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={forbesLogo} alt="Logo 4" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={logo404} alt="Logo 5" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={logo411} alt="Logo 6" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={logo415} alt="Logo 7" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 px-12">
+                  <div className="flex-shrink-0 px-24">
                     <img src={logo417} alt="Logo 8" className="h-16 w-auto object-contain" />
                   </div>
                 </div>
