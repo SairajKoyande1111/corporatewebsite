@@ -765,7 +765,7 @@ export default function Home() {
               </motion.h2>
             </div>
             
-            <p className="text-gray-100 text-2xl md:text-3xl mb-10 leading-relaxed font-light max-w-2xl mx-auto">
+            <p className="text-gray-100 text-2xl md:text-3xl mb-10 leading-relaxed font-light max-w-2xl mx-auto text-justify">
               We believe that happy employees lead to happy clients. Our unique
               culture fosters collaboration, innovation, and a relentless
               commitment to excellence. When our team thrives, so does your
