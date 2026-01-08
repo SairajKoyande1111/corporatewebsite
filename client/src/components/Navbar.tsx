@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Phone, ArrowUpRight, Search } from "lucide-react";
+import { Phone, ArrowUpRight, Search, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Navbar() {
@@ -14,7 +14,7 @@ export function Navbar() {
               404.752.0600
             </a>
             <a href="mailto:info@btcpa.net" className="hover:text-secondary transition-colors flex items-center gap-2">
-              <Search className="w-4 h-4 text-secondary" />
+              <Mail className="w-4 h-4 text-secondary" />
               info@btcpa.net
             </a>
           </div>
