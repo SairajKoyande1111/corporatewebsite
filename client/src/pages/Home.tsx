@@ -49,15 +49,22 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-[hsl(var(--header-main))] overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative min-h-[90vh] flex items-center bg-[#002140] overflow-hidden">
+        {/* Background Image with Overlay and Pattern */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
             alt="Corporate Meeting" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--header-main))] via-[hsl(var(--header-main))]/80 to-transparent" />
+          {/* Complex Gradient Overlay matching screenshot */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#002140] via-[#002140]/90 to-[#003A70]/40" />
+          
+          {/* Large "BT" Pattern Overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+             <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[120px] border-white/30 rounded-full" />
+             <div className="absolute -right-40 top-1/2 -translate-y-1/3 w-[600px] h-[600px] border-[100px] border-white/20 rounded-full" />
+          </div>
         </div>
 
         <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -67,13 +74,19 @@ export default function Home() {
             variants={stagger}
             className="max-w-2xl"
           >
-            <motion.h1 variants={fadeIn} className="text-6xl md:text-7xl lg:text-8xl font-bold text-white font-display leading-[1.05] mb-12 tracking-tight">
+            <motion.h1 
+              variants={fadeIn} 
+              className="text-6xl md:text-7xl lg:text-8xl font-bold text-white font-['Nunito',sans-serif] leading-[1.05] mb-12 tracking-tight"
+            >
               Financial <br />
               confidence for <br />
               today
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-xl md:text-3xl text-gray-300 mb-14 max-w-2xl leading-relaxed font-medium">
+            <motion.p 
+              variants={fadeIn} 
+              className="text-xl md:text-3xl text-white/90 mb-14 max-w-2xl leading-relaxed font-['Nunito',sans-serif] font-medium"
+            >
               45+ years of tax, audit & advisory solutions.
             </motion.p>
             
