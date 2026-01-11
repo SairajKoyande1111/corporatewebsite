@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
+import whyChooseUsVideo from "@assets/8348724-uhd_2160_3840_25fps_1768142292931.mp4";
 import teamImage1 from "@assets/image_1768141896225.png";
 import teamImage2 from "@assets/image_1768141987305.png";
 import teamImage3 from "@assets/image_1768142027474.png";
@@ -232,9 +233,12 @@ export default function About() {
               className="relative"
             >
               <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden border-8 border-[#F5F2EA] shadow-xl max-h-[600px] mx-auto lg:mx-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" 
-                  alt="Global Talent" 
+                <video 
+                  src={whyChooseUsVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="w-full h-full object-cover"
                 />
               </div>
