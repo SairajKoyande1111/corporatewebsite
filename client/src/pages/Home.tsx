@@ -50,6 +50,7 @@ import healthcareImage from "@assets/image_1768143396577.png";
 import legalImage from "@assets/image_1768143436752.png";
 import retailImage from "@assets/image_1768143203469.png";
 import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
+import collaborativeVideo from "@assets/3248136-uhd_3840_2160_25fps_1768144093550.mp4";
 import { Link } from "wouter";
 
 const fadeIn = {
@@ -270,11 +271,14 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            {/* Collaboration image */}
+            {/* Collaboration video */}
             <div className="aspect-[4/3] rounded-tl-[120px] rounded-br-[120px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative z-10 border-8 border-white">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Team Collaboration"
+              <video
+                src={collaborativeVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />
             </div>
