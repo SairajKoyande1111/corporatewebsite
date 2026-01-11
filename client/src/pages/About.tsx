@@ -74,7 +74,7 @@ export default function About() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-[#002140] text-white overflow-hidden">
+      <section className="relative min-h-[500px] flex items-center bg-[#002140] text-white overflow-hidden py-24">
         <div className="absolute inset-0 z-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
@@ -84,7 +84,7 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#002140] to-transparent" />
         </div>
 
-        <div className="container-custom relative z-10 text-center">
+        <div className="container-custom relative z-10 text-center w-full">
           <motion.div
             initial="hidden"
             animate="visible"
