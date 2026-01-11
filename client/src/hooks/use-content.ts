@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@shared/routes";
+import { type Service, type Expert, type Testimonial, type Award, type Industry } from "@shared/schema";
 
 // Hook for fetching Services
 export function useServices() {
@@ -8,7 +9,8 @@ export function useServices() {
     queryFn: async () => {
       const res = await fetch(api.services.list.path);
       if (!res.ok) throw new Error("Failed to fetch services");
-      return api.services.list.responses[200].parse(await res.json());
+      const data = await res.json();
+      return data;
     },
   });
 }
@@ -20,7 +22,8 @@ export function useExperts() {
     queryFn: async () => {
       const res = await fetch(api.experts.list.path);
       if (!res.ok) throw new Error("Failed to fetch experts");
-      return api.experts.list.responses[200].parse(await res.json());
+      const data = await res.json();
+      return data;
     },
   });
 }
@@ -32,7 +35,8 @@ export function useTestimonials() {
     queryFn: async () => {
       const res = await fetch(api.testimonials.list.path);
       if (!res.ok) throw new Error("Failed to fetch testimonials");
-      return api.testimonials.list.responses[200].parse(await res.json());
+      const data = await res.json();
+      return data;
     },
   });
 }
@@ -44,7 +48,21 @@ export function useAwards() {
     queryFn: async () => {
       const res = await fetch(api.awards.list.path);
       if (!res.ok) throw new Error("Failed to fetch awards");
-      return api.awards.list.responses[200].parse(await res.json());
+      const data = await res.json();
+      return data;
+    },
+  });
+}
+
+// Hook for fetching Industries
+export function useIndustries() {
+  return useQuery<Industry[]>({
+    queryKey: [api.industries.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.industries.list.path);
+      if (!res.ok) throw new Error("Failed to fetch industries");
+      const data = await res.json();
+      return data;
     },
   });
 }

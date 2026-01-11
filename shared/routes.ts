@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertServiceSchema, insertExpertSchema, insertTestimonialSchema, insertAwardSchema, services, experts, testimonials, awards } from './schema';
+import { insertServiceSchema, insertExpertSchema, insertTestimonialSchema, insertAwardSchema, insertIndustrySchema, services, experts, testimonials, awards, industries } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -48,6 +48,15 @@ export const api = {
       path: '/api/awards',
       responses: {
         200: z.array(z.custom<typeof awards.$inferSelect>()),
+      },
+    },
+  },
+  industries: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/industries',
+      responses: {
+        200: z.array(z.custom<typeof industries.$inferSelect>()),
       },
     },
   },

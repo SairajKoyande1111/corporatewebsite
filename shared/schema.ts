@@ -38,10 +38,19 @@ export const awards = pgTable("awards", {
   imageUrl: text("image_url"), // placeholder for logo
 });
 
+// Industries Section
+export const industries = pgTable("industries", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  imageUrl: text("image_url").notNull(),
+});
+
 export const insertServiceSchema = createInsertSchema(services).omit({ id: true });
 export const insertExpertSchema = createInsertSchema(experts).omit({ id: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
 export const insertAwardSchema = createInsertSchema(awards).omit({ id: true });
+export const insertIndustrySchema = createInsertSchema(industries).omit({ id: true });
 
 export type Service = typeof services.$inferSelect;
 export type InsertService = z.infer<typeof insertServiceSchema>;
@@ -54,3 +63,6 @@ export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 
 export type Award = typeof awards.$inferSelect;
 export type InsertAward = z.infer<typeof insertAwardSchema>;
+
+export type Industry = typeof industries.$inferSelect;
+export type InsertIndustry = z.infer<typeof insertIndustrySchema>;

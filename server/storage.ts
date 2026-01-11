@@ -1,7 +1,7 @@
 import { db } from "./db";
 import {
-  services, experts, testimonials, awards,
-  type Service, type Expert, type Testimonial, type Award
+  services, experts, testimonials, awards, industries,
+  type Service, type Expert, type Testimonial, type Award, type Industry
 } from "@shared/schema";
 
 export interface IStorage {
@@ -9,6 +9,7 @@ export interface IStorage {
   getExperts(): Promise<Expert[]>;
   getTestimonials(): Promise<Testimonial[]>;
   getAwards(): Promise<Award[]>;
+  getIndustries(): Promise<Industry[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -26,6 +27,10 @@ export class DatabaseStorage implements IStorage {
 
   async getAwards(): Promise<Award[]> {
     return await db.select().from(awards);
+  }
+
+  async getIndustries(): Promise<Industry[]> {
+    return await db.select().from(industries);
   }
 }
 

@@ -19,6 +19,7 @@ import {
   useExperts,
   useTestimonials,
   useAwards,
+  useIndustries,
 } from "@/hooks/use-content";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -53,6 +54,7 @@ export default function Home() {
   const { data: experts } = useExperts();
   const { data: testimonials } = useTestimonials();
   const { data: awards } = useAwards();
+  const { data: industries } = useIndustries();
 
   const [heroTextIndex, setHeroTextIndex] = useState(0);
   const heroTexts = [
@@ -117,142 +119,6 @@ export default function Home() {
         return <BarChart3 className="w-8 h-8" />;
     }
   };
-
-  const [selectedCategory, setSelectedCategory] = useState("Construction");
-
-  const categories = [
-    {
-      id: "Construction",
-      title: "Construction",
-      description:
-        "If you're looking for strategic construction tax consulting to navigate financial reporting, international growth and business transactions, we can help.",
-      experts: [
-        {
-          name: "Aaron Scale",
-          role: "Partner",
-          phone: "678.302.1409",
-          email: "aaron.scale@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
-        },
-        {
-          name: "Aaron Epp",
-          role: "Senior Manager",
-          phone: "770.635.5028",
-          email: "aaron.epp@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-        },
-      ],
-    },
-    {
-      id: "Entertainment",
-      title: "Entertainment",
-      description:
-        "If you're looking for a strategic entertainment accounting firm to help with your financial and consulting needs, we can help.",
-      experts: [
-        {
-          name: "Peter G. Stathopoulos",
-          role: "Partner",
-          phone: "678.218.1396",
-          email: "peter.stathopoulos@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
-        },
-        {
-          name: "Jane L. Klingmeyer",
-          role: "Director",
-          phone: "678.218.1390",
-          email: "jane.klingmeyer@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-        },
-      ],
-    },
-    {
-      id: "Healthcare",
-      title: "Healthcare",
-      description:
-        "If you would benefit from the assistance of dedicated healthcare accountants and consultants, we can help.",
-      experts: [
-        {
-          name: "Patrick Braley",
-          role: "Partner",
-          phone: "678.218.1407",
-          email: "patrick.braley@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop",
-        },
-        {
-          name: "Michael Y. Dukes",
-          role: "Partner",
-          phone: "678.302.1480",
-          email: "michael.dukes@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-        },
-        {
-          name: "Matthew R. Grosvenor",
-          role: "Partner",
-          phone: "678.302.1465",
-          email: "matt.grosvenor@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop",
-        },
-      ],
-    },
-    {
-      id: "HNWI",
-      title: "High Net Worth Individuals",
-      description:
-        "If you're looking for a solution to manage your individual tax planning and compliance needs, we can help.",
-      experts: [
-        {
-          name: "Jonathan D. Swartz",
-          role: "Partner",
-          phone: "678.302.1477",
-          email: "jonathan.swartz@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=400&h=400&fit=crop",
-        },
-        {
-          name: "Michael Thrasher",
-          role: "Partner",
-          phone: "678.990.2264",
-          email: "michael.thrasher@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop",
-        },
-      ],
-    },
-    {
-      id: "Hospitality",
-      title: "Hospitality",
-      description:
-        "If you're looking for a strategic hospitality accounting partner who understands the industry, we can help.",
-      experts: [
-        {
-          name: "Cory Bennett",
-          role: "Partner",
-          phone: "678.302.1485",
-          email: "cory.bennett@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-        },
-        {
-          name: "Timothy Watt",
-          role: "Partner",
-          phone: "678.302.1420",
-          email: "tim.watt@btcpa.net",
-          image:
-            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
-        },
-      ],
-    },
-  ];
-
-  const currentCategory =
-    categories.find((c) => c.id === selectedCategory) || categories[0];
 
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
@@ -575,437 +441,219 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experts Section */}
-      <section id="people" className="py-20 bg-[#F5F2EA] overflow-hidden">
-        <div className="container-custom">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-12 font-display"
-          >
-            Meet Your Experts
-          </motion.h2>
-
-          <div className="grid lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-5 space-y-8">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedCategory}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-6"
-                >
-                  <div className="pl-6 border-l-4 border-primary">
-                    <h3 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">
-                      {currentCategory.title}
-                    </h3>
-                    <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8">
-                      {currentCategory.description}
-                    </p>
-                    <div className="text-base md:text-lg text-gray-600">
-                      Contact{" "}
-                      {currentCategory.experts.map((e, i) => (
-                        <span key={e.name}>
-                          <span className="text-primary font-bold hover:text-secondary cursor-pointer transition-colors underline decoration-secondary/30 underline-offset-4">
-                            {e.name}
-                          </span>
-                          {i < currentCategory.experts.length - 1
-                            ? i === currentCategory.experts.length - 2
-                              ? " or "
-                              : ", "
-                            : ""}
-                        </span>
-                      ))}{" "}
-                      to schedule a consultation.
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="flex gap-4 pt-4">
-                <button
-                  onClick={() => {
-                    const idx = categories.findIndex(
-                      (c) => c.id === selectedCategory,
-                    );
-                    const prevIdx =
-                      (idx - 1 + categories.length) % categories.length;
-                    setSelectedCategory(categories[prevIdx].id);
-                  }}
-                  className="w-14 h-14 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
-                  aria-label="Previous Category"
-                >
-                  <ArrowRight className="w-6 h-6 rotate-180" />
-                </button>
-                <button
-                  onClick={() => {
-                    const idx = categories.findIndex(
-                      (c) => c.id === selectedCategory,
-                    );
-                    const nextIdx = (idx + 1) % categories.length;
-                    setSelectedCategory(categories[nextIdx].id);
-                  }}
-                  className="w-14 h-14 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group"
-                  aria-label="Next Category"
-                >
-                  <ArrowRight className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="flex overflow-x-auto pb-6 mb-10 border-b-2 border-primary/10 no-scrollbar gap-10">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setSelectedCategory(cat.id)}
-                    className={`text-xl font-bold whitespace-nowrap pb-4 transition-all relative font-display ${
-                      selectedCategory === cat.id
-                        ? "text-primary"
-                        : "text-gray-400 hover:text-gray-600"
-                    }`}
-                  >
-                    {cat.title}
-                    {selectedCategory === cat.id && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute -bottom-[2px] left-0 right-0 h-1 bg-primary rounded-full"
-                      />
-                    )}
-                  </button>
-                ))}
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <AnimatePresence mode="popLayout">
-                  {currentCategory.experts.map((expert, idx) => (
-                    <motion.div
-                      key={expert.name}
-                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                      transition={{ duration: 0.3, delay: idx * 0.1 }}
-                      className="space-y-4"
-                    >
-                      <div className="aspect-[4/5] rounded-tr-[60px] overflow-hidden relative group shadow-xl border-4 border-white">
-                        <img
-                          src={expert.image}
-                          alt={expert.name}
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
-                      </div>
-                      <div className="space-y-1">
-                        <h4 className="font-bold text-primary text-2xl font-display">
-                          {expert.name}
-                        </h4>
-                        <p className="text-secondary font-bold text-sm uppercase tracking-widest">
-                          {expert.role}
-                        </p>
-                        <div className="pt-2 space-y-1">
-                          <p className="text-primary font-bold hover:text-secondary cursor-pointer transition-colors flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                            {expert.phone}
-                          </p>
-                          <p className="text-gray-600 text-sm hover:text-primary cursor-pointer transition-colors truncate pl-3.5">
-                            {expert.email}
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team/Success Section */}
-      <section className="py-24 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 transform origin-top-right" />
-
-        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="order-2 lg:order-1 relative"
-          >
-            {/* Leaf shape image */}
-            <div className="aspect-square bg-gray-800 rounded-tr-[150px] rounded-bl-[150px] overflow-hidden border-4 border-secondary/30">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2070&q=80"
-                alt="Professional Team"
-                className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-              />
-            </div>
-          </motion.div>
-
-          <div className="order-1 lg:order-2 space-y-8 flex flex-col items-center text-center">
-            <div className="space-y-4">
-              <motion.span 
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-secondary font-bold tracking-[0.2em] uppercase text-base md:text-lg block"
-              >
-                Culture
-              </motion.span>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display leading-tight"
-              >
-                Our Team, Your Success
-              </motion.h2>
-            </div>
-            
-            <p className="text-gray-100 text-2xl md:text-3xl mb-10 leading-relaxed font-light max-w-2xl mx-auto text-justify">
-              We believe that happy employees lead to happy clients. Our unique
-              culture fosters collaboration, innovation, and a relentless
-              commitment to excellence. When our team thrives, so does your
-              business.
-            </p>
-            <button className="bg-secondary text-primary hover:bg-white px-12 py-5 rounded-full font-bold text-xl md:text-2xl transition-all duration-300 shadow-2xl shadow-secondary/20">
-              Meet Our Team
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-24 bg-white overflow-hidden">
+      {/* Industries We Serve Section */}
+      <section id="industries" className="py-20 bg-[#F5F2EA] overflow-hidden">
         <div className="container-custom">
           <div className="flex flex-col items-center text-center mb-16 space-y-4">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base"
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl"
             >
-              Testimonials
+              Our Expertise
             </motion.span>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-display"
             >
-              Trusted by Many
+              Industries We Serve
             </motion.h2>
-          </div>
-          
-          <div className="mt-12 relative px-4 md:px-12">
-            <Carousel 
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 4000,
-                }),
-              ]}
-              className="w-full"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xl text-gray-600 max-w-3xl"
             >
-              <CarouselContent className="-ml-4 md:-ml-8">
-                {(testimonials?.length ? testimonials : [1, 2, 3, 4, 5]).map((t, i) => (
-                  <CarouselItem key={i} className="pl-4 md:pl-8 md:basis-1/2 lg:basis-1/3 h-full">
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex flex-col h-full bg-[#F9F7F2] p-8 md:p-10 rounded-3xl shadow-sm border border-primary/5 relative group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 min-h-[400px]"
-                    >
-                      <div className="text-secondary text-6xl font-serif absolute top-6 left-6 opacity-20 group-hover:opacity-40 transition-opacity">"</div>
-                      <div className="flex-grow">
-                        <p className="text-gray-700 italic mb-10 relative z-10 pt-6 text-lg leading-relaxed">
-                          {typeof t === 'object' ? t.quote : "The team provided exceptional guidance during our merger. Their attention to detail and strategic advice were instrumental to our success."}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-4 pt-6 border-t border-primary/5">
-                        <div className="w-14 h-14 bg-white rounded-full overflow-hidden border-2 border-secondary/20 shadow-inner p-1">
-                          <img 
-                            src={`https://i.pravatar.cc/150?u=${i}`} 
-                            alt="User" 
-                            className="w-full h-full object-cover rounded-full"
-                          />
-                        </div>
-                        <div className="flex flex-col">
-                          <h5 className="font-bold text-primary text-lg leading-tight">{typeof t === 'object' ? t.author : "Michael Richards"}</h5>
-                          <p className="text-xs text-secondary font-bold uppercase tracking-widest mt-1">{typeof t === 'object' ? (t.role || t.company) : "CFO, Tech Ventures"}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-4 mt-12">
-                <CarouselPrevious className="static translate-y-0 w-12 h-12 border-2 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all" />
-                <CarouselNext className="static translate-y-0 w-12 h-12 border-2 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all" />
-              </div>
-            </Carousel>
+              We provide specialized accounting outsourcing services to firms across multiple industries
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industries?.map((industry, idx) => (
+              <motion.div
+                key={industry.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden bg-white">
+                  <div className="aspect-[16/10] overflow-hidden relative">
+                    <img
+                      src={industry.imageUrl}
+                      alt={industry.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
+                      {industry.title}
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                      {industry.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Join Us / Careers */}
-      <section className="py-12 bg-[#ebf0f5] relative">
-        <div className="container-custom grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-tr-[100px] overflow-hidden relative z-10 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-                alt="Join Us"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-24 bg-white relative">
+        <div className="container-custom">
+          <div className="flex flex-col items-center text-center mb-20 space-y-4">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl"
+            >
+              Client Feedback
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-display"
+            >
+              Trusted by Industry Leaders
+            </motion.h2>
           </div>
 
-          <div className="py-8 lg:pl-12">
-            <h2 className="text-5xl font-medium text-[#002140] mb-8 font-display">
-              Join Us
-            </h2>
-            <div className="space-y-6 max-w-xl">
-              <p className="text-xl text-[#002140] font-bold leading-snug">
-                We are one of the largest and fastest-growing certified public accounting and consulting firms.
-              </p>
-              <p className="text-gray-600 text-base leading-relaxed">
-                Consistently named one of the Best Accounting Firms to Work for in the United States by Accounting Today, Bennett Thrasher offers you the opportunities of a large accounting firm, with a collaborative, fun culture and a flexible, supportive work atmosphere.
-              </p>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+              }),
+            ]}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent>
+              {testimonials?.map((testimonial) => (
+                <CarouselItem key={testimonial.id} className="md:basis-full lg:basis-full px-4">
+                  <div className="bg-[#002140] rounded-[40px] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl" />
+
+                    <div className="relative z-10 space-y-10">
+                      <div className="flex gap-1 justify-center">
+                        {[...Array(5)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: i * 0.1 }}
+                          >
+                            <ArrowUpRight className="w-6 h-6 text-secondary fill-secondary" />
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      <p className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-medium leading-relaxed italic">
+                        "{testimonial.quote}"
+                      </p>
+
+                      <div className="flex flex-col items-center gap-4 pt-4">
+                        <div className="w-16 h-1 bg-secondary rounded-full" />
+                        <div className="text-center">
+                          <h4 className="text-xl md:text-2xl font-bold text-white">
+                            {testimonial.author}
+                          </h4>
+                          <p className="text-secondary font-bold uppercase tracking-widest text-sm pt-2">
+                            {testimonial.company}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-4 mt-12">
+              <CarouselPrevious className="relative translate-y-0 left-0 hover:bg-secondary hover:text-primary border-primary/20" />
+              <CarouselNext className="relative translate-y-0 right-0 hover:bg-secondary hover:text-primary border-primary/20" />
             </div>
-            
-            <div className="flex items-center gap-4 pt-8">
-              <button className="border border-[#002140]/20 text-[#002140] px-10 py-3 rounded-full font-medium hover:bg-[#002140]/5 transition-all duration-300">
-                Explore Careers
-              </button>
-              <div className="w-12 h-12 bg-[#d4af37] rounded-full flex items-center justify-center text-[#002140] cursor-pointer hover:bg-[#c4a137] transition-all">
-                <ArrowUpRight className="w-6 h-6" />
-              </div>
-            </div>
-          </div>
+          </Carousel>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0b1b2d] text-white pt-20 pb-10">
+      <footer className="bg-[#002140] py-20 text-white border-t border-white/10">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-            <div className="space-y-8">
-              <div className="flex flex-col">
-                <span className="text-4xl font-bold tracking-tight text-white mb-1 font-display">
-                  BT
-                </span>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d4af37] font-bold">
-                  Bennett Thrasher
-                </span>
+          <div className="grid md:grid-cols-4 gap-16">
+            <div className="col-span-2 space-y-10">
+              <div className="text-4xl font-bold tracking-tighter">
+                Bennett <br /> Thrasher
               </div>
-              <p className="text-gray-400 max-w-xs leading-relaxed text-base">
-                Providing financial confidence and strategic guidance to
-                businesses and individuals since 1980.
+              <p className="text-white/70 text-xl max-w-md leading-relaxed">
+                We believe that the best results come from true partnership.
+                Delivering financial confidence since 1980.
               </p>
-              <div className="flex gap-4">
-                {[1, 2, 3, 4].map((i) => (
+              <div className="flex gap-8">
+                {["LinkedIn", "Twitter", "Facebook"].map((social) => (
                   <a
-                    key={i}
+                    key={social}
                     href="#"
-                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#d4af37] hover:text-[#002140] transition-all duration-300"
+                    className="text-white/60 hover:text-secondary transition-colors font-bold text-lg"
                   >
-                    <Globe className="w-4 h-4 opacity-70" />
+                    {social}
                   </a>
                 ))}
               </div>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-8 text-white font-display">About</h4>
-              <ul className="space-y-4 text-gray-400 text-base">
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Our Story
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Leadership
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Community
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-8 text-white font-display">Services</h4>
-              <ul className="space-y-4 text-gray-400 text-base">
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Advisory
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Audit
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Tax
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#d4af37] transition-colors">
-                    Technology
-                  </a>
-                </li>
+            <div className="space-y-8">
+              <h4 className="text-xl font-bold text-secondary uppercase tracking-widest">
+                Quick Links
+              </h4>
+              <ul className="space-y-4">
+                {["Services", "Experts", "Industries", "Careers", "Contact"].map(
+                  (link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-white/70 hover:text-white transition-colors text-lg"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
 
             <div className="space-y-8">
-              <h4 className="font-bold text-lg mb-8 text-white font-display">Contact</h4>
-              <div className="space-y-6 text-gray-400 text-base">
-                <div className="flex items-center gap-4">
-                  <Phone className="w-5 h-5 text-[#d4af37] shrink-0" />
-                  <span>404.752.0600</span>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Globe className="w-5 h-5 text-[#d4af37] shrink-0 mt-1" />
-                  <span>
-                    3300 Riverwood Pkwy
-                    <br />
-                    Atlanta, GA 30339
-                  </span>
-                </div>
+              <h4 className="text-xl font-bold text-secondary uppercase tracking-widest">
+                Contact Us
+              </h4>
+              <div className="space-y-6 text-white/70 text-lg">
+                <p>3310 Northside Parkway <br /> Suite 600 <br /> Atlanta, GA 30327</p>
+                <p className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-secondary" />
+                  770.396.2200
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-            <p>
-              &copy; {new Date().getFullYear()} Bennett Thrasher LLP. All rights reserved.
-            </p>
+          <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white/50">
+            <p>© 2026 Bennett Thrasher LLP. All rights reserved.</p>
             <div className="flex gap-10">
-              <a href="#" className="hover:text-[#d4af37] transition-colors">
+              <a href="#" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-[#d4af37] transition-colors">
-                Terms of Use
+              <a href="#" className="hover:text-white transition-colors">
+                Terms of Service
               </a>
             </div>
           </div>

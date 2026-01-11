@@ -3,7 +3,7 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { db } from "./db";
-import { services, experts, testimonials, awards } from "@shared/schema";
+import { services, experts, testimonials, awards, industries } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -26,6 +26,11 @@ export async function registerRoutes(
 
   app.get(api.awards.list.path, async (_req, res) => {
     const data = await storage.getAwards();
+    res.json(data);
+  });
+
+  app.get(api.industries.list.path, async (_req, res) => {
+    const data = await storage.getIndustries();
     res.json(data);
   });
 
@@ -105,6 +110,42 @@ async function seedDatabase() {
         imageUrl: "",
       },
       { title: "Top 100 Firms", year: "2025", imageUrl: "" },
+    ]);
+  }
+
+  const existingIndustries = await storage.getIndustries();
+  if (existingIndustries.length === 0) {
+    await db.insert(industries).values([
+      {
+        title: "Accounting & CPA Firms",
+        description: "Specialized support for accounting practices to enhance operational efficiency.",
+        imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80"
+      },
+      {
+        title: "E-commerce & Retail",
+        description: "Tailored financial solutions for the fast-paced world of digital and physical retail.",
+        imageUrl: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80"
+      },
+      {
+        title: "Hospitality & Restaurants",
+        description: "Expert accounting for the service industry, focusing on growth and cost management.",
+        imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"
+      },
+      {
+        title: "Real Estate & Construction",
+        description: "Strategic tax and accounting services for developers, contractors, and owners.",
+        imageUrl: "https://images.unsplash.com/photo-1503387762-592dea58ef21?w=800&q=80"
+      },
+      {
+        title: "Healthcare & Medical Practices",
+        description: "Compliance and financial management for private practices and healthcare groups.",
+        imageUrl: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80"
+      },
+      {
+        title: "Financial Services & Wealth Management",
+        description: "Sophisticated accounting for investment firms and wealth management practices.",
+        imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+      }
     ]);
   }
 }
