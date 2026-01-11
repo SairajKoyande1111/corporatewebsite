@@ -416,9 +416,6 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 text-lg leading-relaxed">
-                        {service.description || "Comprehensive solutions tailored to your unique needs, delivering clarity and confidence through expert technical knowledge."}
-                      </p>
                       <div className="pt-4 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all duration-300">
                         <span>Learn More</span>
                         <ArrowRight className="w-5 h-5" />
