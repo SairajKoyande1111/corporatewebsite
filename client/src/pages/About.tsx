@@ -89,24 +89,18 @@ export default function About() {
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="max-w-4xl"
+            className="w-full"
           >
-            <motion.span 
-              variants={fadeIn}
-              className="text-secondary font-bold tracking-widest uppercase text-lg mb-4 block"
-            >
-              About Us
-            </motion.span>
             <motion.h1 
               variants={fadeIn}
-              className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display"
+              className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display w-full"
             >
               Your Trusted Partner in <br /> 
-              <span className="text-secondary text-5xl md:text-6xl">Accounting & Financial Services</span>
+              <span className="text-secondary">Accounting & Financial Services</span>
             </motion.h1>
             <motion.p 
               variants={fadeIn}
-              className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl"
+              className="text-xl md:text-2xl text-white/80 leading-relaxed w-full"
             >
               We are a premier <span className="text-white font-bold">Knowledge Processing Outsourcing (KPO)</span> firm based in India, providing world-class accounting, bookkeeping, payroll, and tax services to firms across the <span className="text-white font-bold">USA, UK, Australia, Canada, and beyond.</span>
             </motion.p>
