@@ -128,7 +128,7 @@ export default function Services() {
                     {service.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex gap-4 items-start group">
                         <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                          <BarChart3 className="w-4 h-4" />
+                          <CheckCircle2 className="w-4 h-4" />
                         </div>
                         <span className="text-xl text-black font-semibold leading-relaxed">{point}</span>
                       </li>
