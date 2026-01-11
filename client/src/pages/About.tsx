@@ -95,7 +95,7 @@ export default function About() {
               variants={fadeIn}
               className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display w-full"
             >
-              Your Trusted Partner in <br /> 
+              <span className="text-white">Your Trusted Partner in</span> <br /> 
               <span className="text-secondary">Accounting & Financial Services</span>
             </motion.h1>
             <motion.p 
