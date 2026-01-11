@@ -413,37 +413,37 @@ export default function Home() {
                 id: 1,
                 title: "Accounting & CPA Firms",
                 desc: "Full-cycle bookkeeping and financial statement preparation specialized for CPA firms.",
-                image: hospitalityImage,
+                image: expertiseImage,
               },
               {
                 id: 2,
                 title: "E-commerce & Retail",
                 desc: "Inventory management and multi-channel sales tax compliance for modern retailers.",
-                image: constructionImage,
+                image: retailImage,
               },
               {
                 id: 3,
                 title: "Hospitality & Restaurants",
                 desc: "Specialized accounting for restaurants, hotels, and travel services.",
-                image: healthcareImage,
+                image: hospitalityImage,
               },
               {
                 id: 4,
                 title: "Real Estate & Construction",
                 desc: "Project-based accounting, job costing, and tax planning for developers and contractors.",
-                image: legalImage,
+                image: constructionImage,
               },
               {
                 id: 5,
                 title: "Healthcare & Medical Practices",
                 desc: "Revenue cycle management and compliance for medical practices.",
-                image: retailImage,
+                image: healthcareImage,
               },
               {
                 id: 6,
                 title: "Financial Services & Wealth Management",
                 desc: "Strategic financial insights and reporting for wealth management firms.",
-                image: expertiseImage,
+                image: legalImage,
               },
             ].map((industry, idx) => (
               <motion.div
