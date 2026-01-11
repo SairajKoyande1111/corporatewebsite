@@ -26,17 +26,17 @@ export default function About() {
   const teamHighlights = [
     { 
       title: "Certified Accountants & Tax Professionals", 
-      icon: ShieldCheck,
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
       description: "Our experts hold global certifications ensuring top-tier accuracy and compliance."
     },
     { 
       title: "Experienced Payroll Specialists", 
-      icon: Users,
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
       description: "Dedicated specialists managing complex payroll requirements across multiple jurisdictions."
     },
     { 
       title: "Skilled Bookkeepers & Compliance Experts", 
-      icon: Target,
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
       description: "Ensuring your records are meticulous and fully compliant with international standards."
     },
   ];
@@ -190,11 +190,16 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 bg-white rounded-[40px] p-8 group">
-                  <CardContent className="p-0 space-y-6">
-                    <div className="w-16 h-16 bg-[#002140] rounded-2xl flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-                      <item.icon className="w-8 h-8" />
-                    </div>
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 bg-white rounded-[40px] overflow-hidden group">
+                  <div className="aspect-[16/10] overflow-hidden relative">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
+                  <CardContent className="p-8 space-y-4">
                     <h3 className="text-2xl font-bold text-primary leading-tight">
                       {item.title}
                     </h3>
