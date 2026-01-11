@@ -314,7 +314,7 @@ export default function About() {
       </section>
 
       {/* Why Outsource to India Section - NEW PREMIUM SECTION */}
-      <section className="py-20 bg-[#002140] relative overflow-hidden">
+      <section className="py-12 bg-[#002140] relative overflow-hidden">
         {/* Background Patterns */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] border-[100px] border-white rounded-full translate-x-1/2 -translate-y-1/2" />
@@ -322,12 +322,12 @@ export default function About() {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="text-center mb-16 space-y-4">
+          <div className="text-center mb-10 space-y-3">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.3em] uppercase text-lg"
+              className="text-secondary font-bold tracking-[0.3em] uppercase text-base"
             >
               Strategic Advantage
             </motion.span>
@@ -335,7 +335,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold text-white font-display leading-tight"
+              className="text-3xl md:text-5xl font-bold text-white font-display leading-tight"
             >
               Why Outsource to <span className="text-secondary">India?</span>
             </motion.h2>
@@ -344,13 +344,13 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+              className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed"
             >
               India is a global leader in <span className="text-white font-bold">accounting and financial outsourcing</span>, offering an unmatched combination of talent, efficiency, and technological prowess.
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {outsourcingAdvantages.map((advantage, idx) => (
               <motion.div
                 key={idx}
@@ -358,16 +358,16 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="group bg-white/5 hover:bg-white/10 p-8 md:p-10 rounded-[40px] border border-white/10 transition-all duration-500 relative overflow-hidden"
+                className="group bg-white/5 hover:bg-white/10 p-6 md:p-8 rounded-[30px] border border-white/10 transition-all duration-500 relative overflow-hidden"
               >
-                <div className="relative z-10 space-y-4">
-                  <div className="inline-block bg-secondary text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="relative z-10 space-y-3">
+                  <div className="inline-block bg-secondary text-primary px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-1">
                     {advantage.highlight}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-secondary transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-secondary transition-colors">
                     {advantage.title}
                   </h3>
-                  <p className="text-base md:text-lg text-white/60 group-hover:text-white/90 leading-relaxed transition-colors">
+                  <p className="text-sm md:text-base text-white/60 group-hover:text-white/90 leading-relaxed transition-colors">
                     {advantage.description}
                   </p>
                 </div>
@@ -380,9 +380,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="mt-16 p-8 bg-secondary/10 border border-secondary/20 rounded-[40px] text-center"
+            className="mt-12 p-6 bg-secondary/10 border border-secondary/20 rounded-[30px] text-center"
           >
-            <p className="text-xl md:text-2xl text-white font-medium italic">
+            <p className="text-lg md:text-xl text-white font-medium italic">
               "India remains the top choice for <span className="text-secondary">quality-driven financial outsourcing</span>, providing seamless integration with global accounting workflows."
             </p>
           </motion.div>
