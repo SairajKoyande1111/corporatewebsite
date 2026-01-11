@@ -281,7 +281,7 @@ export default function About() {
           <div className="bg-[#002140] rounded-[60px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="relative z-10 space-y-8">
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight font-display">
+              <h2 className="text-4xl md:text-6xl font-bold leading-tight font-display text-white">
                 Ready to optimize your <br /> financial operations?
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
