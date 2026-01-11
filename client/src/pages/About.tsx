@@ -76,6 +76,33 @@ export default function About() {
     }
   ];
 
+  const outsourcingAdvantages = [
+    {
+      title: "Highly Qualified Talent",
+      description: "Access a pool of CA, CPA, ACCA, and experienced professionals with deep technical expertise.",
+      icon: Users,
+      highlight: "Expertise"
+    },
+    {
+      title: "Cost Efficiency",
+      description: "Optimize your bottom line by saving up to 50% on operational and overhead costs.",
+      icon: TrendingUp,
+      highlight: "50% Savings"
+    },
+    {
+      title: "Time Zone Advantage",
+      description: "Benefit from work done overnight for faster turnaround times and 24/7 productivity.",
+      icon: Globe2,
+      highlight: "Overnight Delivery"
+    },
+    {
+      title: "Global Standards",
+      description: "Total fluency in US GAAP, IFRS, Australian & UK Tax Laws, and international compliance.",
+      icon: ShieldCheck,
+      highlight: "Compliant"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
@@ -283,6 +310,91 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Why Outsource to India Section - NEW PREMIUM SECTION */}
+      <section className="py-32 bg-[#002140] relative overflow-hidden">
+        {/* Background Patterns */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] border-[100px] border-white rounded-full translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] border-[80px] border-secondary rounded-full -translate-x-1/2 translate-y-1/2" />
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-20 space-y-6">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-secondary font-bold tracking-[0.3em] uppercase text-xl"
+            >
+              Strategic Advantage
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-7xl font-bold text-white font-display leading-tight"
+            >
+              Why Outsource to <span className="text-secondary">India?</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+            >
+              India is a global leader in <span className="text-white font-bold">accounting and financial outsourcing</span>, offering an unmatched combination of talent, efficiency, and technological prowess.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {outsourcingAdvantages.map((advantage, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                className="group bg-white/5 hover:bg-white/10 p-10 rounded-[40px] border border-white/10 transition-all duration-500 relative overflow-hidden"
+              >
+                <div className="absolute top-8 right-8 text-secondary/10 group-hover:text-secondary/20 transition-colors duration-500">
+                  <advantage.icon className="w-24 h-24" />
+                </div>
+                
+                <div className="relative z-10 space-y-6">
+                  <div className="inline-block bg-secondary text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                    {advantage.highlight}
+                  </div>
+                  <h3 className="text-3xl font-bold text-white group-hover:text-secondary transition-colors">
+                    {advantage.title}
+                  </h3>
+                  <p className="text-lg text-white/60 group-hover:text-white/90 leading-relaxed transition-colors">
+                    {advantage.description}
+                  </p>
+                  
+                  <div className="pt-4 flex items-center gap-3 text-secondary font-bold group-hover:translate-x-2 transition-transform cursor-default">
+                    <span>Dynamic Growth</span>
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-20 p-10 bg-secondary/10 border border-secondary/20 rounded-[40px] text-center"
+          >
+            <p className="text-2xl md:text-3xl text-white font-medium italic">
+              "India remains the top choice for <span className="text-secondary">quality-driven financial outsourcing</span>, providing seamless integration with global accounting workflows."
+            </p>
+          </motion.div>
         </div>
       </section>
 
