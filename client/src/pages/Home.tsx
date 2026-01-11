@@ -39,6 +39,7 @@ import logo404 from "@assets/logoipsum-404_1767855967342.png";
 import logo411 from "@assets/logoipsum-411_1767855967343.png";
 import logo415 from "@assets/logoipsum-415_1767855967343.png";
 import logo417 from "@assets/logoipsum-417_1767855967343.png";
+import joinUsImage from "@assets/image_1768148300552.png";
 import accountingImage from "@assets/image_1768140230807.png";
 import taxImage from "@assets/image_1768140464458.png";
 import payrollImage from "@assets/image_1768140527133.png";
@@ -553,6 +554,19 @@ export default function Home() {
             className="relative order-1 lg:order-2"
           >
             <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white shadow-2xl">
+              <img 
+                src={joinUsImage} 
+                alt="Our Team" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            {/* Decorative background shape matching previous section */}
+            <div className="absolute -bottom-10 -right-10 w-full h-full bg-white/50 rounded-tl-[100px] rounded-br-[100px] -z-10" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
                 alt="Join Our Team" 
