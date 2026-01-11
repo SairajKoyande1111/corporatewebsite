@@ -416,9 +416,17 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-primary font-['Poppins',sans-serif] group-hover:text-secondary transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 font-['Nunito',sans-serif] text-lg leading-relaxed">
-                        {service.description || "Comprehensive solutions tailored to your unique needs, delivering clarity and confidence through expert technical knowledge."}
-                      </p>
+                      <div className="text-gray-600 font-['Nunito',sans-serif] text-lg leading-relaxed">
+                        {service.description ? (
+                          <ul className="list-disc pl-5 space-y-1">
+                            {service.description.split(', ').map((item: string, i: number) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          "Comprehensive solutions tailored to your unique needs, delivering clarity and confidence through expert technical knowledge."
+                        )}
+                      </div>
                       <div className="pt-4 flex items-center gap-2 text-primary font-bold font-['Poppins',sans-serif] group-hover:gap-4 transition-all duration-300">
                         <span>Learn More</span>
                         <ArrowRight className="w-5 h-5" />
@@ -492,6 +500,84 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Culture Section */}
+      <section className="py-20 bg-[#002140] text-white overflow-hidden">
+        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white/10 shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+                alt="Our Culture" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <span className="text-secondary font-bold tracking-widest uppercase text-sm">Culture</span>
+              <h2 className="text-5xl font-bold leading-tight">Our Team, Your Success</h2>
+            </div>
+            <p className="text-xl text-white/80 leading-relaxed">
+              We believe that happy employees lead to happy clients. Our unique culture fosters collaboration, innovation, and a relentless commitment to excellence. When our team thrives, so does your business.
+            </p>
+            <button className="bg-secondary text-primary px-10 py-4 rounded-full font-bold hover:bg-white transition-all">
+              Meet Our Team
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Join Us Section */}
+      <section className="py-20 bg-[#F5F2EA] overflow-hidden">
+        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8 order-2 lg:order-1"
+          >
+            <h2 className="text-5xl font-bold text-primary">Join Us</h2>
+            <div className="space-y-6">
+              <p className="text-2xl font-bold text-primary leading-tight">
+                We are one of the largest and fastest-growing certified public accounting and consulting firms.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Consistently named one of the Best Accounting Firms to Work for in the United States by Accounting Today, Bennett Thrasher offers you the opportunities of a large accounting firm, with a collaborative, fun culture and a flexible, supportive work atmosphere.
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <button className="bg-white border-2 border-primary/10 text-primary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all flex items-center gap-2">
+                Explore Careers <ArrowUpRight className="w-5 h-5 bg-secondary text-primary rounded-full p-1" />
+              </button>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative order-1 lg:order-2"
+          >
+            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
+                alt="Join Our Team" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
