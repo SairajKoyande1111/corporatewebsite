@@ -450,24 +450,6 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                animate={{
-                  boxShadow: [
-                    "0 0 0px rgba(191, 155, 48, 0)",
-                    "0 0 20px rgba(191, 155, 48, 0.3)",
-                    "0 0 0px rgba(191, 155, 48, 0)",
-                  ],
-                  backgroundColor: [
-                    "rgba(255, 255, 255, 0.05)",
-                    "rgba(255, 255, 255, 0.15)",
-                    "rgba(255, 255, 255, 0.05)",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: idx * 0.5,
-                  ease: "easeInOut",
-                }}
                 className="group relative p-8 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all duration-500 hover:-translate-y-1"
               >
                 <div className="flex flex-col h-full gap-4">
