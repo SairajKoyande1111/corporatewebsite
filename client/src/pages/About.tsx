@@ -215,16 +215,16 @@ export default function About() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-32 bg-white overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden border-[16px] border-[#F5F2EA] shadow-2xl">
+              <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden border-8 border-[#F5F2EA] shadow-xl max-h-[600px] mx-auto lg:mx-0">
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" 
                   alt="Global Talent" 
@@ -232,42 +232,40 @@ export default function About() {
                 />
               </div>
               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="absolute -bottom-8 -right-8 z-20 bg-secondary text-primary p-10 rounded-[40px] shadow-2xl max-w-[320px] border-8 border-white"
+                transition={{ delay: 0.3 }}
+                className="absolute -bottom-6 -right-6 z-20 bg-secondary text-primary p-6 rounded-[30px] shadow-lg max-w-[260px] border-4 border-white"
               >
-                <p className="text-3xl font-bold leading-tight uppercase tracking-tighter">Empowering Firms with Global Talent</p>
+                <p className="text-xl font-bold leading-tight uppercase tracking-tight">Empowering Firms with Global Talent</p>
               </motion.div>
-              {/* Decorative Background */}
-              <div className="absolute -top-12 -left-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10" />
             </motion.div>
 
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <h2 className="text-5xl font-bold text-primary font-display leading-tight">Why Choose Us?</h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Unlock the full potential of your firm with our expert <span className="text-primary font-bold underline decoration-secondary decoration-4 underline-offset-4">Knowledge Processing Outsourcing (KPO)</span> services. Specializing in Accounting, Tax, Payroll, and Bookkeeping, we provide seamless support to businesses worldwide from our highly skilled team in India.
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-bold text-primary font-display leading-tight">Why Choose Us?</h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Unlock the full potential of your firm with our expert <span className="text-primary font-bold">Knowledge Processing Outsourcing (KPO)</span> services. Specializing in Accounting, Tax, Payroll, and Bookkeeping, we provide seamless support to businesses worldwide from our highly skilled team in India.
                 </p>
               </div>
 
-              <div className="grid gap-6">
+              <div className="space-y-4">
                 {whyChooseUs.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group flex gap-6 p-6 rounded-[30px] hover:bg-[#F5F2EA] transition-all duration-500 border border-transparent hover:border-primary/5 shadow-sm hover:shadow-md"
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex gap-4 p-4 rounded-2xl bg-[#F5F2EA]/50 border border-transparent hover:border-secondary/20 transition-all duration-300"
                   >
-                    <div className="flex-shrink-0 w-14 h-14 bg-primary text-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-primary/20">
-                      <CheckCircle2 className="w-7 h-7" />
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-secondary rounded-xl flex items-center justify-center shadow-sm">
+                      <CheckCircle2 className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{item.title}</h4>
-                      <p className="text-lg text-gray-600 leading-relaxed">{item.description}</p>
+                      <h4 className="text-xl font-bold text-primary mb-1">{item.title}</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
