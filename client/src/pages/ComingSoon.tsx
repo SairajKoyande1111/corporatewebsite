@@ -24,6 +24,7 @@ export default function ComingSoon({ title }: { title: string }) {
           </motion.div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

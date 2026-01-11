@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
 import {
   useServices,
@@ -567,78 +568,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#002140] py-20 text-white border-t border-white/10">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-4 gap-16">
-            <div className="col-span-2 space-y-10">
-              <div className="text-4xl font-bold tracking-tighter">
-                Bennett <br /> Thrasher
-              </div>
-              <p className="text-white/70 text-xl max-w-md leading-relaxed">
-                We believe that the best results come from true partnership.
-                Delivering financial confidence since 1980.
-              </p>
-              <div className="flex gap-8">
-                {["LinkedIn", "Twitter", "Facebook"].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="text-white/60 hover:text-secondary transition-colors font-bold text-lg"
-                  >
-                    {social}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <h4 className="text-xl font-bold text-secondary uppercase tracking-widest">
-                Quick Links
-              </h4>
-              <ul className="space-y-4">
-                {["Services", "Experts", "Industries", "Careers", "Contact"].map(
-                  (link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-white/70 hover:text-white transition-colors text-lg"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-
-            <div className="space-y-8">
-              <h4 className="text-xl font-bold text-secondary uppercase tracking-widest">
-                Contact Us
-              </h4>
-              <div className="space-y-6 text-white/70 text-lg">
-                <p>3310 Northside Parkway <br /> Suite 600 <br /> Atlanta, GA 30327</p>
-                <p className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-secondary" />
-                  770.396.2200
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white/50">
-            <p>© 2026 Bennett Thrasher LLP. All rights reserved.</p>
-            <div className="flex gap-10">
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

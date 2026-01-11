@@ -11,6 +11,7 @@ import {
   Cpu, 
   ArrowRight 
 } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -276,7 +277,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="bg-[#002140] rounded-[60px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
@@ -300,15 +301,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Footer (Simplified for About Page) */}
-      <footer className="bg-[#002140] py-20 text-white border-t border-white/10">
-        <div className="container-custom text-center space-y-8">
-          <div className="text-4xl font-bold tracking-tighter">
-            BT <span className="text-secondary text-lg uppercase tracking-[0.3em] font-medium ml-2">Bennett Thrasher</span>
-          </div>
-          <p className="text-white/50">© 2026 Bennett Thrasher LLP. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
