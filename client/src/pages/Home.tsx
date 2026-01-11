@@ -51,6 +51,7 @@ import legalImage from "@assets/image_1768143436752.png";
 import retailImage from "@assets/image_1768143203469.png";
 import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
 import collaborativeVideo from "@assets/3248136-uhd_3840_2160_25fps_1768144093550.mp4";
+import cultureVideo from "@assets/5725959-uhd_3840_2160_30fps_1768144492033.mp4";
 import { Link } from "wouter";
 
 const fadeIn = {
@@ -491,9 +492,12 @@ export default function Home() {
             className="relative"
           >
             <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white/10 shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                alt="Our Culture" 
+              <video 
+                src={cultureVideo} 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
                 className="w-full h-full object-cover"
               />
             </div>
