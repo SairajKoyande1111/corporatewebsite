@@ -199,7 +199,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-xl md:text-3xl text-white/90 mb-10 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3.5rem]"
             >
-              <TypewriterEffect text="45+ years of tax, audit & advisory solutions." />
+              <TypewriterEffect text="Tax, Audit & Advisory Solutions Built for Today’s Businesses" />
             </motion.p>
 
             <motion.div
