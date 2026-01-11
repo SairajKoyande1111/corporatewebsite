@@ -85,16 +85,22 @@ export default function Services() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-32 bg-[#002140] text-white overflow-hidden text-center">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20" />
+      <section className="relative py-24 bg-[#002140] text-white overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+            alt="Office background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#002140] to-transparent" />
         </div>
-        <div className="container-custom relative z-10">
+
+        <div className="container-custom relative z-10 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display">
-              Comprehensive <span className="text-secondary">Accounting & Finance</span> Solutions
+              <span className="text-white">Comprehensive</span> <span className="text-secondary">Accounting & Finance</span> <span className="text-white">Solutions</span>
             </motion.h1>
-            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-white/80 max-w-5xl mx-auto leading-relaxed">
               Tailored services designed to optimize your financial operations and drive global growth.
             </motion.p>
           </motion.div>
