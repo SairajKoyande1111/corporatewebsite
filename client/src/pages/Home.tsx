@@ -184,7 +184,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
                 >
                   {heroTexts[heroTextIndex].main} <br />
                   {heroTexts[heroTextIndex].sub} <br />
