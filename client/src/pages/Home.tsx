@@ -566,16 +566,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
-                alt="Join Our Team" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Testimonials Section */}
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-24 bg-white relative">
