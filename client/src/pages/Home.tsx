@@ -39,6 +39,9 @@ import logo404 from "@assets/logoipsum-404_1767855967342.png";
 import logo411 from "@assets/logoipsum-411_1767855967343.png";
 import logo415 from "@assets/logoipsum-415_1767855967343.png";
 import logo417 from "@assets/logoipsum-417_1767855967343.png";
+import heroImage1 from "@assets/image_1768148843306.png";
+import heroImage2 from "@assets/image_1768148862409.png";
+import heroImage3 from "@assets/image_1768148880563.png";
 import joinUsImage from "@assets/image_1768148300552.png";
 import accountingImage from "@assets/image_1768140230807.png";
 import taxImage from "@assets/image_1768140464458.png";
@@ -74,9 +77,9 @@ export default function Home() {
 
   const [heroTextIndex, setHeroTextIndex] = useState(0);
   const heroTexts = [
-    { main: "Financial", sub: "confidence for", highlight: "today" },
-    { main: "Strategic", sub: "guidance for", highlight: "growth" },
-    { main: "Expert", sub: "solutions for", highlight: "success" },
+    { main: "Financial", sub: "confidence for", highlight: "today", image: heroImage1 },
+    { main: "Strategic", sub: "guidance for", highlight: "growth", image: heroImage2 },
+    { main: "Expert", sub: "solutions for", highlight: "success", image: heroImage3 },
   ];
 
   useEffect(() => {
@@ -144,11 +147,18 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center bg-[#002140] overflow-hidden">
         {/* Background Image with Overlay and Pattern */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Corporate Meeting"
-            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={heroTextIndex}
+              src={heroTexts[heroTextIndex].image}
+              alt="Hero Background"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.6 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="w-full h-full object-cover mix-blend-overlay"
+            />
+          </AnimatePresence>
           {/* Complex Gradient Overlay matching screenshot */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#002140] via-[#002140]/95 to-transparent" />
 
