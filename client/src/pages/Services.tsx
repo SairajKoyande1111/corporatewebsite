@@ -152,53 +152,48 @@ export default function Services() {
       </section>
 
       {/* Technology & Security Section */}
-      <section className="py-16 bg-[#FAF9F6] overflow-hidden">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary font-bold tracking-wider uppercase text-[10px]">
-              <Cpu className="w-3 h-3" />
-              <span>Technology & Security</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-primary font-display tracking-tight">
-              Securing Your <span className="text-secondary italic">Financial Future</span>
+          <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary font-display tracking-tight">
+              Securing Your <span className="text-secondary">Financial Future</span>
             </h2>
-            <p className="text-base text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
               Enterprise-grade security meets industry-leading cloud platforms.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-10">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="flex flex-col"
             >
-              <Card className="flex-1 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white rounded-2xl p-8 overflow-hidden relative group hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#F5F2EA] rounded-full -translate-y-1/2 translate-x-1/2 transition-transform duration-700 group-hover:scale-110" />
-                <CardContent className="p-0 space-y-6 relative z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary text-secondary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                      <Cloud className="w-6 h-6" />
+              <div className="flex-1 bg-white rounded-2xl p-10 border border-gray-100 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] group">
+                <div className="space-y-10">
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 bg-[#002140] text-secondary rounded-xl flex items-center justify-center shadow-lg shadow-primary/10 transition-transform duration-500 group-hover:scale-110">
+                      <Cloud className="w-7 h-7" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-primary tracking-tight">Platform Expertise</h3>
-                      <p className="text-gray-400 text-xs">Certified global accounting experts.</p>
+                      <p className="text-gray-400 text-sm mt-1">Certified cloud accounting specialists.</p>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8">
                     {softwareExpertise.map((sw, i) => (
-                      <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50/50 border border-gray-100 group-hover:border-secondary/20 transition-all duration-300 hover:bg-white hover:shadow-sm">
-                        <span className="font-bold text-primary/80 text-sm tracking-tight">{sw}</span>
-                        <div className="w-4 h-4 rounded-full bg-secondary/10 flex items-center justify-center">
-                          <CheckCircle2 className="w-2.5 h-2.5 text-secondary" />
+                      <div key={i} className="flex items-center gap-4 group/item">
+                        <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 transition-colors group-hover/item:bg-secondary">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-secondary group-hover/item:text-white transition-colors" />
                         </div>
+                        <span className="font-bold text-primary/80 tracking-tight text-lg">{sw}</span>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div 
@@ -208,31 +203,31 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="flex flex-col"
             >
-              <Card className="flex-1 border-none shadow-2xl bg-[#002140] text-white rounded-2xl p-8 overflow-hidden relative group">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <CardContent className="p-0 h-full flex flex-col justify-between space-y-6 relative z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20">
-                      <Lock className="w-6 h-6" />
+              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-10 border border-white/5 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,33,64,0.3)] group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl transition-opacity duration-500 group-hover:opacity-100 opacity-50" />
+                <div className="space-y-10 relative z-10">
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
+                      <Lock className="w-7 h-7" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-white tracking-tight">Data Integrity</h3>
-                      <p className="text-white/40 text-xs">Uncompromising compliance standards.</p>
+                      <p className="text-white/40 text-sm mt-1">Uncompromising compliance standards.</p>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-5">
                     {securityFeatures.map((feat, i) => (
-                      <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-all duration-300">
-                        <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
-                          <ShieldCheck className="w-4 h-4 text-secondary" />
+                      <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/5 transition-colors">
+                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
+                          <ShieldCheck className="w-5 h-5 text-secondary" />
                         </div>
-                        <span className="text-sm font-medium tracking-wide">{feat}</span>
+                        <span className="text-lg font-medium tracking-wide text-white/90">{feat}</span>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
