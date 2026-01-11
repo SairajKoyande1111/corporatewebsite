@@ -121,19 +121,16 @@ export default function Services() {
               >
                 <div className={`${idx % 2 === 1 ? 'lg:order-2' : ''} space-y-8`}>
                   <div className="space-y-4">
-                    <div className="w-16 h-16 bg-[#F5F2EA] text-primary rounded-2xl flex items-center justify-center shadow-sm">
-                      <service.icon className="w-8 h-8" />
-                    </div>
                     <h2 className="text-4xl font-bold text-primary font-display">{service.title}</h2>
-                    <div className="h-1.5 w-20 bg-secondary rounded-full" />
+                    <div className="h-1.5 w-full bg-secondary rounded-full" />
                   </div>
-                  <ul className="grid gap-4">
+                  <ul className="grid gap-6">
                     {service.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex gap-4 items-start group">
-                        <div className="mt-1.5 flex-shrink-0 w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
+                        <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                          <BarChart3 className="w-4 h-4" />
                         </div>
-                        <span className="text-lg text-gray-600 leading-relaxed">{point}</span>
+                        <span className="text-xl text-black font-semibold leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
