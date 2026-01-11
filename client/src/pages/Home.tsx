@@ -43,6 +43,12 @@ import accountingImage from "@assets/image_1768140230807.png";
 import taxImage from "@assets/image_1768140464458.png";
 import payrollImage from "@assets/image_1768140527133.png";
 import analysisImage from "@assets/image_1768140625098.png";
+import expertiseImage from "@assets/image_1768143076266.png";
+import hospitalityImage from "@assets/image_1768143282206.png";
+import constructionImage from "@assets/image_1768143334932.png";
+import healthcareImage from "@assets/image_1768143396577.png";
+import legalImage from "@assets/image_1768143436752.png";
+import retailImage from "@assets/image_1768143203469.png";
 import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
 import { Link } from "wouter";
 
@@ -402,7 +408,44 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries?.map((industry, idx) => (
+            {[
+              {
+                id: 1,
+                title: "Hospitality",
+                desc: "Specialized accounting for restaurants, hotels, and travel services.",
+                image: hospitalityImage,
+              },
+              {
+                id: 2,
+                title: "Construction",
+                desc: "Project-based accounting, job costing, and tax planning for contractors.",
+                image: constructionImage,
+              },
+              {
+                id: 3,
+                title: "Healthcare",
+                desc: "Revenue cycle management and compliance for medical practices.",
+                image: healthcareImage,
+              },
+              {
+                id: 4,
+                title: "Legal & Professional",
+                desc: "Trust accounting and practice management for law firms and consultants.",
+                image: legalImage,
+              },
+              {
+                id: 5,
+                title: "Retail & E-commerce",
+                desc: "Inventory management and multi-channel sales tax compliance.",
+                image: retailImage,
+              },
+              {
+                id: 6,
+                title: "Real Estate",
+                desc: "Property management accounting and investment tax strategies.",
+                image: expertiseImage,
+              },
+            ].map((industry, idx) => (
               <motion.div
                 key={industry.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -413,7 +456,7 @@ export default function Home() {
                 <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden bg-white">
                   <div className="aspect-[16/10] overflow-hidden relative">
                     <img
-                      src={industry.imageUrl}
+                      src={industry.image}
                       alt={industry.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
@@ -424,7 +467,7 @@ export default function Home() {
                       {industry.title}
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed">
-                      {industry.description}
+                      {industry.desc}
                     </p>
                   </CardContent>
                 </Card>
