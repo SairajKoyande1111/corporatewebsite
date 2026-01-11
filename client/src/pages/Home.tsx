@@ -567,8 +567,6 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-
-      {/* Testimonials Section */}
       <section id="testimonials" className="py-24 bg-white relative">
         <div className="container-custom">
           <div className="flex flex-col items-center text-center mb-20 space-y-4">
