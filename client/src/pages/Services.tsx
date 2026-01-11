@@ -182,11 +182,11 @@ export default function Services() {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8">
+                  <div className="grid grid-cols-1 gap-y-4">
                     {softwareExpertise.map((sw, i) => (
-                      <div key={i} className="flex items-center gap-4 group/item">
-                        <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 transition-colors group-hover/item:bg-secondary">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-secondary group-hover/item:text-white transition-colors" />
+                      <div key={i} className="flex items-center gap-4 group/item p-2 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 transition-colors group-hover/item:bg-secondary">
+                          <CheckCircle2 className="w-4 h-4 text-secondary group-hover/item:text-white transition-colors" />
                         </div>
                         <span className="font-bold text-primary/80 tracking-tight text-lg">{sw}</span>
                       </div>
