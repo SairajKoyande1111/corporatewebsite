@@ -510,7 +510,7 @@ export default function Home() {
           >
             <div className="space-y-4">
               <span className="text-secondary font-bold tracking-widest uppercase text-sm">Culture</span>
-              <h2 className="text-5xl font-bold leading-tight">Our Team, Your Success</h2>
+              <h2 className="text-5xl font-bold leading-tight text-secondary">Our Team, Your Success</h2>
             </div>
             <p className="text-xl text-white/80 leading-relaxed">
               We believe that happy employees lead to happy clients. Our unique culture fosters collaboration, innovation, and a relentless commitment to excellence. When our team thrives, so does your business.
