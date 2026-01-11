@@ -176,7 +176,7 @@ export default function Home() {
             variants={stagger}
             className="max-w-3xl"
           >
-            <div className="h-[240px] mb-8 flex flex-col justify-center">
+            <div className="h-[180px] md:h-[240px] mb-6 md:mb-8 flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={heroTextIndex}
@@ -184,7 +184,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
-                  className="text-5xl md:text-6xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
                 >
                   {heroTexts[heroTextIndex].main} <br />
                   {heroTexts[heroTextIndex].sub} <br />
@@ -197,19 +197,19 @@ export default function Home() {
 
             <motion.p
               variants={fadeIn}
-              className="text-xl md:text-3xl text-white/90 mb-10 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3.5rem]"
+              className="text-lg sm:text-xl md:text-3xl text-white/90 mb-8 md:mb-10 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3rem] md:min-h-[3.5rem]"
             >
               <TypewriterEffect text="Tax, Audit & Advisory Solutions Built for Today’s Businesses" />
             </motion.p>
 
             <motion.div
               variants={fadeIn}
-              className="flex flex-wrap items-center gap-6"
+              className="flex flex-row items-center gap-4 md:gap-6"
             >
-              <button className="bg-secondary text-primary px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20">
+              <button className="flex-1 sm:flex-none bg-secondary text-primary px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 text-sm md:text-base whitespace-nowrap">
                 Explore Services
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300">
+              <button className="flex-1 sm:flex-none bg-transparent border-2 border-white text-white px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300 text-sm md:text-base whitespace-nowrap">
                 Connect Now
               </button>
             </motion.div>
