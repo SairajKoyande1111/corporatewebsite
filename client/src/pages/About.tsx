@@ -123,30 +123,29 @@ export default function About() {
                   <Target className="w-4 h-4" />
                   Purpose Driven
                 </div>
-                <h2 className="text-5xl md:text-6xl font-bold text-primary font-display leading-[1.1]">
-                  Our Mission <br /> & Vision
+                <h2 className="text-5xl md:text-6xl font-bold text-primary font-display leading-[1.1] whitespace-nowrap">
+                  Our Mission & Vision
                 </h2>
-                <div className="h-2 w-32 bg-secondary rounded-full" />
+                <div className="h-2 w-full bg-secondary rounded-full" />
               </div>
               
               <div className="space-y-8">
-                <div className="group space-y-4">
-                  <h3 className="text-2xl font-bold text-primary flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-secondary group-hover:text-primary transition-colors">
-                      <TrendingUp className="w-5 h-5" />
-                    </div>
-                    Our Mission
-                  </h3>
-                  <p className="text-xl text-gray-600 leading-relaxed pl-13">
-                    Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
-                  </p>
+                <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+                  <div className="relative z-10 space-y-4">
+                    <h3 className="text-2xl font-bold text-secondary">
+                      Our Mission
+                    </h3>
+                    <p className="text-xl text-white/90 leading-relaxed">
+                      Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                  <div className="relative z-10 space-y-6">
-                    <h3 className="text-2xl font-bold text-secondary flex items-center gap-3">
-                      <Globe2 className="w-6 h-6" />
+                  <div className="relative z-10 space-y-4">
+                    <h3 className="text-2xl font-bold text-secondary">
                       Our Vision
                     </h3>
                     <p className="text-xl text-white/90 leading-relaxed font-medium italic">
