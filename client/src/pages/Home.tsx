@@ -169,7 +169,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center -mt-20">
+        <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center lg:-mt-20">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -326,7 +326,7 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 id: 1,
@@ -421,7 +421,7 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
                 step: "01",
@@ -501,7 +501,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 id: 1,
@@ -639,7 +639,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative order-1 lg:order-2"
+            className="relative order-1 lg:order-2 mb-12 lg:mb-0"
           >
             <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white shadow-2xl">
               <img 
