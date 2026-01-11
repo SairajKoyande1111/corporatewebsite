@@ -14,6 +14,9 @@ import {
 } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
+import teamImage1 from "@assets/image_1768141896225.png";
+import teamImage2 from "@assets/image_1768141987305.png";
+import teamImage3 from "@assets/image_1768142027474.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -29,17 +32,17 @@ export default function About() {
   const teamHighlights = [
     { 
       title: "Certified Accountants & Tax Professionals", 
-      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+      image: teamImage1,
       description: "Our experts hold global certifications ensuring top-tier accuracy and compliance."
     },
     { 
       title: "Experienced Payroll Specialists", 
-      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
+      image: teamImage2,
       description: "Dedicated specialists managing complex payroll requirements across multiple jurisdictions."
     },
     { 
       title: "Skilled Bookkeepers & Compliance Experts", 
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+      image: teamImage3,
       description: "Ensuring your records are meticulous and fully compliant with international standards."
     },
   ];
