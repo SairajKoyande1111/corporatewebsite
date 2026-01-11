@@ -111,47 +111,41 @@ export default function About() {
       {/* Mission & Vision Section */}
       <section className="py-32 bg-white relative">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-primary font-display leading-tight inline-block relative">
+              Our Mission & Vision
+              <div className="h-2 w-full bg-secondary rounded-full mt-2" />
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-24 items-stretch">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-12"
+              className="space-y-8 flex flex-col"
             >
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-bold text-sm uppercase tracking-widest">
-                  <Target className="w-4 h-4" />
-                  Purpose Driven
+              <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl flex-1 group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+                <div className="relative z-10 space-y-4">
+                  <h3 className="text-2xl font-bold text-secondary">
+                    Our Mission
+                  </h3>
+                  <p className="text-xl text-white/90 leading-relaxed">
+                    Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
+                  </p>
                 </div>
-                <h2 className="text-5xl md:text-6xl font-bold text-primary font-display leading-[1.1] whitespace-nowrap">
-                  Our Mission & Vision
-                </h2>
-                <div className="h-2 w-full bg-secondary rounded-full" />
               </div>
-              
-              <div className="space-y-8">
-                <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                  <div className="relative z-10 space-y-4">
-                    <h3 className="text-2xl font-bold text-secondary">
-                      Our Mission
-                    </h3>
-                    <p className="text-xl text-white/90 leading-relaxed">
-                      Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
-                    </p>
-                  </div>
-                </div>
 
-                <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                  <div className="relative z-10 space-y-4">
-                    <h3 className="text-2xl font-bold text-secondary">
-                      Our Vision
-                    </h3>
-                    <p className="text-xl text-white/90 leading-relaxed font-medium italic">
-                      "To be the most reliable and efficient outsourcing partner for accounting firms worldwide, enabling them to focus on <span className="text-secondary font-bold">growth, profitability, and client success.</span>"
-                    </p>
-                  </div>
+              <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl flex-1 group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+                <div className="relative z-10 space-y-4">
+                  <h3 className="text-2xl font-bold text-secondary">
+                    Our Vision
+                  </h3>
+                  <p className="text-xl text-white/90 leading-relaxed font-medium italic">
+                    "To be the most reliable and efficient outsourcing partner for accounting firms worldwide, enabling them to focus on <span className="text-secondary font-bold">growth, profitability, and client success.</span>"
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -162,7 +156,7 @@ export default function About() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden border-[16px] border-[#F5F2EA] shadow-2xl">
+              <div className="relative z-10 h-full w-full rounded-[60px] overflow-hidden border-[16px] border-[#F5F2EA] shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" 
                   alt="Our Team Working" 
@@ -172,7 +166,6 @@ export default function About() {
               {/* Decorative Elements */}
               <div className="absolute -top-12 -right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10" />
               <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
-              <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-secondary rounded-[32px] -z-10 animate-pulse" />
             </motion.div>
           </div>
         </div>
