@@ -9,9 +9,11 @@ import {
   ShieldCheck, 
   Globe2, 
   Cpu, 
-  ArrowRight 
+  ArrowRight,
+  ArrowUpRight 
 } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -119,54 +121,55 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-24 items-stretch">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-8 flex flex-col"
-            >
-              <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl flex-1 group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                <div className="relative z-10 space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
-                    Our Mission
-                  </h3>
-                  <p className="text-xl text-white/90 leading-relaxed">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-[#002140] rounded-[32px] p-10 shadow-xl relative overflow-hidden group"
+              >
+                <div className="relative z-10">
+                  <h3 className="text-secondary font-bold text-2xl mb-6">Our Mission</h3>
+                  <p className="text-white/90 text-lg leading-relaxed">
                     Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
                   </p>
                 </div>
-              </div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-secondary/20 transition-colors" />
+              </motion.div>
 
-              <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl flex-1 group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                <div className="relative z-10 space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
-                    Our Vision
-                  </h3>
-                  <p className="text-xl text-white/90 leading-relaxed font-medium italic">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-[#002140] rounded-[32px] p-10 shadow-xl relative overflow-hidden group"
+              >
+                <div className="relative z-10">
+                  <h3 className="text-secondary font-bold text-2xl mb-6">Our Vision</h3>
+                  <p className="text-white/90 text-lg leading-relaxed italic">
                     "To be the most reliable and efficient outsourcing partner for accounting firms worldwide, enabling them to focus on <span className="text-secondary font-bold">growth, profitability, and client success.</span>"
                   </p>
                 </div>
-              </div>
-            </motion.div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl group-hover:bg-secondary/20 transition-colors" />
+              </motion.div>
+            </div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative aspect-video lg:aspect-square rounded-[40px] overflow-hidden shadow-2xl border-8 border-[#F5F2EA]"
             >
-              <div className="relative z-10 h-full w-full rounded-[60px] overflow-hidden border-[16px] border-[#F5F2EA] shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" 
-                  alt="Our Team Working" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-                />
-              </div>
-              {/* Decorative Elements */}
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+              <video
+                src={missionVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
             </motion.div>
           </div>
         </div>

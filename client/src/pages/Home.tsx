@@ -43,6 +43,7 @@ import accountingImage from "@assets/image_1768140230807.png";
 import taxImage from "@assets/image_1768140464458.png";
 import payrollImage from "@assets/image_1768140527133.png";
 import analysisImage from "@assets/image_1768140625098.png";
+import missionVideo from "@assets/uhd_25fps_1768141240054.mp4";
 import { Link } from "wouter";
 
 const fadeIn = {
