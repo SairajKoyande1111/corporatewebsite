@@ -84,12 +84,12 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#002140] to-transparent" />
         </div>
 
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 text-center">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="w-full"
+            className="w-full flex flex-col items-center"
           >
             <motion.h1 
               variants={fadeIn}
@@ -100,7 +100,7 @@ export default function About() {
             </motion.h1>
             <motion.p 
               variants={fadeIn}
-              className="text-xl md:text-2xl text-white/80 leading-relaxed w-full"
+              className="text-xl md:text-2xl text-white/80 leading-relaxed w-full max-w-5xl"
             >
               We are a premier <span className="text-white font-bold">Knowledge Processing Outsourcing (KPO)</span> firm based in India, providing world-class accounting, bookkeeping, payroll, and tax services to firms across the <span className="text-white font-bold">USA, UK, Australia, Canada, and beyond.</span>
             </motion.p>
