@@ -397,23 +397,16 @@ export default function Home() {
                     <div className="aspect-video overflow-hidden rounded-lg mb-6 relative bg-gray-100">
                       <img
                         src={
-                          service.title === "Advisory"
-                            ? "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
-                            : service.title === "Audit"
-                              ? "https://images.unsplash.com/photo-1554224155-1659a7245222?auto=format&fit=crop&w=800&q=80"
-                              : service.title === "Tax"
-                                ? "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-                                : service.title === "Operational Solutions"
-                                  ? "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                                  : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                          service.title.includes("Accounting")
+                            ? "https://images.unsplash.com/photo-1554224155-1659a7245222?auto=format&fit=crop&w=800&q=80"
+                            : service.title.includes("Tax")
+                              ? "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                              : service.title.includes("Payroll")
+                                ? "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+                                : "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
                         }
                         alt={service.title}
                         loading="eager"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src =
-                            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80";
-                        }}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors duration-500" />
@@ -424,9 +417,7 @@ export default function Home() {
                         {service.title}
                       </h3>
                       <p className="text-gray-600 font-['Nunito',sans-serif] text-lg leading-relaxed">
-                        Comprehensive solutions tailored to your unique needs,
-                        delivering clarity and confidence through expert
-                        technical knowledge.
+                        {service.description || "Comprehensive solutions tailored to your unique needs, delivering clarity and confidence through expert technical knowledge."}
                       </p>
                       <div className="pt-4 flex items-center gap-2 text-primary font-bold font-['Poppins',sans-serif] group-hover:gap-4 transition-all duration-300">
                         <span>Learn More</span>

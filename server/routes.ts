@@ -44,11 +44,30 @@ async function seedDatabase() {
   const existingServices = await storage.getServices();
   if (existingServices.length === 0) {
     await db.insert(services).values([
-      { title: "Advisory", icon: "MessageSquare", link: "#" },
-      { title: "Audit", icon: "ClipboardCheck", link: "#" },
-      { title: "Tax", icon: "Receipt", link: "#" },
-      { title: "Operational Solutions", icon: "Settings", link: "#" },
-      { title: "Software Solutions", icon: "Monitor", link: "#" },
+      {
+        title: "Accounting & Bookkeeping",
+        icon: "FileText",
+        link: "#",
+        description: "General Ledger & Trial Balance Preparation, Accounts Payable & Receivable Management, Financial Statement Preparation, Bank & Credit Card Reconciliations, Cloud-Based Accounting Support (Xero, QuickBooks, Sage, etc.)"
+      },
+      {
+        title: "Tax Preparation & Compliance",
+        icon: "Calculator",
+        link: "#",
+        description: "Corporate & Individual Tax Returns, VAT/GST & Sales Tax Filings, Tax Planning & Advisory, IRS & HMRC Compliance Support"
+      },
+      {
+        title: "Payroll Processing",
+        icon: "Users",
+        link: "#",
+        description: "Payroll Setup & Processing, Payslip Generation & Compliance Reporting, Superannuation & Pension Contributions, End-of-Year Payroll Reconciliation"
+      },
+      {
+        title: "Financial Analysis & Reporting",
+        icon: "BarChart3",
+        link: "#",
+        description: "Budgeting & Forecasting, Cash Flow & Profitability Analysis, Management Reporting & KPI Tracking"
+      }
     ]);
   }
 

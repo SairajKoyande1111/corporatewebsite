@@ -8,6 +8,7 @@ export const services = pgTable("services", {
   title: text("title").notNull(),
   icon: text("icon").notNull(), // lucide icon name
   link: text("link").default("#"),
+  description: text("description"),
 });
 
 // Team/Experts Section
