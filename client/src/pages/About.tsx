@@ -282,7 +282,7 @@ export default function About() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="relative z-10 space-y-8">
               <h2 className="text-4xl md:text-6xl font-bold leading-tight font-display text-white">
-                Ready to optimize your <br /> financial operations?
+                Ready to optimize your <br /> <span className="text-secondary">financial operations?</span>
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
                 Partner with India's premier KPO firm and gain access to top-tier accounting talent today.
