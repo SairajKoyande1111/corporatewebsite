@@ -170,25 +170,26 @@ export default function Services() {
               viewport={{ once: true }}
               className="flex flex-col"
             >
-              <div className="flex-1 bg-white rounded-2xl p-10 border border-gray-100 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] group">
-                <div className="space-y-10">
+              <div className="flex-1 bg-secondary rounded-2xl p-10 border border-secondary/20 shadow-xl group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
+                <div className="space-y-10 relative z-10">
                   <div className="flex items-center gap-6">
-                    <div className="w-14 h-14 bg-[#002140] text-secondary rounded-xl flex items-center justify-center shadow-lg shadow-primary/10 transition-transform duration-500 group-hover:scale-110">
-                      <Cloud className="w-7 h-7" />
+                    <div className="w-16 h-16 bg-primary text-secondary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 transition-transform duration-500 group-hover:scale-110">
+                      <Cloud className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-primary tracking-tight">Platform Expertise</h3>
-                      <p className="text-gray-400 text-sm mt-1">Certified cloud accounting specialists.</p>
+                      <h3 className="text-3xl font-bold text-primary tracking-tight">Platform Expertise</h3>
+                      <p className="text-primary/60 text-base mt-1 font-medium">Certified cloud accounting specialists.</p>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 gap-y-4">
+                  <div className="grid grid-cols-1 gap-y-5">
                     {softwareExpertise.map((sw, i) => (
-                      <div key={i} className="flex items-center gap-4 group/item p-2 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 transition-colors group-hover/item:bg-secondary">
-                          <CheckCircle2 className="w-4 h-4 text-secondary group-hover/item:text-white transition-colors" />
+                      <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/10 transition-colors">
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 transition-colors group-hover/item:bg-primary">
+                          <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:text-secondary transition-colors" />
                         </div>
-                        <span className="font-bold text-primary/80 tracking-tight text-lg">{sw}</span>
+                        <span className="font-bold text-primary tracking-tight text-2xl">{sw}</span>
                       </div>
                     ))}
                   </div>
@@ -203,26 +204,26 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="flex flex-col"
             >
-              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-10 border border-white/5 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,33,64,0.3)] group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl transition-opacity duration-500 group-hover:opacity-100 opacity-50" />
+              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-10 border border-white/5 shadow-xl group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
                 <div className="space-y-10 relative z-10">
                   <div className="flex items-center gap-6">
-                    <div className="w-14 h-14 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
-                      <Lock className="w-7 h-7" />
+                    <div className="w-16 h-16 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
+                      <Lock className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white tracking-tight">Data Integrity</h3>
-                      <p className="text-white/40 text-sm mt-1">Uncompromising compliance standards.</p>
+                      <h3 className="text-3xl font-bold text-white tracking-tight">Data Integrity</h3>
+                      <p className="text-white/40 text-base mt-1 font-medium">Uncompromising compliance standards.</p>
                     </div>
                   </div>
 
                   <div className="space-y-5">
                     {securityFeatures.map((feat, i) => (
                       <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/5 transition-colors">
-                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
-                          <ShieldCheck className="w-5 h-5 text-secondary" />
+                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
+                          <ShieldCheck className="w-6 h-6 text-secondary" />
                         </div>
-                        <span className="text-lg font-medium tracking-wide text-white/90">{feat}</span>
+                        <span className="text-2xl font-bold tracking-wide text-white/90">{feat}</span>
                       </div>
                     ))}
                   </div>
