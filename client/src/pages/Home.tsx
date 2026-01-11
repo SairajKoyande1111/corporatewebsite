@@ -401,31 +401,24 @@ export default function Home() {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <div className="space-y-4">
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base block"
-              >
-                How It Works
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-bold font-display"
-              >
-                A Simple & Seamless <br /> Outsourcing Process
-              </motion.h2>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="hidden lg:block h-px flex-1 bg-white/20 mx-12 mb-6"
-            />
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-lg md:text-xl block"
+            >
+              Our Working Process
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight"
+            >
+              A Simple & Seamless <br />
+              <span className="text-secondary">Outsourcing Process</span>
+            </motion.h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
