@@ -393,6 +393,91 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-20 bg-primary text-white overflow-hidden relative">
+        {/* Subtle decorative background pattern */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] border-[100px] border-white/20 rounded-full translate-x-1/3 -translate-y-1/3" />
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div className="space-y-4">
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base block"
+              >
+                How It Works
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold font-display"
+              >
+                A Simple & Seamless <br /> Outsourcing Process
+              </motion.h2>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="hidden lg:block h-px flex-1 bg-white/20 mx-12 mb-6"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                step: "01",
+                title: "Consultation",
+                desc: "We understand your business needs and requirements.",
+              },
+              {
+                step: "02",
+                title: "Tailored Solution",
+                desc: "We create a customized outsourcing strategy.",
+              },
+              {
+                step: "03",
+                title: "Onboarding & Integration",
+                desc: "Your dedicated team gets onboarded with full system integration.",
+              },
+              {
+                step: "04",
+                title: "Ongoing Support",
+                desc: "We provide continuous support and performance monitoring.",
+              },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative p-8 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="flex flex-col h-full gap-4">
+                  <span className="text-4xl font-bold text-secondary/30 group-hover:text-secondary/80 transition-colors duration-500">
+                    {item.step}
+                  </span>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/60 text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Industries We Serve Section */}
       <section id="industries" className="py-20 bg-[#F5F2EA] overflow-hidden">
         <div className="container-custom">
