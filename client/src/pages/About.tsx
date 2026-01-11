@@ -109,46 +109,73 @@ export default function About() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-24 bg-white relative">
-        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-primary font-display">Our Mission & Vision</h2>
-              <div className="h-1.5 w-24 bg-secondary rounded-full" />
-            </div>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards.
-            </p>
-            <div className="bg-[#F5F2EA] p-8 rounded-[40px] border-l-8 border-secondary">
-              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center gap-3">
-                <Target className="text-secondary w-8 h-8" />
-                Our Vision
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed italic">
-                "To be the most reliable and efficient outsourcing partner for accounting firms worldwide, enabling them to focus on <span className="text-primary font-bold">growth, profitability, and client success.</span>"
-              </p>
-            </div>
-          </motion.div>
+      <section className="py-32 bg-white relative">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-12"
+            >
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-bold text-sm uppercase tracking-widest">
+                  <Target className="w-4 h-4" />
+                  Purpose Driven
+                </div>
+                <h2 className="text-5xl md:text-6xl font-bold text-primary font-display leading-[1.1]">
+                  Our Mission <br /> & Vision
+                </h2>
+                <div className="h-2 w-32 bg-secondary rounded-full" />
+              </div>
+              
+              <div className="space-y-8">
+                <div className="group space-y-4">
+                  <h3 className="text-2xl font-bold text-primary flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-secondary group-hover:text-primary transition-colors">
+                      <TrendingUp className="w-5 h-5" />
+                    </div>
+                    Our Mission
+                  </h3>
+                  <p className="text-xl text-gray-600 leading-relaxed pl-13">
+                    Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
+                  </p>
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] rounded-tl-[120px] rounded-br-[120px] overflow-hidden border-8 border-[#F5F2EA] shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" 
-                alt="Our Team Working" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
+                <div className="bg-[#002140] p-10 rounded-[40px] relative overflow-hidden shadow-2xl group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+                  <div className="relative z-10 space-y-6">
+                    <h3 className="text-2xl font-bold text-secondary flex items-center gap-3">
+                      <Globe2 className="w-6 h-6" />
+                      Our Vision
+                    </h3>
+                    <p className="text-xl text-white/90 leading-relaxed font-medium italic">
+                      "To be the most reliable and efficient outsourcing partner for accounting firms worldwide, enabling them to focus on <span className="text-secondary font-bold">growth, profitability, and client success.</span>"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden border-[16px] border-[#F5F2EA] shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" 
+                  alt="Our Team Working" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+                />
+              </div>
+              {/* Decorative Elements */}
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-secondary rounded-[32px] -z-10 animate-pulse" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
