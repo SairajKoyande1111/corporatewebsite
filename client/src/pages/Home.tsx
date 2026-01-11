@@ -39,6 +39,11 @@ import logo404 from "@assets/logoipsum-404_1767855967342.png";
 import logo411 from "@assets/logoipsum-411_1767855967343.png";
 import logo415 from "@assets/logoipsum-415_1767855967343.png";
 import logo417 from "@assets/logoipsum-417_1767855967343.png";
+import accountingImage from "@assets/image_1768140230807.png";
+import taxImage from "@assets/image_1768140464458.png";
+import payrollImage from "@assets/image_1768140527133.png";
+import analysisImage from "@assets/image_1768140625098.png";
+import { Link } from "wouter";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -299,27 +304,48 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(services?.length ? services : mockServices).map(
-              (service, idx) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1, duration: 0.5 }}
-                >
+            {[
+              {
+                id: 1,
+                title: "Accounting & Bookkeeping",
+                desc: "Full-cycle bookkeeping and financial statement preparation.",
+                image: accountingImage,
+                delay: 0,
+              },
+              {
+                id: 2,
+                title: "Tax Preparation & Compliance",
+                desc: "Expert US & UK tax preparation, planning, and compliance.",
+                image: taxImage,
+                delay: 0.1,
+              },
+              {
+                id: 3,
+                title: "Payroll Processing",
+                desc: "Seamless global payroll processing and administration.",
+                image: payrollImage,
+                delay: 0.2,
+              },
+              {
+                id: 4,
+                title: "Financial Analysis & Reporting",
+                desc: "Strategic financial insights and business growth consulting.",
+                image: analysisImage,
+                delay: 0.3,
+              },
+            ].map((service, idx) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+              >
+                <Link href="/services">
                   <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group cursor-pointer overflow-hidden bg-white">
                     <div className="aspect-[16/10] overflow-hidden relative">
                       <img
-                        src={
-                          service.title.includes("Accounting")
-                            ? "https://images.unsplash.com/photo-1554224155-1659a7245222?auto=format&fit=crop&w=800&q=80"
-                            : service.title.includes("Tax")
-                              ? "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-                              : service.title.includes("Payroll")
-                                ? "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
-                                : "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                        }
+                        src={service.image}
                         alt={service.title}
                         loading="eager"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -337,9 +363,9 @@ export default function Home() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
-              ),
-            )}
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -520,7 +546,7 @@ export default function Home() {
             className="w-full max-w-5xl mx-auto"
           >
             <CarouselContent>
-              {testimonials?.map((testimonial) => (
+              {testimonials?.map((testimonial: any) => (
                 <CarouselItem key={testimonial.id} className="md:basis-full lg:basis-full px-4">
                   <div className="bg-[#002140] rounded-[40px] p-12 md:p-20 relative overflow-hidden shadow-2xl">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />

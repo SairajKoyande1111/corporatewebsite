@@ -25,12 +25,17 @@ const stagger = {
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
+import accountingImage from "@assets/image_1768140230807.png";
+import taxImage from "@assets/image_1768140464458.png";
+import payrollImage from "@assets/image_1768140527133.png";
+import analysisImage from "@assets/image_1768140625098.png";
+
 export default function Services() {
   const mainServices = [
     {
       title: "Accounting & Bookkeeping",
       icon: FileText,
-      image: "https://images.unsplash.com/photo-1554224155-1659a7245222?auto=format&fit=crop&w=800&q=80",
+      image: accountingImage,
       points: [
         "General Ledger & Trial Balance Preparation",
         "Accounts Payable & Receivable Management",
@@ -42,7 +47,7 @@ export default function Services() {
     {
       title: "Tax Preparation & Compliance",
       icon: Calculator,
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+      image: taxImage,
       points: [
         "Corporate & Individual Tax Returns",
         "VAT/GST & Sales Tax Filings",
@@ -53,7 +58,7 @@ export default function Services() {
     {
       title: "Payroll Processing",
       icon: Users,
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+      image: payrollImage,
       points: [
         "Payroll Setup & Processing",
         "Payslip Generation & Compliance Reporting",
@@ -64,7 +69,7 @@ export default function Services() {
     {
       title: "Financial Analysis & Reporting",
       icon: BarChart3,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      image: analysisImage,
       points: [
         "Budgeting & Forecasting",
         "Cash Flow & Profitability Analysis",
