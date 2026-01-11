@@ -170,26 +170,26 @@ export default function Services() {
               viewport={{ once: true }}
               className="flex flex-col"
             >
-              <div className="flex-1 bg-secondary rounded-2xl p-10 border border-secondary/20 shadow-xl group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
+              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-10 border border-white/5 shadow-xl group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
                 <div className="space-y-10 relative z-10">
                   <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-primary text-secondary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 transition-transform duration-500 group-hover:scale-110">
+                    <div className="w-16 h-16 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
                       <Cloud className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-primary tracking-tight">Platform Expertise</h3>
-                      <p className="text-primary/60 text-base mt-1 font-medium">Certified cloud accounting specialists.</p>
+                      <h3 className="text-3xl font-bold text-white tracking-tight">Platform Expertise</h3>
+                      <p className="text-white/40 text-base mt-1 font-medium">Certified cloud accounting specialists.</p>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-1 gap-y-5">
                     {softwareExpertise.map((sw, i) => (
-                      <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/10 transition-colors">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 transition-colors group-hover/item:bg-primary">
-                          <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:text-secondary transition-colors" />
+                      <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/5 transition-colors">
+                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
+                          <CheckCircle2 className="w-6 h-6 text-secondary" />
                         </div>
-                        <span className="font-bold text-primary tracking-tight text-2xl">{sw}</span>
+                        <span className="font-bold text-white tracking-tight text-2xl">{sw}</span>
                       </div>
                     ))}
                   </div>
