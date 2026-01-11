@@ -152,36 +152,46 @@ export default function Services() {
       </section>
 
       {/* Technology & Security Section */}
-      <section className="py-24 bg-[#F5F2EA] overflow-hidden">
+      <section className="py-24 bg-[#FAF9F6] overflow-hidden">
         <div className="container-custom">
-          <div className="text-center mb-20 space-y-4">
-            <span className="text-secondary font-bold tracking-widest uppercase text-sm">Technology & Security</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-display">Securing Your Financial Data</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We leverage the latest cloud accounting software and automation tools to deliver accurate, efficient, and secure financial solutions.
+          <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary font-bold tracking-wider uppercase text-[10px]">
+              <Cpu className="w-3 h-3" />
+              <span>Technology & Security</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-primary font-display tracking-tight">
+              Securing Your <span className="text-secondary italic">Financial Future</span>
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
+              We integrate enterprise-grade security with industry-leading cloud platforms to ensure your data is always protected and your operations remain seamless.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="flex flex-col"
             >
-              <Card className="h-full border-none shadow-xl bg-white rounded-[40px] p-10 overflow-hidden relative group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <CardContent className="p-0 space-y-8 relative z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary text-secondary rounded-xl flex items-center justify-center">
-                      <Cloud className="w-6 h-6" />
+              <Card className="flex-1 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white rounded-3xl p-12 overflow-hidden relative group hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#F5F2EA] rounded-full -translate-y-1/2 translate-x-1/2 transition-transform duration-700 group-hover:scale-110" />
+                <CardContent className="p-0 space-y-10 relative z-10">
+                  <div className="space-y-4">
+                    <div className="w-14 h-14 bg-primary text-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+                      <Cloud className="w-7 h-7" />
                     </div>
-                    <h3 className="text-2xl font-bold text-primary">Software Expertise</h3>
+                    <h3 className="text-3xl font-bold text-primary tracking-tight">Platform Expertise</h3>
+                    <p className="text-gray-400 text-sm max-w-xs">Certified experts in global accounting ecosystems.</p>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  
+                  <div className="grid grid-cols-2 gap-4">
                     {softwareExpertise.map((sw, i) => (
-                      <div key={i} className="flex items-center gap-2 p-3 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-secondary/30 transition-colors">
-                        <CheckCircle2 className="w-4 h-4 text-secondary" />
-                        <span className="font-bold text-primary">{sw}</span>
+                      <div key={i} className="flex items-center justify-between p-5 rounded-2xl bg-gray-50/50 border border-gray-100 group-hover:border-secondary/20 transition-all duration-300 hover:bg-white hover:shadow-md hover:-translate-y-1">
+                        <span className="font-bold text-primary/80 tracking-tight">{sw}</span>
+                        <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center">
+                          <CheckCircle2 className="w-3 h-3 text-secondary" />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -190,24 +200,30 @@ export default function Services() {
             </motion.div>
 
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col"
             >
-              <Card className="h-full border-none shadow-xl bg-[#002140] text-white rounded-[40px] p-10 overflow-hidden relative group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <CardContent className="p-0 space-y-8 relative z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-secondary text-primary rounded-xl flex items-center justify-center">
-                      <Lock className="w-6 h-6" />
+              <Card className="flex-1 border-none shadow-2xl bg-[#002140] text-white rounded-3xl p-12 overflow-hidden relative group">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                <CardContent className="p-0 h-full flex flex-col justify-between space-y-10 relative z-10">
+                  <div className="space-y-4">
+                    <div className="w-14 h-14 bg-secondary text-primary rounded-2xl flex items-center justify-center shadow-lg shadow-secondary/20">
+                      <Lock className="w-7 h-7" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Data Security & Compliance</h3>
+                    <h3 className="text-3xl font-bold text-white tracking-tight">Data Integrity</h3>
+                    <p className="text-white/40 text-sm max-w-xs">Uncompromising standards for global compliance.</p>
                   </div>
-                  <div className="grid gap-4">
+
+                  <div className="space-y-3">
                     {securityFeatures.map((feat, i) => (
-                      <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
-                        <ShieldCheck className="w-5 h-5 text-secondary" />
-                        <span className="text-lg font-medium">{feat}</span>
+                      <div key={i} className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-all duration-300">
+                        <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                          <ShieldCheck className="w-5 h-5 text-secondary" />
+                        </div>
+                        <span className="text-lg font-medium tracking-wide">{feat}</span>
                       </div>
                     ))}
                   </div>
