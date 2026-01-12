@@ -46,9 +46,11 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4 md:gap-8">
-            <button className="hidden lg:block bg-secondary text-primary px-8 py-3 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 uppercase tracking-widest text-sm">
-              Connect Now
-            </button>
+            <Link href="/contact">
+              <button className="hidden lg:block bg-secondary text-primary px-8 py-3 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 uppercase tracking-widest text-sm">
+                Connect Now
+              </button>
+            </Link>
             <button 
               className="lg:hidden p-2 text-white hover:text-secondary transition-colors z-[60]"
               onClick={() => setIsOpen(!isOpen)}
@@ -103,9 +105,11 @@ export function Navbar() {
                     </a>
                   </div>
                   
-                  <button className="w-full bg-secondary text-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-secondary/20">
-                    Connect Now
-                  </button>
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
+                    <button className="w-full bg-secondary text-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-secondary/20">
+                      Connect Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

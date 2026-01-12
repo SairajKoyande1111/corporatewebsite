@@ -206,12 +206,16 @@ export default function Home() {
               variants={fadeIn}
               className="flex flex-row items-center gap-4 md:gap-6"
             >
-              <button className="flex-1 sm:flex-none bg-secondary text-primary px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 text-sm md:text-base whitespace-nowrap">
-                Explore Services
-              </button>
-              <button className="flex-1 sm:flex-none bg-transparent border-2 border-white text-white px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300 text-sm md:text-base whitespace-nowrap">
-                Connect Now
-              </button>
+              <Link href="/services" className="flex-1 sm:flex-none">
+                <button className="w-full bg-secondary text-primary px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 text-sm md:text-base whitespace-nowrap">
+                  Explore Services
+                </button>
+              </Link>
+              <Link href="/contact" className="flex-1 sm:flex-none">
+                <button className="w-full bg-transparent border-2 border-white text-white px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300 text-sm md:text-base whitespace-nowrap">
+                  Connect Now
+                </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
