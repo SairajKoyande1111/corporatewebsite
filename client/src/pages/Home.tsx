@@ -601,7 +601,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 md:space-y-8 order-2"
+            className="space-y-6 md:space-y-10 order-2"
           >
             <div className="space-y-3 md:space-y-4">
               <span className="text-secondary font-bold tracking-widest uppercase text-lg block">Our Culture</span>
