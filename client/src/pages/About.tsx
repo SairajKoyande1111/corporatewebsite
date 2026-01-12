@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   CheckCircle2, 
@@ -127,14 +128,14 @@ export default function About() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display w-full"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 leading-tight font-display w-full px-2"
             >
               <span className="text-white">Your Trusted Partner in</span> <br /> 
               <span className="text-secondary">Accounting & Financial Services</span>
             </motion.h1>
             <motion.p 
               variants={fadeIn}
-              className="text-xl md:text-2xl text-white/80 leading-relaxed w-full max-w-5xl"
+              className="text-lg md:text-2xl text-white/80 leading-relaxed w-full max-w-5xl px-4"
             >
               We are a premier <span className="text-white font-bold">Knowledge Processing Outsourcing (KPO)</span> firm based in India, providing world-class accounting, bookkeeping, payroll, and tax services to firms across the <span className="text-white font-bold">USA, UK, Australia, Canada, and beyond.</span>
             </motion.p>
@@ -143,26 +144,26 @@ export default function About() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-32 bg-white relative">
+      <section className="py-16 md:py-32 bg-white relative">
         <div className="container-custom">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl md:text-6xl font-bold text-primary font-display leading-tight inline-block relative">
+          <div className="text-center mb-10 md:mb-16 space-y-4">
+            <h2 className="text-4xl md:text-6xl font-bold text-primary font-display leading-tight inline-block relative px-4">
               Our Mission & Vision
-              <div className="h-2 w-full bg-secondary rounded-full mt-2" />
+              <div className="h-1.5 md:h-2 w-full bg-secondary rounded-full mt-1 md:mt-2" />
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="space-y-6 md:order-1 order-2">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-[#002140] rounded-[32px] p-10 shadow-xl relative overflow-hidden group"
+                className="bg-[#002140] rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-xl relative overflow-hidden group"
               >
                 <div className="relative z-10">
-                  <h3 className="text-secondary font-bold text-2xl mb-6">Our Mission</h3>
-                  <p className="text-white/90 text-lg leading-relaxed">
+                  <h3 className="text-secondary font-bold text-xl md:text-2xl mb-4 md:mb-6">Our Mission</h3>
+                  <p className="text-white/90 text-base md:text-lg leading-relaxed">
                     Our mission is to help businesses optimize their financial operations while ensuring compliance with international accounting standards. We bridge the gap between complexity and clarity.
                   </p>
                 </div>
@@ -174,11 +175,11 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-[#002140] rounded-[32px] p-10 shadow-xl relative overflow-hidden group"
+                className="bg-[#002140] rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-xl relative overflow-hidden group"
               >
                 <div className="relative z-10">
-                  <h3 className="text-secondary font-bold text-2xl mb-6">Our Vision</h3>
-                  <p className="text-white/90 text-lg leading-relaxed italic">
+                  <h3 className="text-secondary font-bold text-xl md:text-2xl mb-4 md:mb-6">Our Vision</h3>
+                  <p className="text-white/90 text-base md:text-lg leading-relaxed italic">
                     "To be the most reliable and efficient outsourcing partner for accounting firms worldwide, enabling them to focus on <span className="text-secondary font-bold">growth, profitability, and client success.</span>"
                   </p>
                 </div>
@@ -190,7 +191,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-video lg:aspect-square rounded-[40px] overflow-hidden shadow-2xl border-8 border-[#F5F2EA]"
+              className="relative aspect-video rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl border-4 md:border-8 border-[#F5F2EA] md:order-2 order-1"
             >
               <video
                 src={missionVideo}
@@ -207,16 +208,16 @@ export default function About() {
       </section>
 
       {/* Our Team Section */}
-      <section id="team" className="py-24 bg-[#F5F2EA]">
+      <section id="team" className="py-16 md:py-24 bg-[#F5F2EA]">
         <div className="container-custom">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-display">Our Team</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-10 md:mb-16 space-y-3">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary font-display">Our Team</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               Highly skilled professionals dedicated to your success.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {teamHighlights.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -225,7 +226,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 bg-white rounded-[40px] overflow-hidden group">
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 bg-white rounded-[24px] md:rounded-[40px] overflow-hidden group">
                   <div className="aspect-[16/10] overflow-hidden relative">
                     <img
                       src={item.image}
@@ -234,11 +235,11 @@ export default function About() {
                     />
                     <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
-                  <CardContent className="p-8 space-y-4">
-                    <h3 className="text-2xl font-bold text-primary leading-tight">
+                  <CardContent className="p-6 md:p-8 space-y-3 md:space-y-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                       {item.description}
                     </p>
                   </CardContent>
@@ -250,16 +251,16 @@ export default function About() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-white overflow-hidden">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative md:order-1 order-1"
             >
-              <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden border-8 border-[#F5F2EA] shadow-xl max-h-[600px] mx-auto lg:mx-0">
+              <div className="relative z-10 aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden border-4 md:border-8 border-[#F5F2EA] shadow-xl max-h-[500px] md:max-h-[600px] mx-auto lg:mx-0">
                 <video 
                   src={whyChooseUsVideo}
                   autoPlay
@@ -274,16 +275,16 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-6 -right-6 z-20 bg-secondary text-primary p-6 rounded-[30px] shadow-lg max-w-[260px] border-4 border-white"
+                className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 z-20 bg-secondary text-primary p-4 md:p-6 rounded-[20px] md:rounded-[30px] shadow-lg max-w-[200px] md:max-w-[260px] border-2 md:border-4 border-white"
               >
-                <p className="text-xl font-bold leading-tight uppercase tracking-tight">Empowering Firms with Global Talent</p>
+                <p className="text-base md:text-xl font-bold leading-tight uppercase tracking-tight">Empowering Firms with Global Talent</p>
               </motion.div>
             </motion.div>
 
-            <div className="space-y-10">
+            <div className="space-y-8 md:space-y-10 md:order-2 order-2">
               <div className="space-y-4">
-                <h2 className="text-4xl font-bold text-primary font-display leading-tight">Why Choose Us?</h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary font-display leading-tight">Why Choose Us?</h2>
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                   Unlock the full potential of your firm with our expert <span className="text-primary font-bold">Knowledge Processing Outsourcing (KPO)</span> services. Specializing in Accounting, Tax, Payroll, and Bookkeeping, we provide seamless support to businesses worldwide from our highly skilled team in India.
                 </p>
               </div>
@@ -296,14 +297,14 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex gap-4 p-4 rounded-2xl bg-[#F5F2EA]/50 border border-transparent hover:border-secondary/20 transition-all duration-300"
+                    className="flex gap-3 md:gap-4 p-4 rounded-2xl bg-[#F5F2EA]/50 border border-transparent hover:border-secondary/20 transition-all duration-300"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-secondary rounded-xl flex items-center justify-center shadow-sm">
-                      <CheckCircle2 className="w-5 h-5" />
+                    <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-primary text-secondary rounded-lg md:rounded-xl flex items-center justify-center shadow-sm">
+                      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-primary mb-1">{item.title}</h4>
-                      <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
+                      <h4 className="text-lg md:text-xl font-bold text-primary mb-1">{item.title}</h4>
+                      <p className="text-gray-600 leading-relaxed text-xs md:text-sm">{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -390,24 +391,28 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
-          <div className="bg-[#002140] rounded-[60px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-[#002140] rounded-[40px] md:rounded-[60px] p-10 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <div className="relative z-10 space-y-8">
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight font-display text-white">
+            <div className="relative z-10 space-y-6 md:space-y-8">
+              <h2 className="text-3xl md:text-6xl font-bold leading-tight font-display text-white px-2">
                 Ready to optimize your <br /> <span className="text-secondary">financial operations?</span>
               </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed px-4">
                 Partner with India's premier KPO firm and gain access to top-tier accounting talent today.
               </p>
-              <div className="flex flex-wrap justify-center gap-6 pt-4">
-                <button className="bg-secondary text-primary px-10 py-5 rounded-full font-bold text-xl hover:bg-white transition-all shadow-lg shadow-secondary/20 flex items-center gap-3">
-                  Get Started <ArrowRight className="w-6 h-6" />
-                </button>
-                <button className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-primary transition-all">
-                  Contact Us
-                </button>
+              <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-4">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <button className="w-full bg-secondary text-primary px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3">
+                    Get Started <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+                  </button>
+                </Link>
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <button className="w-full bg-transparent border-2 border-white text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-primary transition-all">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
