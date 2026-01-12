@@ -9,7 +9,8 @@ import {
   Send,
   MessageSquare,
   Globe,
-  ArrowRight
+  ArrowRight,
+  ChevronDown
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -20,10 +21,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
+  phone: z.string().optional(),
+  service: z.string().min(1, "Please select a service"),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
@@ -45,6 +55,8 @@ export default function Contact() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
+      service: "",
       subject: "",
       message: "",
     },
@@ -81,6 +93,15 @@ export default function Contact() {
       description: "Strategic KPO Hub, India",
       color: "bg-emerald-500/10 text-emerald-500"
     }
+  ];
+
+  const servicesList = [
+    "Accounting & Bookkeeping",
+    "Tax Preparation & Compliance",
+    "Payroll Processing",
+    "Financial Analysis & Reporting",
+    "Audit & Assurance",
+    "Business Consulting"
   ];
 
   return (
@@ -223,6 +244,45 @@ export default function Contact() {
                                 <FormControl>
                                   <Input placeholder="john@example.com" {...field} className="rounded-xl border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-secondary transition-all py-6" />
                                 </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <FormField
+                            control={form.control}
+                            name="phone"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-primary font-bold">Phone Number (Optional)</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="+1 (555) 000-0000" {...field} className="rounded-xl border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-secondary transition-all py-6" />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="service"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-primary font-bold">Service Required</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                  <FormControl>
+                                    <SelectTrigger className="rounded-xl border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-secondary transition-all py-6">
+                                      <SelectValue placeholder="Select a service" />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent className="rounded-xl border-gray-100">
+                                    {servicesList.map((service) => (
+                                      <SelectItem key={service} value={service}>
+                                        {service}
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
                                 <FormMessage />
                               </FormItem>
                             )}
