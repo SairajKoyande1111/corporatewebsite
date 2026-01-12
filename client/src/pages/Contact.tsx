@@ -110,8 +110,7 @@ export default function Contact() {
               variants={fadeIn}
               className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6 text-white"
             >
-              Let's Start a <br />
-              <span className="text-secondary">Conversation</span>
+              Let's Start a <span className="text-secondary">Conversation</span>
             </motion.h1>
             <motion.p 
               variants={fadeIn}
