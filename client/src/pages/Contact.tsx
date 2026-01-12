@@ -149,9 +149,9 @@ export default function Contact() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 md:py-24 relative z-20">
+      <section className="py-12 md:py-24 -mt-24 relative z-20">
         <div className="container-custom">
-          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 pt-8 md:pt-0">
+          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8">
             {/* Contact Form - First on Mobile */}
             <div className="order-1 lg:order-2 lg:col-span-2">
               <motion.div
