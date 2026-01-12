@@ -270,12 +270,14 @@ export default function Home() {
               </div>
 
               <motion.div variants={fadeIn} className="pt-4">
-                <button className="group flex items-center gap-3 text-primary font-bold text-xl hover:text-secondary transition-colors">
-                  <span className="border-b-2 border-secondary pb-1 group-hover:border-primary transition-colors">
-                    Read Our Story
-                  </span>
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
+                <Link href="/about">
+                  <button className="group flex items-center gap-3 text-primary font-bold text-xl hover:text-secondary transition-colors">
+                    <span className="border-b-2 border-secondary pb-1 group-hover:border-primary transition-colors">
+                      Read Our Story
+                    </span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                  </button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
