@@ -88,7 +88,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-[#002140] text-white overflow-hidden">
+      <section className="relative py-24 bg-[#002140] text-white overflow-hidden text-center">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-[600px] h-[600px] border-[80px] border-white rounded-full -translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -98,7 +98,7 @@ export default function Contact() {
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="max-w-3xl"
+            className="w-full"
           >
             <motion.span 
               variants={fadeIn}
@@ -108,14 +108,14 @@ export default function Contact() {
             </motion.span>
             <motion.h1 
               variants={fadeIn}
-              className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6"
+              className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6 text-white"
             >
               Let's Start a <br />
               <span className="text-secondary">Conversation</span>
             </motion.h1>
             <motion.p 
               variants={fadeIn}
-              className="text-xl text-white/70 leading-relaxed max-w-2xl"
+              className="text-xl text-white/70 leading-relaxed max-w-4xl mx-auto"
             >
               Have questions about our outsourcing services? Our team is here to help you navigate your financial operations with expert precision.
             </motion.p>
