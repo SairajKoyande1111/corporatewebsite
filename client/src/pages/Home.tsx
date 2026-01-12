@@ -400,7 +400,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-primary text-white overflow-hidden relative">
+      <section className="py-20 bg-[#002140] text-white overflow-hidden relative">
         {/* Subtle decorative background pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] border-[100px] border-white/20 rounded-full translate-x-1/3 -translate-y-1/3" />
