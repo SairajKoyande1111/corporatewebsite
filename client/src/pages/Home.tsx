@@ -610,7 +610,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-6 md:mb-10">
               We believe that happy employees lead to happy clients. Our unique culture fosters collaboration, innovation, and a relentless commitment to excellence. When our team thrives, so does your business.
             </p>
-            <Link href="/about#team" className="mt-4">
+            <Link href="/about" className="mt-4">
               <button className="bg-secondary text-primary px-8 md:px-10 py-4 rounded-full font-bold hover:bg-white transition-all text-lg">
                 Meet Our Team
               </button>
