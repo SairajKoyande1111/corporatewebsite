@@ -174,9 +174,9 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="max-w-3xl"
+            className="max-w-3xl w-full"
           >
-            <div className="h-[180px] md:h-[240px] mb-6 md:mb-8 flex flex-col justify-center">
+            <div className="h-[160px] sm:h-[180px] md:h-[240px] mb-4 md:mb-8 flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={heroTextIndex}
@@ -184,7 +184,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
+                  className="text-4xl sm:text-6xl md:text-7xl lg:text-[72px] font-medium text-white font-['Poppins',sans-serif] leading-[1.1] tracking-tight"
                 >
                   {heroTexts[heroTextIndex].main} <br />
                   {heroTexts[heroTextIndex].sub} <br />
@@ -197,22 +197,22 @@ export default function Home() {
 
             <motion.p
               variants={fadeIn}
-              className="text-lg sm:text-xl md:text-3xl text-white/90 mb-8 md:mb-10 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[3rem] md:min-h-[3.5rem]"
+              className="text-lg sm:text-xl md:text-3xl text-white/90 mb-6 md:mb-10 max-w-2xl leading-relaxed font-['Poppins',sans-serif] font-medium min-h-[2.5rem] md:min-h-[3.5rem] px-1"
             >
               <TypewriterEffect text="Tax, Audit & Advisory Solutions Built for Today’s Businesses" />
             </motion.p>
 
             <motion.div
               variants={fadeIn}
-              className="flex flex-row items-center gap-4 md:gap-6"
+              className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 w-full"
             >
-              <Link href="/services" className="flex-1 sm:flex-none">
-                <button className="w-full bg-secondary text-primary px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 text-sm md:text-base whitespace-nowrap">
+              <Link href="/services" className="w-full sm:w-auto">
+                <button className="w-full bg-secondary text-primary px-6 md:px-8 py-4 md:py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 text-base md:text-base whitespace-nowrap">
                   Explore Services
                 </button>
               </Link>
-              <Link href="/contact" className="flex-1 sm:flex-none">
-                <button className="w-full bg-transparent border-2 border-white text-white px-4 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300 text-sm md:text-base whitespace-nowrap">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <button className="w-full bg-transparent border-2 border-white text-white px-6 md:px-8 py-4 md:py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300 text-base md:text-base whitespace-nowrap">
                   Connect Now
                 </button>
               </Link>
@@ -225,42 +225,42 @@ export default function Home() {
       </section>
 
       {/* Collaborative Approach Section */}
-      <section className="py-20 bg-white">
-        <div className="container-custom grid lg:grid-cols-2 gap-24 items-center">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-custom flex flex-col lg:grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex flex-col justify-center h-full"
+            className="flex flex-col justify-center h-full order-2 lg:order-1"
           >
-            <div className="space-y-8">
-              <div className="space-y-4">
+            <div className="space-y-6 md:space-y-8">
+              <div className="space-y-3 md:space-y-4">
                 <motion.span
                   variants={fadeIn}
-                  className="text-secondary font-bold tracking-[0.2em] uppercase text-xl block"
+                  className="text-secondary font-bold tracking-[0.2em] uppercase text-lg md:text-xl block"
                 >
                   Our Philosophy
                 </motion.span>
                 <motion.h2
                   variants={fadeIn}
-                  className="text-5xl md:text-6xl font-bold text-primary font-display leading-[1.1]"
+                  className="text-4xl md:text-6xl font-bold text-primary font-display leading-[1.1]"
                 >
                   A Collaborative <br /> Approach
                 </motion.h2>
               </div>
 
-              <div className="space-y-6 max-w-xl">
+              <div className="space-y-4 md:space-y-6 max-w-xl">
                 <motion.p
                   variants={fadeIn}
-                  className="text-2xl text-primary font-semibold leading-tight"
+                  className="text-xl md:text-2xl text-primary font-semibold leading-tight"
                 >
                   Your goals are our goals. We don't just work for you; we work
                   with you.
                 </motion.p>
                 <motion.p
                   variants={fadeIn}
-                  className="text-gray-600 text-lg leading-relaxed"
+                  className="text-base md:text-lg text-gray-600 leading-relaxed"
                 >
                   We believe that the best results come from true partnership.
                   By combining our deep technical expertise with a genuine
@@ -269,13 +269,13 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              <motion.div variants={fadeIn} className="pt-4">
+              <motion.div variants={fadeIn} className="pt-2 md:pt-4">
                 <Link href="/about">
-                  <button className="group flex items-center gap-3 text-primary font-bold text-xl hover:text-secondary transition-colors">
+                  <button className="group flex items-center gap-3 text-primary font-bold text-lg md:text-xl hover:text-secondary transition-colors">
                     <span className="border-b-2 border-secondary pb-1 group-hover:border-primary transition-colors">
                       Read Our Story
                     </span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                   </button>
                 </Link>
               </motion.div>
@@ -283,14 +283,14 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative order-1 lg:order-2 w-full"
           >
             {/* Collaboration video */}
-            <div className="aspect-[4/3] rounded-tl-[120px] rounded-br-[120px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative z-10 border-8 border-white">
+            <div className="aspect-[4/3] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px] overflow-hidden shadow-xl md:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative z-10 border-4 md:border-8 border-white">
               <video
                 src={collaborativeVideo}
                 autoPlay
@@ -301,7 +301,7 @@ export default function Home() {
               />
             </div>
             {/* Decorative background shape */}
-            <div className="absolute -bottom-12 -right-12 w-full h-full bg-[#F5F2EA] rounded-tl-[120px] rounded-br-[120px] -z-0" />
+            <div className="absolute -bottom-6 -right-6 md:-bottom-12 md:-right-12 w-full h-full bg-[#F5F2EA] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px] -z-0" />
           </motion.div>
         </div>
       </section>
@@ -309,15 +309,15 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="py-20 bg-white relative overflow-hidden"
+        className="py-16 md:py-24 bg-white relative overflow-hidden"
       >
         <div className="container-custom">
-          <div className="flex flex-col items-center text-center mb-20 space-y-4">
+          <div className="flex flex-col items-center text-center mb-12 md:mb-20 space-y-3 md:space-y-4">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl md:text-2xl"
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-lg md:text-2xl"
             >
               Our Services
             </motion.span>
@@ -326,13 +326,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-display leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary font-display leading-tight px-4"
             >
               Backed by Deep Industry Knowledge
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 id: 1,
@@ -371,7 +371,7 @@ export default function Home() {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
               >
                 <Link href="/services">
-                  <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group cursor-pointer overflow-hidden bg-white">
+                  <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group cursor-pointer overflow-hidden bg-white rounded-[24px] md:rounded-[32px]">
                     <div className="aspect-[16/10] overflow-hidden relative">
                       <img
                         src={service.image}
@@ -382,13 +382,13 @@ export default function Home() {
                       <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors duration-500" />
                     </div>
 
-                    <CardContent className="p-8 space-y-4">
-                      <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
+                    <CardContent className="p-6 md:p-8 space-y-3 md:space-y-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <div className="pt-4 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all duration-300">
+                      <div className="pt-2 md:pt-4 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all duration-300 text-sm md:text-base">
                         <span>Learn More</span>
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                       </div>
                     </CardContent>
                   </Card>
@@ -400,14 +400,14 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-[#002140] text-white overflow-hidden relative">
+      <section className="py-16 md:py-24 bg-[#002140] text-white overflow-hidden relative">
         {/* Subtle decorative background pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] border-[100px] border-white/20 rounded-full translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] border-[60px] md:border-[100px] border-white/20 rounded-full translate-x-1/3 -translate-y-1/3" />
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+          <div className="flex flex-col items-center text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -420,14 +420,14 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-tight px-4"
             >
               <span className="text-white">A Simple & Seamless</span> <br />
               <span className="text-secondary">Outsourcing Process</span>
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               {
                 step: "01",
@@ -456,17 +456,17 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative p-8 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all duration-500 hover:-translate-y-1"
+                className="group relative p-6 md:p-8 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all duration-500 hover:-translate-y-1"
               >
-                <div className="flex flex-col h-full gap-4">
-                  <span className="text-4xl font-bold text-secondary/30 group-hover:text-secondary/80 transition-colors duration-500">
+                <div className="flex flex-col h-full gap-3 md:gap-4">
+                  <span className="text-3xl md:text-4xl font-bold text-secondary/30 group-hover:text-secondary/80 transition-colors duration-500">
                     {item.step}
                   </span>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-secondary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-white/60 text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                    <p className="text-sm md:text-base text-white/60 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
                       {item.desc}
                     </p>
                   </div>
@@ -478,14 +478,14 @@ export default function Home() {
       </section>
 
       {/* Industries We Serve Section */}
-      <section id="industries" className="py-20 bg-[#F5F2EA] overflow-hidden">
+      <section id="industries" className="py-16 md:py-24 bg-[#F5F2EA] overflow-hidden">
         <div className="container-custom">
-          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+          <div className="flex flex-col items-center text-center mb-12 md:mb-20 space-y-3 md:space-y-4">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-xl"
+              className="text-secondary font-bold tracking-[0.2em] uppercase text-lg md:text-xl"
             >
               Our Expertise
             </motion.span>
@@ -493,7 +493,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary font-display"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary font-display px-4"
             >
               Industries We Serve
             </motion.h2>
@@ -501,13 +501,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl text-gray-600 max-w-3xl"
+              className="text-lg md:text-xl text-gray-600 max-w-3xl px-4"
             >
               We provide specialized accounting outsourcing services to firms across multiple industries
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 id: 1,
@@ -553,7 +553,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden bg-white">
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden bg-white rounded-[24px] md:rounded-[32px]">
                   <div className="aspect-[16/10] overflow-hidden relative">
                     <img
                       src={industry.image}
@@ -562,11 +562,11 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
+                  <CardContent className="p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 md:mb-4 group-hover:text-secondary transition-colors">
                       {industry.title}
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                       {industry.desc}
                     </p>
                   </CardContent>
@@ -578,15 +578,15 @@ export default function Home() {
       </section>
 
       {/* Culture Section */}
-      <section className="py-20 bg-[#002140] text-white overflow-hidden">
-        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 md:py-24 bg-[#002140] text-white overflow-hidden">
+        <div className="container-custom grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative order-1"
           >
-            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white/10 shadow-2xl">
+            <div className="aspect-[4/3] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[100px] md:rounded-br-[100px] overflow-hidden border-4 md:border-8 border-white/10 shadow-2xl">
               <video 
                 src={cultureVideo} 
                 autoPlay 
@@ -598,20 +598,20 @@ export default function Home() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 md:space-y-8 order-2"
           >
-            <div className="space-y-4">
-              <span className="text-secondary font-bold tracking-widest uppercase text-lg">Our Culture</span>
-              <h2 className="text-5xl font-bold leading-tight text-white">Our Team, Your Success</h2>
+            <div className="space-y-3 md:space-y-4">
+              <span className="text-secondary font-bold tracking-widest uppercase text-lg block">Our Culture</span>
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">Our Team, Your Success</h2>
             </div>
-            <p className="text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
               We believe that happy employees lead to happy clients. Our unique culture fosters collaboration, innovation, and a relentless commitment to excellence. When our team thrives, so does your business.
             </p>
             <Link href="/about#team">
-              <button className="bg-secondary text-primary px-10 py-4 rounded-full font-bold hover:bg-white transition-all">
+              <button className="w-full sm:w-auto bg-secondary text-primary px-8 md:px-10 py-4 rounded-full font-bold hover:bg-white transition-all text-lg">
                 Meet Our Team
               </button>
             </Link>
@@ -620,38 +620,38 @@ export default function Home() {
       </section>
 
       {/* Join Us Section */}
-      <section className="py-20 bg-[#F5F2EA] overflow-hidden">
-        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 md:py-24 bg-[#F5F2EA] overflow-hidden">
+        <div className="container-custom flex flex-col lg:grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8 order-2 lg:order-1"
+            className="space-y-6 md:space-y-8 order-2 lg:order-1"
           >
-            <h2 className="text-5xl font-bold text-primary">Join Us</h2>
-            <div className="space-y-6">
-              <p className="text-2xl font-bold text-primary leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary font-display">Join Us</h2>
+            <div className="space-y-4 md:space-y-6">
+              <p className="text-xl md:text-2xl font-bold text-primary leading-tight">
                 We are one of the largest and fastest-growing certified public accounting and consulting firms.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Consistently named one of the Best Accounting Firms to Work for in the United States by Accounting Today, Bennett Thrasher offers you the opportunities of a large accounting firm, with a collaborative, fun culture and a flexible, supportive work atmosphere.
               </p>
             </div>
-            <div className="flex gap-4">
-              <Link href="/contact">
-                <button className="bg-white border-2 border-primary/10 text-primary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all flex items-center gap-2">
+            <div className="flex">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <button className="w-full bg-white border-2 border-primary/10 text-primary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 text-lg">
                   Explore Careers <ArrowUpRight className="w-5 h-5 bg-secondary text-primary rounded-full p-1" />
                 </button>
               </Link>
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative order-1 lg:order-2 mb-12 lg:mb-0"
+            className="relative order-1 lg:order-2 w-full"
           >
-            <div className="aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-white shadow-2xl">
+            <div className="aspect-[4/3] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[100px] md:rounded-br-[100px] overflow-hidden border-4 md:border-8 border-white shadow-2xl">
               <img 
                 src={joinUsImage} 
                 alt="Our Team" 
@@ -659,7 +659,7 @@ export default function Home() {
               />
             </div>
             {/* Decorative background shape matching previous section */}
-            <div className="absolute -bottom-10 -right-10 w-full h-full bg-white/50 rounded-tl-[100px] rounded-br-[100px] -z-10" />
+            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-full h-full bg-white/50 rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[100px] md:rounded-br-[100px] -z-10" />
           </motion.div>
         </div>
       </section>
