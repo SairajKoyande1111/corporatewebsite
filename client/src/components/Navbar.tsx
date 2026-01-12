@@ -45,14 +45,14 @@ export function Navbar() {
             <Link href="/contact" className="hover:text-secondary transition-colors py-2">Contact</Link>
           </nav>
 
-          <div className="flex items-center gap-4 md:gap-8">
+          <div className="flex items-center gap-4 md:gap-8 flex-shrink-0">
             <Link href="/contact">
               <button className="hidden lg:block bg-secondary text-primary px-8 py-3 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-secondary/20 uppercase tracking-widest text-sm">
                 Connect Now
               </button>
             </Link>
             <button 
-              className="lg:hidden p-2 text-white hover:text-secondary transition-colors z-[60]"
+              className="lg:hidden p-2 text-white hover:text-secondary transition-colors z-[60] flex-shrink-0"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
             >
@@ -80,17 +80,17 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] bg-[hsl(var(--header-main))] z-[56] lg:hidden shadow-2xl p-8 pt-24"
+              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] bg-[hsl(var(--header-main))] z-[56] lg:hidden shadow-2xl p-6 md:p-8 pt-24"
             >
-              <div className="flex flex-col h-full">
-                <nav className="flex flex-col gap-6 font-['Poppins',sans-serif] text-xl font-medium uppercase tracking-widest">
+              <div className="flex flex-col h-full overflow-y-auto">
+                <nav className="flex flex-col gap-4 md:gap-6 font-['Poppins',sans-serif] text-xl font-medium uppercase tracking-widest">
                   <Link href="/" onClick={() => setIsOpen(false)} className="text-white hover:text-secondary transition-colors py-2 border-b border-white/5">Home</Link>
                   <Link href="/about" onClick={() => setIsOpen(false)} className="text-white hover:text-secondary transition-colors py-2 border-b border-white/5">About Us</Link>
                   <Link href="/services" onClick={() => setIsOpen(false)} className="text-white hover:text-secondary transition-colors py-2 border-b border-white/5">Services</Link>
                   <Link href="/contact" onClick={() => setIsOpen(false)} className="text-white hover:text-secondary transition-colors py-2 border-b border-white/5">Contact</Link>
                 </nav>
 
-                <div className="mt-12 space-y-8">
+                <div className="mt-8 md:mt-12 space-y-6 md:space-y-8 pb-8">
                   <div className="flex flex-col gap-4 text-white/80 font-['Poppins',sans-serif]">
                     <a href="tel:4047520600" className="flex items-center gap-3 text-lg hover:text-secondary transition-colors">
                       <Phone className="w-5 h-5 text-secondary" />
