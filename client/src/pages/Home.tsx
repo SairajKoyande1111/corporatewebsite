@@ -638,9 +638,11 @@ export default function Home() {
               </p>
             </div>
             <div className="flex gap-4">
-              <button className="bg-white border-2 border-primary/10 text-primary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all flex items-center gap-2">
-                Explore Careers <ArrowUpRight className="w-5 h-5 bg-secondary text-primary rounded-full p-1" />
-              </button>
+              <Link href="/contact">
+                <button className="bg-white border-2 border-primary/10 text-primary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all flex items-center gap-2">
+                  Explore Careers <ArrowUpRight className="w-5 h-5 bg-secondary text-primary rounded-full p-1" />
+                </button>
+              </Link>
             </div>
           </motion.div>
           <motion.div
