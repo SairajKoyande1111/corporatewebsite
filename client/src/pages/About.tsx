@@ -207,7 +207,7 @@ export default function About() {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-24 bg-[#F5F2EA]">
+      <section id="team" className="py-24 bg-[#F5F2EA]">
         <div className="container-custom">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-display">Our Team</h2>

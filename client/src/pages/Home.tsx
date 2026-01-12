@@ -610,9 +610,11 @@ export default function Home() {
             <p className="text-xl text-white/80 leading-relaxed">
               We believe that happy employees lead to happy clients. Our unique culture fosters collaboration, innovation, and a relentless commitment to excellence. When our team thrives, so does your business.
             </p>
-            <button className="bg-secondary text-primary px-10 py-4 rounded-full font-bold hover:bg-white transition-all">
-              Meet Our Team
-            </button>
+            <Link href="/about#team">
+              <button className="bg-secondary text-primary px-10 py-4 rounded-full font-bold hover:bg-white transition-all">
+                Meet Our Team
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
