@@ -109,17 +109,22 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-[#002140] text-white overflow-hidden text-center">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] border-[80px] border-white rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <section className="relative min-h-[500px] flex items-center bg-[#002140] text-white overflow-hidden py-24 text-center">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+            alt="Office background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#002140] to-transparent" />
         </div>
         
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 w-full">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="w-full"
+            className="w-full flex flex-col items-center"
           >
             <motion.span 
               variants={fadeIn}
@@ -135,7 +140,7 @@ export default function Contact() {
             </motion.h1>
             <motion.p 
               variants={fadeIn}
-              className="text-xl text-white/70 leading-relaxed max-w-4xl mx-auto"
+              className="text-xl text-white/80 leading-relaxed max-w-4xl mx-auto"
             >
               Have questions about our outsourcing services? Our team is here to help you navigate your financial operations with expert precision.
             </motion.p>
@@ -330,30 +335,6 @@ export default function Contact() {
                   </CardContent>
                 </Card>
               </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map or Global Presence Section */}
-      <section className="py-24 bg-[#F5F2EA]">
-        <div className="container-custom">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-display">Global Presence</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Strategic operations hub in India serving clients across the globe.
-            </p>
-          </div>
-          
-          <div className="relative aspect-[21/9] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white bg-[#002140] flex items-center justify-center p-12 text-center group">
-            <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
-              <Globe className="w-full h-full text-white animate-pulse" />
-            </div>
-            <div className="relative z-10 max-w-2xl">
-              <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Seamless Connectivity</h3>
-              <p className="text-xl text-white/80 leading-relaxed">
-                Leveraging high-speed digital infrastructure to ensure that your outsourcing experience feels like having a team right in your office.
-              </p>
             </div>
           </div>
         </div>
