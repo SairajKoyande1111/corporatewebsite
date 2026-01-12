@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
-import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "wouter";
 import { 
   FileText, 
   Calculator, 
@@ -103,10 +103,10 @@ export default function Services() {
 
         <div className="container-custom relative z-10 text-center w-full">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display">
+            <motion.h1 variants={fadeIn} className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 leading-tight font-display">
               <span className="text-white">Comprehensive</span> <span className="text-secondary">Accounting & Finance</span> <span className="text-white">Solutions</span>
             </motion.h1>
-            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-white/80 max-w-5xl mx-auto leading-relaxed">
+            <motion.p variants={fadeIn} className="text-lg md:text-2xl text-white/80 max-w-5xl mx-auto leading-relaxed px-4">
               Tailored services designed to optimize your financial operations and drive global growth.
             </motion.p>
           </motion.div>
@@ -114,42 +114,42 @@ export default function Services() {
       </section>
 
       {/* Main Services Detail */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-24 bg-white">
         <div className="container-custom">
-          <div className="grid gap-24">
+          <div className="grid gap-16 md:gap-24">
             {mainServices.map((service, idx) => (
               <motion.div 
                 key={idx}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
-                <div className={`${idx % 2 === 1 ? 'lg:order-2' : ''} space-y-8`}>
+                <div className={`${idx % 2 === 1 ? 'lg:order-2' : ''} space-y-6 md:order-1`}>
                   <div className="space-y-4">
-                    <h2 className="text-4xl font-bold text-primary font-display">{service.title}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary font-display">{service.title}</h2>
                     <div className="h-1.5 w-full bg-secondary rounded-full" />
                   </div>
-                  <ul className="grid gap-6">
+                  <ul className="grid gap-4 md:gap-6">
                     {service.points.map((point, pIdx) => (
-                      <li key={pIdx} className="flex gap-4 items-start group">
-                        <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                          <CheckCircle2 className="w-4 h-4" />
+                      <li key={pIdx} className="flex gap-3 md:gap-4 items-start group">
+                        <div className="mt-1 flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                          <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" />
                         </div>
-                        <span className="text-xl text-black font-semibold leading-relaxed">{point}</span>
+                        <span className="text-lg md:text-xl text-black font-semibold leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
-                  <button className="flex items-center gap-3 text-primary font-bold text-lg hover:text-secondary transition-colors group">
+                  <button className="flex items-center gap-3 text-primary font-bold text-base md:text-lg hover:text-secondary transition-colors group">
                     Inquire About This Service 
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
                   </button>
                 </div>
-                <div className={`${idx % 2 === 1 ? 'lg:order-1' : ''} relative`}>
-                  <div className="aspect-[4/3] rounded-[60px] overflow-hidden border-8 border-[#F5F2EA] shadow-2xl">
+                <div className={`${idx % 2 === 1 ? 'lg:order-1' : ''} relative md:order-2`}>
+                  <div className="aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden border-4 md:border-8 border-[#F5F2EA] shadow-2xl">
                     <img src={service.image} alt={service.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
                   </div>
-                  <div className={`absolute -z-10 w-full h-full bg-secondary/5 rounded-[60px] -bottom-6 ${idx % 2 === 1 ? '-left-6' : '-right-6'}`} />
+                  <div className={`absolute -z-10 w-full h-full bg-secondary/5 rounded-[40px] md:rounded-[60px] -bottom-4 md:-bottom-6 ${idx % 2 === 1 ? '-left-4 md:-left-6' : '-right-4 md:-right-6'}`} />
                 </div>
               </motion.div>
             ))}
@@ -169,33 +169,33 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-10">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="flex flex-col"
             >
-              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-10 border border-white/5 shadow-xl group relative overflow-hidden">
+              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-6 md:p-10 border border-white/5 shadow-xl group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
-                <div className="space-y-10 relative z-10">
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
-                      <Cloud className="w-8 h-8" />
+                <div className="space-y-8 md:space-y-10 relative z-10">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
+                      <Cloud className="w-6 h-6 md:w-8 md:h-8" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-white tracking-tight">Platform Expertise</h3>
-                      <p className="text-white/40 text-base mt-1 font-medium">Certified cloud accounting specialists.</p>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Platform Expertise</h3>
+                      <p className="text-white/40 text-sm md:text-base mt-1 font-medium">Certified cloud accounting specialists.</p>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 gap-y-5">
+                  <div className="grid grid-cols-1 gap-y-4 md:gap-y-5">
                     {softwareExpertise.map((sw, i) => (
-                      <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/5 transition-colors">
-                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
-                          <CheckCircle2 className="w-6 h-6 text-secondary" />
+                      <div key={i} className="flex items-center gap-4 md:gap-5 group/item p-2 md:p-3 rounded-xl hover:bg-white/5 transition-colors">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
+                          <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-secondary" />
                         </div>
-                        <span className="font-bold text-white tracking-tight text-2xl">{sw}</span>
+                        <span className="font-bold text-white tracking-tight text-xl md:text-2xl">{sw}</span>
                       </div>
                     ))}
                   </div>
@@ -210,26 +210,26 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="flex flex-col"
             >
-              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-10 border border-white/5 shadow-xl group relative overflow-hidden">
+              <div className="flex-1 bg-[#002140] text-white rounded-2xl p-6 md:p-10 border border-white/5 shadow-xl group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
-                <div className="space-y-10 relative z-10">
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
-                      <Lock className="w-8 h-8" />
+                <div className="space-y-8 md:space-y-10 relative z-10">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-secondary text-primary rounded-xl flex items-center justify-center shadow-lg shadow-secondary/20 transition-transform duration-500 group-hover:scale-110">
+                      <Lock className="w-6 h-6 md:w-8 md:h-8" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-white tracking-tight">Data Integrity</h3>
-                      <p className="text-white/40 text-base mt-1 font-medium">Uncompromising compliance standards.</p>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Data Integrity</h3>
+                      <p className="text-white/40 text-sm md:text-base mt-1 font-medium">Uncompromising compliance standards.</p>
                     </div>
                   </div>
 
-                  <div className="space-y-5">
+                  <div className="space-y-4 md:space-y-5">
                     {securityFeatures.map((feat, i) => (
-                      <div key={i} className="flex items-center gap-5 group/item p-3 rounded-xl hover:bg-white/5 transition-colors">
-                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
-                          <ShieldCheck className="w-6 h-6 text-secondary" />
+                      <div key={i} className="flex items-center gap-4 md:gap-5 group/item p-2 md:p-3 rounded-xl hover:bg-white/5 transition-colors">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-secondary/50 group-hover/item:bg-secondary/10 transition-all">
+                          <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-secondary" />
                         </div>
-                        <span className="text-2xl font-bold tracking-wide text-white/90">{feat}</span>
+                        <span className="text-xl md:text-2xl font-bold tracking-wide text-white/90">{feat}</span>
                       </div>
                     ))}
                   </div>
@@ -241,21 +241,23 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
-          <div className="bg-[#002140] rounded-[60px] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-[#002140] rounded-[40px] md:rounded-[60px] p-8 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <div className="relative z-10 space-y-8">
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight font-display text-white">
+            <div className="relative z-10 space-y-6 md:space-y-8">
+              <h2 className="text-3xl md:text-6xl font-bold leading-tight font-display text-white px-2">
                 Get Started with <br /> <span className="text-secondary">Expert Financial Support</span>
               </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed px-4">
                 Connect with our team today to learn how our specialized services can drive value for your business.
               </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <button className="bg-secondary text-primary px-10 py-5 rounded-full font-bold text-xl hover:bg-white transition-all shadow-lg flex items-center gap-3">
-                  Connect Now <ArrowRight className="w-6 h-6" />
-                </button>
+              <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-4">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <button className="w-full bg-secondary text-primary px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3">
+                    Connect Now <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
