@@ -601,17 +601,17 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 md:space-y-10 order-2"
+            className="flex flex-col items-start space-y-3 md:space-y-4 order-2"
           >
             <div className="space-y-3 md:space-y-4">
               <span className="text-secondary font-bold tracking-widest uppercase text-lg block">Our Culture</span>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">Our Team, Your Success</h2>
             </div>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-6 md:mb-10">
               We believe that happy employees lead to happy clients. Our unique culture fosters collaboration, innovation, and a relentless commitment to excellence. When our team thrives, so does your business.
             </p>
-            <Link href="/about#team">
-              <button className="w-full sm:w-auto bg-secondary text-primary px-8 md:px-10 py-4 rounded-full font-bold hover:bg-white transition-all text-lg">
+            <Link href="/about#team" className="mt-4">
+              <button className="bg-secondary text-primary px-8 md:px-10 py-4 rounded-full font-bold hover:bg-white transition-all text-lg">
                 Meet Our Team
               </button>
             </Link>
