@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Phone, ArrowUpRight, Search, Mail, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import logoImage from "@assets/CoreAxis_Global_1769351988747.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,10 +33,12 @@ export function Navbar() {
       <div className="bg-[hsl(var(--header-main))] text-white">
         <div className="container-custom flex items-center justify-between h-[80px] md:h-[105px]">
           <Link href="/">
-            <div className="flex flex-col cursor-pointer group">
-              <span className="text-2xl md:text-4xl font-display font-medium tracking-tight text-white group-hover:text-secondary transition-colors">BT</span>
-              <span className="text-[8px] md:text-[10px] tracking-[0.2em] uppercase text-secondary font-medium -mt-1">Bennett Thrasher</span>
-            </div>
+            <img 
+              src={logoImage} 
+              alt="CoreAxis Global" 
+              className="h-10 md:h-14 w-auto cursor-pointer"
+              data-testid="img-logo"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-12 font-['Poppins',sans-serif] text-[18px] font-medium uppercase tracking-[0.15em] text-white">

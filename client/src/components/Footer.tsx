@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import logoImage from "@assets/CoreAxis_Global_1769351988747.png";
 
 export function Footer() {
   return (
@@ -12,10 +13,12 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6 md:space-y-8">
             <Link href="/">
-              <div className="flex flex-col cursor-pointer group w-fit">
-                <span className="text-3xl md:text-4xl font-display font-medium tracking-tight text-white group-hover:text-secondary transition-colors leading-none">BT</span>
-                <span className="text-[10px] tracking-[0.2em] uppercase text-secondary font-medium mt-1">Bennett Thrasher</span>
-              </div>
+              <img 
+                src={logoImage} 
+                alt="CoreAxis Global" 
+                className="h-10 md:h-12 w-auto cursor-pointer"
+                data-testid="img-footer-logo"
+              />
             </Link>
             <p className="text-white/70 max-w-sm leading-relaxed text-sm md:text-base">
               We believe that the best results come from true partnership. Delivering financial confidence since 1980 through expert advisory and solutions.
@@ -85,7 +88,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 md:pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs md:text-sm text-white/40">
-          <p>© 2026 Bennett Thrasher LLP. All rights reserved.</p>
+          <p>© 2026 CoreAxis Global. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-secondary transition-colors">Terms of Use</a>
