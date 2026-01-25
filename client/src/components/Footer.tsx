@@ -13,12 +13,14 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6 md:space-y-8">
             <Link href="/">
-              <img 
-                src={logoImage} 
-                alt="CoreAxis Global" 
-                className="h-10 md:h-12 w-auto cursor-pointer"
-                data-testid="img-footer-logo"
-              />
+              <div className="bg-white rounded-md px-4 py-1.5 inline-block">
+                <img 
+                  src={logoImage} 
+                  alt="CoreAxis Global" 
+                  className="h-10 md:h-12 w-auto cursor-pointer"
+                  data-testid="img-footer-logo"
+                />
+              </div>
             </Link>
             <p className="text-white/70 max-w-sm leading-relaxed text-sm md:text-base">
               We believe that the best results come from true partnership. Delivering financial confidence since 1980 through expert advisory and solutions.
