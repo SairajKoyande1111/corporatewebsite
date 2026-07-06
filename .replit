@@ -43,3 +43,9 @@ waitForPort = 5000
 
 [agent]
 expertMode = true
+
+[userenv]
+
+[userenv.shared]
+ADMIN_PASSWORD = "coreaxis@admin2026"
+MONGODB_URL = "mongodb+srv://raneaniket23_db_user:cFkpqOAEFAUVgXVL@tempdemo.kmetc4p.mongodb.net/?appName=TEMPDEMO"
